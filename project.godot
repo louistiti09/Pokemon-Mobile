@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Pokemon Mobile"
+run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
-config/icon="res://Textures/icon.svg"
+config/icon="res://Textures/icon.png"
+
+[audio]
+
+buses/default_bus_layout="res://Sounds/default_bus_layout.tres"
 
 [display]
 
@@ -23,6 +28,16 @@ window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "red",
+"res://Script/": "orange",
+"res://Shaders/": "yellow",
+"res://Sounds/": "green",
+"res://Textures/": "teal"
+}
 
 [rendering]
 

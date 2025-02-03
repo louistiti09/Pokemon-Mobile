@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsmiqr8j120xd"
+path="res://.godot/imported/Status Sleep.mp3-f23de6405c78bcf99313fcd4ff81206f.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Status/Status Sleep.mp3"
+dest_files=["res://.godot/imported/Status Sleep.mp3-f23de6405c78bcf99313fcd4ff81206f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

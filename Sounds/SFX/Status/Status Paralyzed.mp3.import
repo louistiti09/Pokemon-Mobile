@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fnayhsq62ljd"
+path="res://.godot/imported/Status Paralyzed.mp3-6f8f242d76460192b107313f867f31ea.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Status/Status Paralyzed.mp3"
+dest_files=["res://.godot/imported/Status Paralyzed.mp3-6f8f242d76460192b107313f867f31ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bwlgfuig8hgfd"]
+[gd_scene load_steps=52 format=3 uid="uid://bwlgfuig8hgfd"]
 
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_1pfj7"]
 [ext_resource type="Script" path="res://Script/game.gd" id="1_306b4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://Shaders/pokemon_apparition.gdshader" id="4_qljo8"]
 [ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="5_hty7j"]
 [ext_resource type="Texture2D" uid="uid://dv1ptqos3vro6" path="res://Textures/pokeball_spritesheet.png" id="5_ng0dg"]
+[ext_resource type="Texture2D" uid="uid://drlqq7f3udj1q" path="res://Textures/Pokemons/Back/n/f1/1.png" id="6_7171s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gowmg"]
 shader = ExtResource("1_1pfj7")
@@ -22,11 +23,13 @@ shader_parameter/wave_width = 2.0
 shader = ExtResource("4_qljo8")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/avancement = 3.0
+shader_parameter/resolution = 80
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uglnp"]
 shader = ExtResource("4_qljo8")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/avancement = 3.0
+shader_parameter/resolution = 80
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi80u"]
 
@@ -400,12 +403,13 @@ vframes = 32
 
 [node name="ClientPkmn" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_an1l4")
-position = Vector2(140, 637)
+position = Vector2(140, 580)
 scale = Vector2(3, 3)
+texture = ExtResource("6_7171s")
 
 [node name="OppPkmn" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_uglnp")
-position = Vector2(420, 394)
+position = Vector2(420, 337)
 scale = Vector2(3, 3)
 
 [node name="ClientDmg" type="Sprite2D" parent="Sprites"]

@@ -463,9 +463,9 @@ func game():
 	ActionUI.Label.text = ""
 	ActionUI.Block.visible = true
 	MainUI.MainMenu.visible = false
-	ClientNodes.Pokeball.position = ClientNodes.Sprite.position+Vector2(0,30)
+	ClientNodes.Pokeball.position = ClientNodes.Sprite.position+Vector2(0,30)+Vector2(0,240)
 	ClientNodes.Pokeball.visible = true
-	OppNodes.Pokeball.position = OppNodes.Sprite.position+Vector2(0,30)
+	OppNodes.Pokeball.position = OppNodes.Sprite.position+Vector2(0,30)+Vector2(0,240)
 	OppNodes.Pokeball.visible = true
 	await pokemon_activation(2,0)
 	await pokemon_activation(1,0)
@@ -539,8 +539,8 @@ func _on_pokemon_6_pressed():change_pokemon(5)
 
 func _ready():game()
 
-var time = 0.0
+var p_time = 0.0
 func _process(delta):
-	time += delta
-	ClientNodes.Sprite.position.y = ClientNodes.BasePos.y + sin(time*10)
-	OppNodes.Sprite.position.y = OppNodes.BasePos.y + cos(time*10)
+	p_time += delta
+	ClientNodes.Sprite.position.y = ClientNodes.BasePos.y + sin(p_time*7)
+	OppNodes.Sprite.position.y = OppNodes.BasePos.y + cos(p_time*7)

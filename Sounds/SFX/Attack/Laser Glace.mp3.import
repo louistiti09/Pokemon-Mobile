@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://v3eb5h37a0kd"
+path="res://.godot/imported/Laser Glace.mp3-1124e7ff6a65bd129db70effde728f7c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Attack/Laser Glace.mp3"
+dest_files=["res://.godot/imported/Laser Glace.mp3-1124e7ff6a65bd129db70effde728f7c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

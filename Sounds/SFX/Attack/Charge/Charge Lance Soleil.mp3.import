@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy000x55tiu5b"
+path="res://.godot/imported/Charge Lance Soleil.mp3-601e1e61c9d713b1f714809be82a72ee.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Attack/Charge/Charge Lance Soleil.mp3"
+dest_files=["res://.godot/imported/Charge Lance Soleil.mp3-601e1e61c9d713b1f714809be82a72ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5hjb17b120lv"
+path="res://.godot/imported/Charge Coud'Krâne.mp3-9c66ba8656b96a4db9a8c91499c7d1f4.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Attack/Charge/Charge Coud'Krâne.mp3"
+dest_files=["res://.godot/imported/Charge Coud'Krâne.mp3-9c66ba8656b96a4db9a8c91499c7d1f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

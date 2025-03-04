@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ba22vj78rmgrq"
+path="res://.godot/imported/Gaz Toxik.mp3-27f855160092621d974b3bfe5d100fb9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Attack/Gaz Toxik.mp3"
+dest_files=["res://.godot/imported/Gaz Toxik.mp3-27f855160092621d974b3bfe5d100fb9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

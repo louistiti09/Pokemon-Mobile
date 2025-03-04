@@ -1,13 +1,15 @@
-[gd_scene load_steps=52 format=3 uid="uid://bwlgfuig8hgfd"]
+[gd_scene load_steps=66 format=3 uid="uid://bwlgfuig8hgfd"]
 
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_1pfj7"]
 [ext_resource type="Script" path="res://Script/game.gd" id="1_306b4"]
 [ext_resource type="Texture2D" uid="uid://dqseokaqvxt8j" path="res://Textures/basis.png" id="2_1pvcr"]
 [ext_resource type="Texture2D" uid="uid://cpxechcig0c0s" path="res://Textures/settings.png" id="2_xuqmb"]
-[ext_resource type="Shader" path="res://Shaders/pokemon_apparition.gdshader" id="4_qljo8"]
+[ext_resource type="Shader" path="res://Shaders/ingame_pokemon.gdshader" id="4_qljo8"]
 [ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="5_hty7j"]
 [ext_resource type="Texture2D" uid="uid://dv1ptqos3vro6" path="res://Textures/pokeball_spritesheet.png" id="5_ng0dg"]
-[ext_resource type="Texture2D" uid="uid://drlqq7f3udj1q" path="res://Textures/Pokemons/Back/n/f1/1.png" id="6_7171s"]
+[ext_resource type="Texture2D" uid="uid://b88utel6b3wnc" path="res://Textures/Pokemons/Back/s/6.png" id="6_racuq"]
+[ext_resource type="Texture2D" uid="uid://cfwutjmrhtbmq" path="res://Textures/Pokemons/Front/s/1.png" id="7_7q42y"]
+[ext_resource type="Script" path="res://Script/game_ia.gd" id="10_73u3u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gowmg"]
 shader = ExtResource("1_1pfj7")
@@ -24,33 +26,20 @@ shader = ExtResource("4_qljo8")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/avancement = 3.0
 shader_parameter/resolution = 80
+shader_parameter/death_animation = 0.0
+shader_parameter/client = true
+shader_parameter/status = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uglnp"]
 shader = ExtResource("4_qljo8")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/avancement = 3.0
 shader_parameter/resolution = 80
+shader_parameter/death_animation = 0.0
+shader_parameter/client = false
+shader_parameter/status = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi80u"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrbjx"]
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6in17"]
-shader = ExtResource("1_1pfj7")
-shader_parameter/color1 = Color(1, 1, 1, 1)
-shader_parameter/color2 = Color(0.588235, 0.588235, 0.588235, 1)
-shader_parameter/offset = 1.49012e-08
-shader_parameter/pixelise = 1000.0
-shader_parameter/generate_offset = false
-shader_parameter/wavy = 6.0
-shader_parameter/wave_width = 1.0
-
-[sub_resource type="SystemFont" id="SystemFont_v5vqx"]
-font_names = PackedStringArray("Berlin Sans FB")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vaiy6"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -74,6 +63,134 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjuaw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4oc0"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfl6f"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrbjx"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6in17"]
+shader = ExtResource("1_1pfj7")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/offset = 1.49012e-08
+shader_parameter/pixelise = 1000.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmf1s"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0b1kk"]
+shader = ExtResource("1_1pfj7")
+shader_parameter/color1 = Color(0.392157, 0.392157, 0.392157, 1)
+shader_parameter/color2 = Color(0.196078, 0.196078, 0.196078, 1)
+shader_parameter/offset = 1.49012e-08
+shader_parameter/pixelise = 1000.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 1.0
+
+[sub_resource type="SystemFont" id="SystemFont_v5vqx"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2sg11"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvdq3"]
+bg_color = Color(0.784314, 0.392157, 0.392157, 1)
+border_width_bottom = 8
+border_color = Color(0.392157, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd2su"]
+bg_color = Color(0.843137, 0.45098, 0.45098, 1)
+border_width_bottom = 8
+border_color = Color(0.392157, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt5mx"]
+bg_color = Color(0.588235, 0.196078, 0.196078, 1)
+border_width_top = 8
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avl52"]
+bg_color = Color(0.588235, 0.196078, 0.196078, 1)
+border_width_top = 8
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3tta"]
+bg_color = Color(0.392157, 0.392157, 0.784314, 1)
+border_width_bottom = 8
+border_color = Color(0, 0, 0.392157, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r44j1"]
+bg_color = Color(0.45098, 0.45098, 0.843137, 1)
+border_width_bottom = 8
+border_color = Color(0, 0, 0.392157, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agf82"]
+bg_color = Color(0.196078, 0.196078, 0.588235, 1)
+border_width_top = 8
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_um2ft"]
+bg_color = Color(0.196078, 0.196078, 0.588235, 1)
+border_width_top = 8
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsu6g"]
 bg_color = Color(1, 0, 0, 0.784314)
@@ -182,6 +299,33 @@ corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd034"]
+bg_color = Color(0.784314, 0.784314, 0.784314, 1)
+border_width_bottom = 8
+border_color = Color(0.392157, 0.392157, 0.392157, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jclc"]
+bg_color = Color(0.843137, 0.843137, 0.843137, 1)
+border_width_bottom = 8
+border_color = Color(0.392157, 0.392157, 0.392157, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3l5v"]
+bg_color = Color(0.588235, 0.588235, 0.588235, 1)
+border_width_top = 8
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keyei"]
 bg_color = Color(0.784314, 0.784314, 0.784314, 1)
@@ -327,43 +471,6 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd034"]
-bg_color = Color(0.784314, 0.784314, 0.784314, 1)
-border_width_bottom = 8
-border_color = Color(0.392157, 0.392157, 0.392157, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jclc"]
-bg_color = Color(0.843137, 0.843137, 0.843137, 1)
-border_width_bottom = 8
-border_color = Color(0.392157, 0.392157, 0.392157, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3l5v"]
-bg_color = Color(0.588235, 0.588235, 0.588235, 1)
-border_width_top = 8
-border_color = Color(1, 1, 1, 0)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0b1kk"]
-shader = ExtResource("1_1pfj7")
-shader_parameter/color1 = Color(0.392157, 0.392157, 0.392157, 1)
-shader_parameter/color2 = Color(0.196078, 0.196078, 0.196078, 1)
-shader_parameter/offset = 1.49012e-08
-shader_parameter/pixelise = 1000.0
-shader_parameter/generate_offset = false
-shader_parameter/wavy = 6.0
-shader_parameter/wave_width = 1.0
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_306b4")
 
@@ -405,12 +512,13 @@ vframes = 32
 material = SubResource("ShaderMaterial_an1l4")
 position = Vector2(140, 580)
 scale = Vector2(3, 3)
-texture = ExtResource("6_7171s")
+texture = ExtResource("6_racuq")
 
 [node name="OppPkmn" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_uglnp")
 position = Vector2(420, 337)
 scale = Vector2(3, 3)
+texture = ExtResource("7_7q42y")
 
 [node name="ClientDmg" type="Sprite2D" parent="Sprites"]
 position = Vector2(140, 637)
@@ -437,42 +545,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_bi80u")
 icon = ExtResource("2_xuqmb")
 icon_alignment = 1
 expand_icon = true
-
-[node name="Tutorial_UI" type="Panel" parent="UI"]
-visible = false
-clip_children = 1
-offset_left = 20.0
-offset_top = 100.0
-offset_right = 520.0
-offset_bottom = 180.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
-
-[node name="Background" type="ColorRect" parent="UI/Tutorial_UI"]
-material = SubResource("ShaderMaterial_6in17")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="UI/Tutorial_UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = -1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Pokemons_UI" type="Node" parent="UI"]
 
@@ -539,7 +611,6 @@ size_flags_stretch_ratio = 0.1
 theme_override_styles/background = SubResource("StyleBoxFlat_chjru")
 theme_override_styles/fill = SubResource("StyleBoxFlat_euq1y")
 max_value = 0.0
-step = 1.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/Pokemons_UI/Opp/Margin/VBox/Bar"]
@@ -561,7 +632,6 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_vjuaw")
 
 [node name="Client" type="Control" parent="UI/Pokemons_UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 300.0
@@ -621,9 +691,8 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 theme_override_styles/background = SubResource("StyleBoxFlat_chjru")
-theme_override_styles/fill = SubResource("StyleBoxFlat_euq1y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e4oc0")
 max_value = 0.0
-step = 1.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="UI/Pokemons_UI/Client/Margin/VBox/Bar"]
@@ -643,6 +712,255 @@ theme_override_constants/shadow_offset_x = -2
 [node name="Gap" type="HSeparator" parent="UI/Pokemons_UI/Client/Margin/VBox"]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_vjuaw")
+
+[node name="ExpBar" type="ProgressBar" parent="UI/Pokemons_UI/Client/Margin"]
+custom_minimum_size = Vector2(160, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.1
+theme_override_styles/background = SubResource("StyleBoxFlat_chjru")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xfl6f")
+max_value = 0.0
+show_percentage = false
+
+[node name="Pkm_Info_UI" type="Panel" parent="UI"]
+visible = false
+clip_children = 1
+offset_left = 10.0
+offset_top = 500.0
+offset_right = 360.0
+offset_bottom = 670.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
+
+[node name="Background" type="ColorRect" parent="UI/Pkm_Info_UI"]
+material = SubResource("ShaderMaterial_6in17")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="UI/Pkm_Info_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="UI/Pkm_Info_UI/Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "
+"
+vertical_alignment = 1
+
+[node name="LvL" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Bar" type="ProgressBar" parent="UI/Pkm_Info_UI/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_styles/background = SubResource("StyleBoxFlat_chjru")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bmf1s")
+max_value = 0.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox/Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+text = "
+"
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="UI/Pkm_Info_UI/Margin/VBox"]
+layout_mode = 2
+
+[node name="Atk1" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "
+"
+vertical_alignment = 1
+
+[node name="Atk2" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "
+"
+vertical_alignment = 1
+
+[node name="Atk3" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "
+"
+vertical_alignment = 1
+
+[node name="Atk4" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "
+"
+vertical_alignment = 1
+
+[node name="Action_UI" type="Panel" parent="UI"]
+visible = false
+clip_children = 1
+offset_left = 10.0
+offset_top = 700.0
+offset_right = 530.0
+offset_bottom = 950.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
+
+[node name="Background" type="ColorRect" parent="UI/Action_UI"]
+material = SubResource("ShaderMaterial_0b1kk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="UI/Action_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="UI/Action_UI/Margin"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = -1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+text = "CACA DANS LE LABORATOIRE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Death_Switch_UI" type="Panel" parent="UI"]
+visible = false
+clip_children = 1
+offset_left = 10.0
+offset_top = 700.0
+offset_right = 530.0
+offset_bottom = 950.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2sg11")
+
+[node name="Background" type="ColorRect" parent="UI/Death_Switch_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Margin" type="MarginContainer" parent="UI/Death_Switch_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="VBox" type="VBoxContainer" parent="UI/Death_Switch_UI/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Switch" type="Button" parent="UI/Death_Switch_UI/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvdq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kd2su")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yt5mx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_avl52")
+text = "Changer de Pokémon"
+
+[node name="Continue" type="Button" parent="UI/Death_Switch_UI/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_h3tta")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r44j1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_agf82")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_um2ft")
+text = "Continuer le combat"
 
 [node name="Main_UI" type="Node" parent="UI"]
 
@@ -726,132 +1044,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b5eiu")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_hkydw")
 text = "OBJET"
 
-[node name="Attack_UI" type="Panel" parent="UI/Main_UI"]
-visible = false
-clip_children = 1
-offset_left = 10.0
-offset_top = 700.0
-offset_right = 530.0
-offset_bottom = 950.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
-
-[node name="Background" type="ColorRect" parent="UI/Main_UI/Attack_UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.666667)
-
-[node name="Margin" type="MarginContainer" parent="UI/Main_UI/Attack_UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBox" type="HBoxContainer" parent="UI/Main_UI/Attack_UI/Margin"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="Margin" type="MarginContainer" parent="UI/Main_UI/Attack_UI/Margin/HBox"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Back" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Margin"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_vertical = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_kk4a5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_30xpy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wswjk")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_kk4a5")
-text = "Retour"
-
-[node name="Attacks" type="MarginContainer" parent="UI/Main_UI/Attack_UI/Margin/HBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 10
-
-[node name="VBox" type="VBoxContainer" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 3
-
-[node name="Attack1" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
-layout_mode = 2
-size_flags_vertical = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_keyei")
-theme_override_styles/hover = SubResource("StyleBoxFlat_paend")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_kpgbl")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_gj1ys")
-text = "Charge"
-
-[node name="Attack2" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
-layout_mode = 2
-size_flags_vertical = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_7or6u")
-theme_override_styles/hover = SubResource("StyleBoxFlat_txqyv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_f33ki")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_d5we3")
-text = "Rugissement"
-
-[node name="Attack3" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
-layout_mode = 2
-size_flags_vertical = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_esn3m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j6r74")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yok47")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_lkr2m")
-
-[node name="Attack4" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
-layout_mode = 2
-size_flags_vertical = 3
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_udxka")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bvsj1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_tts3n")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_lj1jq")
-
 [node name="Pokemon_UI" type="Panel" parent="UI/Main_UI"]
 visible = false
 clip_children = 1
@@ -859,7 +1051,7 @@ offset_left = 10.0
 offset_top = 700.0
 offset_right = 530.0
 offset_bottom = 950.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2sg11")
 
 [node name="Background" type="ColorRect" parent="UI/Main_UI/Pokemon_UI"]
 layout_mode = 1
@@ -884,6 +1076,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 0
 
 [node name="Margin" type="MarginContainer" parent="UI/Main_UI/Pokemon_UI/Margin/HBox"]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -1031,7 +1224,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_r3l5v")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Action_UI" type="Panel" parent="UI"]
+[node name="Attack_UI" type="Panel" parent="UI/Main_UI"]
 visible = false
 clip_children = 1
 offset_left = 10.0
@@ -1040,8 +1233,16 @@ offset_right = 530.0
 offset_bottom = 950.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
 
-[node name="Background" type="ColorRect" parent="UI/Action_UI"]
-material = SubResource("ShaderMaterial_0b1kk")
+[node name="Background" type="ColorRect" parent="UI/Main_UI/Attack_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Margin" type="MarginContainer" parent="UI/Main_UI/Attack_UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1049,21 +1250,131 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Margin" type="MarginContainer" parent="UI/Action_UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 50
-
-[node name="Label" type="Label" parent="UI/Action_UI/Margin"]
+[node name="HBox" type="HBoxContainer" parent="UI/Main_UI/Attack_UI/Margin"]
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Margin" type="MarginContainer" parent="UI/Main_UI/Attack_UI/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Back" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Margin"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_kk4a5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_30xpy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wswjk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kk4a5")
+text = "Retour"
+
+[node name="Attacks" type="MarginContainer" parent="UI/Main_UI/Attack_UI/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Attack1" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_keyei")
+theme_override_styles/hover = SubResource("StyleBoxFlat_paend")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kpgbl")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gj1ys")
+text = "Charge"
+
+[node name="Attack2" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7or6u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_txqyv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f33ki")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_d5we3")
+text = "Rugissement"
+
+[node name="Attack3" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_esn3m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j6r74")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yok47")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lkr2m")
+
+[node name="Attack4" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_v5vqx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_udxka")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bvsj1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tts3n")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lj1jq")
+
+[node name="Tutorial_UI" type="Panel" parent="UI"]
+visible = false
+clip_children = 1
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 520.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
+
+[node name="Background" type="ColorRect" parent="UI/Tutorial_UI"]
+material = SubResource("ShaderMaterial_6in17")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Tutorial_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1072,7 +1383,6 @@ theme_override_constants/shadow_offset_y = -1
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
-text = "CACA DANS LE LABORATOIRE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1085,21 +1395,44 @@ bus = &"SFX"
 [node name="Attack" type="AudioStreamPlayer" parent="Audios"]
 bus = &"SFX"
 
+[node name="BGM" type="AudioStreamPlayer" parent="Audios"]
+bus = &"BGM"
+
 [node name="SFX" type="AudioStreamPlayer" parent="Audios"]
 bus = &"SFX"
 
+[node name="Damages" type="AudioStreamPlayer" parent="Audios"]
+bus = &"SFX"
+
+[node name="IA" type="Node" parent="."]
+script = ExtResource("10_73u3u")
+
+[connection signal="pressed" from="UI/Death_Switch_UI/Margin/VBox/Switch" to="." method="_on_switch_pressed"]
+[connection signal="pressed" from="UI/Death_Switch_UI/Margin/VBox/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Basis_UI/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Basis_UI/Pokemon" to="." method="_on_pokemon_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Basis_UI/Objet" to="." method="_on_objet_pressed"]
+[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Margin/Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/1" to="." method="_on_pokemon_1_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/1" to="." method="_on_pokemon_1_mouse_exited"]
+[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/1" to="." method="_on_pokemon_1_pressed"]
+[connection signal="mouse_entered" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/2" to="." method="_on_pokemon_2_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/2" to="." method="_on_pokemon_2_mouse_exited"]
+[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/2" to="." method="_on_pokemon_2_pressed"]
+[connection signal="mouse_entered" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/3" to="." method="_on_pokemon_3_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/3" to="." method="_on_pokemon_3_mouse_exited"]
+[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/3" to="." method="_on_pokemon_3_pressed"]
+[connection signal="mouse_entered" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/4" to="." method="_on_pokemon_4_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/4" to="." method="_on_pokemon_4_mouse_exited"]
+[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/4" to="." method="_on_pokemon_4_pressed"]
+[connection signal="mouse_entered" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/5" to="." method="_on_pokemon_5_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/5" to="." method="_on_pokemon_5_mouse_exited"]
+[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/5" to="." method="_on_pokemon_5_pressed"]
+[connection signal="mouse_entered" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/6" to="." method="_on_pokemon_6_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/6" to="." method="_on_pokemon_6_mouse_exited"]
+[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/6" to="." method="_on_pokemon_6_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Attack_UI/Margin/HBox/Margin/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox/Attack1" to="." method="_on_attack_1_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox/Attack2" to="." method="_on_attack_2_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox/Attack3" to="." method="_on_attack_3_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox/Attack4" to="." method="_on_attack_4_pressed"]
-[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Margin/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/1" to="." method="_on_pokemon_1_pressed"]
-[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L1/2" to="." method="_on_pokemon_2_pressed"]
-[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/3" to="." method="_on_pokemon_3_pressed"]
-[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L2/4" to="." method="_on_pokemon_4_pressed"]
-[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/5" to="." method="_on_pokemon_5_pressed"]
-[connection signal="pressed" from="UI/Main_UI/Pokemon_UI/Margin/HBox/Pokemons/VBox/L3/6" to="." method="_on_pokemon_6_pressed"]

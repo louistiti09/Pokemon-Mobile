@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://docu55bwc1tvo"
-path="res://.godot/imported/lvlup.mp3-e717b49537abe918e17821527d9804d5.mp3str"
+path="res://.godot/imported/LvLup.mp3-ca94868e0df77f2585222209a05cf77f.mp3str"
 
 [deps]
 
-source_file="res://Sounds/SFX/Other/lvlup.mp3"
-dest_files=["res://.godot/imported/lvlup.mp3-e717b49537abe918e17821527d9804d5.mp3str"]
+source_file="res://Sounds/SFX/Other/LvLup.mp3"
+dest_files=["res://.godot/imported/LvLup.mp3-ca94868e0df77f2585222209a05cf77f.mp3str"]
 
 [params]
 

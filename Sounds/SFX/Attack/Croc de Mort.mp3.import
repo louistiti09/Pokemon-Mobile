@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmj283gqpkwij"
+path="res://.godot/imported/Croc de Mort.mp3-1a5506fd2f97a9ada3e612a6c8ad5c59.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Attack/Croc de Mort.mp3"
+dest_files=["res://.godot/imported/Croc de Mort.mp3-1a5506fd2f97a9ada3e612a6c8ad5c59.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

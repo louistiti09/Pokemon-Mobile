@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k4mrlnbjxng7"
+path="res://.godot/imported/Coup d'Boule.mp3-718dead7393ed333a477806a7b00f999.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Attack/Coup d'Boule.mp3"
+dest_files=["res://.godot/imported/Coup d'Boule.mp3-718dead7393ed333a477806a7b00f999.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

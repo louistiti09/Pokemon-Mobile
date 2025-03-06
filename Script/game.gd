@@ -7,7 +7,7 @@ var against_bot = true
 var allow_death_switch = false
 var ClientPokemon = 0
 var ClientDeck = [
-	{"Name":"Onix",
+	{"Name":"Excelangue",
 		"Stats":{
 			"PV":{"IV":0,"EV":0},
 			"Precision":{"Modif":0},
@@ -24,9 +24,35 @@ var ClientDeck = [
 		"Damages":0,
 		"Shiny":"n",
 		"Attacks":[
-			{"Name":"Étreinte","PP":15}
+			{"Name":"Riposte","PP":10},
+			{"Name":"Poing de Feu","PP":15},
+			{"Name":"Poinglace","PP":15},
+			{"Name":"Poing-Éclair","PP":15},
 		],
 		"Statut":[]},
+	#{"Name":"Tygnon",
+		#"Stats":{
+			#"PV":{"IV":0,"EV":0},
+			#"Precision":{"Modif":0},
+			#"Esquive":{"Modif":0},
+			#"Critique":{"Modif":0},
+			#"Attaque":{"Modif":0,"IV":0,"EV":0},
+			#"Defense":{"Modif":0,"IV":0,"EV":0},
+			#"AttaqueSpe":{"Modif":0,"IV":0,"EV":0},
+			#"DefenseSpe":{"Modif":0,"IV":0,"EV":0},
+			#"Vitesse":{"Modif":0,"IV":0,"EV":0}},
+		#"EXP":0,
+		#"LvL":10,
+		#"Nature":"Mauvais",
+		#"Damages":0,
+		#"Shiny":"n",
+		#"Attacks":[
+			#{"Name":"Riposte","PP":10},
+			#{"Name":"Poing de Feu","PP":15},
+			#{"Name":"Poinglace","PP":15},
+			#{"Name":"Poing-Éclair","PP":15},
+		#],
+		#"Statut":[]},
 	#{"Name":"Alakazam",
 		#"Stats":{
 			#"PV":{"IV":0,"EV":0},
@@ -324,6 +350,7 @@ var ConfuseCounter = [0,0,0,0,0,0,0,0,0,0,0,0]
 var MimiqueAttack = ["",""]
 var EntraveAttack = ["",""]
 var EntraveCounter = [0,0]
+var PreRiposteDamages = [0,0]
 var Fainted = [false,false]
 var death_switch = false
 var win_condition = null
@@ -545,6 +572,7 @@ func attack_phase():
 	ActionUI.Label.text = ""
 	ActionUI.Block.visible = true
 	MainUI.MainMenu.visible = false
+	PreRiposteDamages = [get_active_pokemon(1).Damages,get_active_pokemon(2).Damages]
 	var clientfirst = first_pick_calculation()
 	await wait(1)
 	var alr_played = await switch_phase(clientfirst)
@@ -654,6 +682,7 @@ func XP_phase():
 		if pkm.Damages < stat(pkm,"PV"): await exp_animation(pkm,EXP)
 	participants_KO_exp.clear()
 
+
 #									-----ACTIONS-----
 func attack(plr : int):
 	var pkm = get_active_pokemon(plr)
@@ -681,10 +710,18 @@ func attack(plr : int):
 	await wait(1)
 	Charging[plr-1] = await attack_charge(plr,atk)
 	if Charging[plr-1] != "": return
+	if atk == "Riposte" && (pkm.Damages <= PreRiposteDamages[plr]) && (stats.POKEMONS[pkm.Name].Type1 == "Spectre" || stats.POKEMONS[pkm.Name].Type2 == "Spectre"):
+		await action_ui_writing("Mais cela échoue...")
+		await wait(2)
+		return
 	if atk == "Dévorêve" && !target.Statut.has("Endormi"):
 		await action_ui_writing("Mais cela échoue...")
 		await wait(2)
 		return
+	if (atk == "Pied Sauté" || atk == "Pied Voltige") && (stats.POKEMONS[pkm.Name].Type1 == "Spectre" || stats.POKEMONS[pkm.Name].Type2 == "Spectre"):
+		await damage_animation(plr,round(stat(pkm,"PV")/2),1)
+		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
+		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
 	for a in pkm.Attacks:
 		if a.Name == atk:
 			if a.PP == 0:
@@ -700,6 +737,11 @@ func attack(plr : int):
 	if !precision_calculation(pkm,target,atk) || (Charging[get_opp(plr)-1]=="Vol" && !(atk=="Tornade" || atk=="Fatal-Foudre")):
 		if plr==1: await action_ui_writing("Le %s ennemi esquive l'attaque !" % target.Name)
 		else : await action_ui_writing("%s esquive l'attaque !" % target.Name)
+		if atk == "Pied Sauté" || atk == "Pied Voltige":
+			await wait(1)
+			await damage_animation(plr,round(stat(pkm,"PV")/2),1)
+			if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
+			else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
 	else :
 		if stats.ATTACKS[atk].Categorie == "Statut" :
 			await attaque_statut(plr,atk)
@@ -714,7 +756,7 @@ func attack(plr : int):
 				if !crit && ProtectionCounter[get_opp(plr)-1]>0 && stats.ATTACKS[atk].Categorie == "Physique": damages/=2.0
 				await damage_animation(get_opp(plr),damages,weakness)
 				if hits_number > i+1:
-					if atk == "Furie" || atk == "Combo-Griffe" || atk == "Torgnoles": crit = false
+					if atk == "Furie" || atk == "Combo-Griffe" || atk == "Torgnoles" || atk == "Pilonnage" || atk == "Poing Comète": crit = false
 					elif atk == "Dard-Nuée" || atk == "Double Pied": crit = crit_check(plr)
 					await wait(1)
 					attack_animation(plr,atk)
@@ -818,7 +860,7 @@ func before_attack_effects(plr : int):
 
 func get_hits_number(plr : int):
 	var atk = incomming_attacks[plr-1]
-	if atk == "Furie" || atk == "Dard-Nuée" || atk == "Combo-Griffe" || atk == "Torgnoles" || atk == "Picanon":
+	if atk == "Furie" || atk == "Dard-Nuée" || atk == "Combo-Griffe" || atk == "Torgnoles" || atk == "Picanon" || atk == "Pilonnage" || atk == "Poing Comète":
 		if incomming_attacks[get_opp(plr)-1] == "Riposte" || get_active_pokemon(get_opp(plr)).Statut.has("Patience"):
 			return 1
 		else:
@@ -830,7 +872,7 @@ func get_hits_number(plr : int):
 					if random_percent_check(12.5):
 						h = 5
 			return h
-	elif atk == "Double-Dard":
+	elif atk == "Double-Dard" || atk == "Osmerang":
 		return 2
 	elif atk == "Double Pied":
 		if incomming_attacks[get_opp(plr)-1] == "Riposte" || get_active_pokemon(get_opp(plr)).Statut.has("Patience"): return 1
@@ -1028,6 +1070,8 @@ func attaque_statut(plr : int, atk : String):
 		await change_stat_pkm(plr,"Defense",2,true)
 	elif atk == "Danse-Lames":
 		await change_stat_pkm(plr,"Attaque",2,true)
+	elif atk == "Yoga":
+		await change_stat_pkm(plr,"Attaque",1,true)
 	else : return
 	await wait(2)
 
@@ -1043,7 +1087,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 		await damage_animation(plr,round(stat(pkm,"PV")/4),1)#S'inflige lui-même 1/4 de sa vie
 		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
 		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
-	elif atk == "Flammèche" || atk == "Lance-Flammes":
+	elif atk == "Flammèche" || atk == "Lance-Flammes" || atk == "Poing de Feu":
 		if random_percent_check(10): await burn_pkm(get_opp(plr),false)
 	elif atk == "Frénésie":
 		if !pkm.Statut.has("Frénésie"):
@@ -1060,7 +1104,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 				await action_ui_writing("%s est piégé dans un tourbillon de feu !" % target.Name)
 	elif atk == "Écume" || atk == "Constriction":
 		if random_percent_check(10): await change_stat_pkm(get_opp(plr),"Vitesse",-1,false)
-	elif atk == "Morsure" || atk == "Croc de Mort":
+	elif atk == "Morsure" || atk == "Croc de Mort" || atk == "Massd'Os":
 		if random_percent_check(10): await scare_pkm(get_opp(plr),false)
 	elif atk == "Choc Mental" || atk == "Rafale Psy":
 		if random_percent_check(10): await confuse_pkm(get_opp(plr),false)
@@ -1079,7 +1123,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 				await action_ui_writing("%s est ligoté par %s !" % [get_active_pokemon(get_opp(plr)).Name,pkm.Name])
 	elif atk == "Acide" || atk == "Psyko":
 		if random_percent_check(10): await change_stat_pkm(get_opp(plr),"DefenseSpe",-1,false)
-	elif atk == "Éclair" || atk == "Tonnerre":
+	elif atk == "Éclair" || atk == "Tonnerre" || atk == "Poing-Éclair":
 		if random_percent_check(10): await paralyse_pkm(get_opp(plr),false)
 	elif atk == "Fatal-Foudre" || atk == "Plaquage" || atk == "Léchouille":
 		if random_percent_check(30): await paralyse_pkm(get_opp(plr),false)
@@ -1105,7 +1149,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
 	elif atk == "Destruction" || atk == "Explosion":
 		await damage_animation(plr,stat(pkm,"PV"),1)
-	elif atk == "Coup d'Boule":
+	elif atk == "Coup d'Boule" || atk == "Mawashi Geri":
 		if random_percent_check(30): await scare_pkm(get_opp(plr),false)
 	elif atk == "Triplattaque":
 		if random_percent_check(6.67): await burn_pkm(get_opp(plr),false)
@@ -1113,7 +1157,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 		elif random_percent_check(6.67): await paralyse_pkm(get_opp(plr),false)
 	elif atk == "Onde Boréale":
 		if random_percent_check(10): await change_stat_pkm(get_opp(plr),"Attaque",-1,false)
-	elif atk == "Laser Glace":
+	elif atk == "Laser Glace" || atk == "Poinglace":
 		if random_percent_check(10): await froze_pkm(get_opp(plr),false)
 	elif atk == "Claquoir":
 		if !target.Statut.has("Claquoir"):
@@ -1519,10 +1563,11 @@ func reset_modifs(plr : int):
 #									-----CALCULATIONS-----
 func damage_calculation(pkm : Dictionary,target : Dictionary,atk : String,crit : bool,weakness : float):
 	if atk == "Croc Fatal": return ceil((stat(target,'PV')-target.Damages)/2.0)
-	elif atk == "Empal'Korne": return stat(target,'PV')
+	elif atk == "Empal'Korne" || atk == "Guillotine": return stat(target,'PV')
 	elif atk == "Frappe Atlas": return pkm.LvL
 	elif atk == "Ombre Nocturne": return pkm.LvL * int(!(stats.POKEMONS[pkm.Name].Type1=="Normal" || stats.POKEMONS[pkm.Name].Type2=="Normal"))
 	elif atk == "Sonicboom": return 20
+	elif atk == "Riposte": return (pkm.Damages-PreRiposteDamages[pkm.Owner-1])*2
 	else:
 		var Att = 0
 		var Def = 0
@@ -1571,7 +1616,7 @@ func weakness_calculation(atk : String,target : Dictionary):
 
 func precision_calculation(pkm : Dictionary,target : Dictionary,atk : String):
 	var Pre = stats.ATTACKS[atk].Precision
-	if atk == "Empal'Korne":
+	if atk == "Empal'Korne" || atk == "Guillotine":
 		return random_percent_check((pkm.LvL - target.LvL) + 30)
 	elif (atk == "Plaquage" || atk == "Écrasement") && target.Statut.has("Lilliput"):
 		return true

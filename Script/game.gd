@@ -7,7 +7,8 @@ var against_bot = true
 var allow_death_switch = false
 var ClientPokemon = 0
 var ClientDeck = [
-	{"Name":"Léviator",
+	{"Name":"Tygnon",
+		"Nickname":null,
 		"Stats":{
 			"PV":{"IV":0,"EV":0},
 			"Attaque":{"IV":0,"EV":0},
@@ -16,139 +17,60 @@ var ClientDeck = [
 			"DefenseSpe":{"IV":0,"EV":0},
 			"Vitesse":{"IV":0,"EV":0}},
 		"EXP":0,
-		"LvL":10,
+		"LvL":50,
 		"Nature":"Mauvais",
+		"Damages":0,
+		"Shiny":"s",
+		"Attacks":[
+			{"Name":"Riposte","PP":20},
+			{"Name":"Poing de Feu","PP":15},
+			{"Name":"Poinglace","PP":15},
+			{"Name":"Poing-Éclair","PP":15},
+		],
+		"Statut":[]},
+	{"Name":"Alakazam",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Relax",
+		"Damages":0,
+		"Shiny":"s",
+		"Attacks":[
+			{"Name":"Télékinésie","PP":15},
+			{"Name":"Soin","PP":5},
+			{"Name":"Protection","PP":20},
+			{"Name":"Psyko","PP":10}
+		],
+		"Statut":[]},
+	{"Name":"Mélodelfe",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Jovial",
 		"Damages":0,
 		"Shiny":"n",
 		"Attacks":[
-			{"Name":"Trempette","PP":40},
-			{"Name":"Ultralaser","PP":5},
-			{"Name":"Draco-Rage","PP":10},
-		],
+			{"Name":"Métronome","PP":10},
+			{"Name":"Lilliput","PP":10},
+			{"Name":"Boul'Armure","PP":40},
+			{"Name":"Torgnoles","PP":10}],
 		"Statut":[]},
-	#{"Name":"Tygnon",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Mauvais",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Riposte","PP":10},
-			#{"Name":"Poing de Feu","PP":15},
-			#{"Name":"Poinglace","PP":15},
-			#{"Name":"Poing-Éclair","PP":15},
-		#],
-		#"Statut":[]},
-	#{"Name":"Alakazam",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Relax",
-		#"Damages":0,
-		#"Shiny":"s",
-		#"Attacks":[
-			#{"Name":"Télékinésie","PP":15},
-			#{"Name":"Soin","PP":5},
-			#{"Name":"Protection","PP":20},
-			#{"Name":"Psyko","PP":10}
-		#],
-		#"Statut":[]},
-	#{"Name":"Mélodelfe",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Jovial",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Métronome","PP":10},
-			#{"Name":"Lilliput","PP":10},
-			#{"Name":"Boul'Armure","PP":40},
-			#{"Name":"Torgnoles","PP":10}],
-		#"Statut":[]},
-	#{"Name":"Nidoking",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Gentil",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Dard-Venin","PP":20},
-			#{"Name":"Koud'Korne","PP":25},
-			#{"Name":"Empal'Korne","PP":5},
-			#{"Name":"Mania","PP":10}
-		#],
-		#"Statut":[]},
-	#{"Name":"Pikachu",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Brave",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Tonnerre","PP":15},
-			#{"Name":"Reflet","PP":15},
-			#{"Name":"Mur Lumière","PP":30},
-			#{"Name":"Cage-Éclair","PP":20}
-		#],
-		#"Statut":[]},
-	#{"Name":"Rattatac",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Rigide",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Croc Fatal","PP":10},
-			#{"Name":"Mimi-Queue","PP":30},
-			#{"Name":"Vive-Attaque","PP":30},
-			#{"Name":"Croc de Mort","PP":15}
-		#],
-		#"Statut":[]},
-]
-var OppPokemon = 0
-var OppDeck = [
-	{"Name":"Carapuce",
+	{"Name":"Nidoking",
+		"Nickname":null,
 		"Stats":{
 			"PV":{"IV":0,"EV":0},
 			"Attaque":{"IV":0,"EV":0},
@@ -157,133 +79,184 @@ var OppDeck = [
 			"DefenseSpe":{"IV":0,"EV":0},
 			"Vitesse":{"IV":0,"EV":0}},
 		"EXP":0,
-		"LvL":10,
+		"LvL":50,
+		"Nature":"Gentil",
+		"Damages":0,
+		"Shiny":"n",
+		"Attacks":[
+			{"Name":"Dard-Venin","PP":20},
+			{"Name":"Koud'Korne","PP":25},
+			{"Name":"Empal'Korne","PP":5},
+			{"Name":"Mania","PP":10}
+		],
+		"Statut":[]},
+	{"Name":"Pikachu",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Brave",
+		"Damages":0,
+		"Shiny":"n",
+		"Attacks":[
+			{"Name":"Tonnerre","PP":15},
+			{"Name":"Reflet","PP":15},
+			{"Name":"Mur Lumière","PP":30},
+			{"Name":"Cage-Éclair","PP":20}
+		],
+		"Statut":[]},
+	{"Name":"Rattatac",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Rigide",
+		"Damages":0,
+		"Shiny":"n",
+		"Attacks":[
+			{"Name":"Croc Fatal","PP":10},
+			{"Name":"Mimi-Queue","PP":30},
+			{"Name":"Vive-Attaque","PP":30},
+			{"Name":"Croc de Mort","PP":15}
+		],
+		"Statut":[]},
+]
+var OppPokemon = 0
+var OppDeck = [
+	{"Name":"Roucarnage",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
 		"Nature":"Relax",
+		"Damages":0,
+		"Shiny":"n",
+		"Attacks":[
+			{"Name":"Cyclone","PP":20},
+			{"Name":"Jet de Sable","PP":15},
+			{"Name":"Mimique","PP":20},
+			{"Name":"Cru-Aile","PP":35}
+		],
+		"Statut":[]},
+	{"Name":"Tortank",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Calme",
 		"Damages":0,
 		"Shiny":"n",
 		"Attacks":[
 			{"Name":"Coud'Krâne","PP":10},
 			{"Name":"Mimi-Queue","PP":30},
-			{"Name":"Écume","PP":30},
-			{"Name":"Pistolet à O","PP":25}
+			{"Name":"Hydrocanon","PP":5},
+			{"Name":"Écume","PP":30}],
+		"Statut":[]},
+	{"Name":"Florizarre",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Discret",
+		"Damages":0,
+		"Shiny":"n",
+		"Attacks":[
+			{"Name":"Poudre Dodo","PP":15},
+			{"Name":"Croissance","PP":20},
+			{"Name":"Tranch'Herbe","PP":25},
+			{"Name":"Lance Soleil","PP":10}],
+		"Statut":[]},
+	{"Name":"Dracaufeu",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Brave",
+		"Damages":0,
+		"Shiny":"s",
+		"Attacks":[
+			{"Name":"Lance-Flammes","PP":15},
+			{"Name":"Danse-Flammes","PP":15},
+			{"Name":"Groz'Yeux","PP":35},
+			{"Name":"Frénésie","PP":20}],
+		"Statut":[]},
+	{"Name":"Feunard",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Docile",
+		"Damages":0,
+		"Shiny":"s",
+		"Attacks":[
+			{"Name":"Hurlement","PP":20},
+			{"Name":"Onde Folie","PP":10},
+			{"Name":"Lance-Flammes","PP":15},
+			{"Name":"Danse-Flammes","PP":15}],
+		"Statut":[]},
+	{"Name":"Grolem",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Docile",
+		"Damages":0,
+		"Shiny":"s",
+		"Attacks":[
+			{"Name":"Jet-Pierres","PP":15},
+			{"Name":"Destruction","PP":5},
+			{"Name":"Explosion","PP":5},
+			{"Name":"Séisme","PP":10}
 		],
 		"Statut":[]},
-	#{"Name":"Roucarnage",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Relax",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Cyclone","PP":20},
-			#{"Name":"Jet de Sable","PP":15},
-			#{"Name":"Mimique","PP":20},
-			#{"Name":"Cru-Aile","PP":35}
-		#],
-		#"Statut":[]},
-	#{"Name":"Tortank",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Calme",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Coud'Krâne","PP":10},
-			#{"Name":"Mimi-Queue","PP":30},
-			#{"Name":"Hydrocanon","PP":5},
-			#{"Name":"Écume","PP":30}],
-		#"Statut":[]},
-	#{"Name":"Florizarre",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Discret",
-		#"Damages":0,
-		#"Shiny":"n",
-		#"Attacks":[
-			#{"Name":"Poudre Dodo","PP":15},
-			#{"Name":"Croissance","PP":20},
-			#{"Name":"Tranch'Herbe","PP":25},
-			#{"Name":"Lance Soleil","PP":10}],
-		#"Statut":[]},
-	#{"Name":"Dracaufeu",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Brave",
-		#"Damages":0,
-		#"Shiny":"s",
-		#"Attacks":[
-			#{"Name":"Lance-Flammes","PP":15},
-			#{"Name":"Danse-Flammes","PP":15},
-			#{"Name":"Groz'Yeux","PP":35},
-			#{"Name":"Frénésie","PP":20}],
-		#"Statut":[]},
-	#{"Name":"Feunard",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Docile",
-		#"Damages":0,
-		#"Shiny":"s",
-		#"Attacks":[
-			#{"Name":"Hurlement","PP":20},
-			#{"Name":"Onde Folie","PP":10},
-			#{"Name":"Lance-Flammes","PP":15},
-			#{"Name":"Danse-Flammes","PP":15}],
-		#"Statut":[]},
-	#{"Name":"Grolem",
-		#"Stats":{
-			#"PV":{"IV":0,"EV":0},
-			#"Attaque":{"IV":0,"EV":0},
-			#"Defense":{"IV":0,"EV":0},
-			#"AttaqueSpe":{"IV":0,"EV":0},
-			#"DefenseSpe":{"IV":0,"EV":0},
-			#"Vitesse":{"IV":0,"EV":0}},
-		#"EXP":0,
-		#"LvL":50,
-		#"Nature":"Docile",
-		#"Damages":0,
-		#"Shiny":"s",
-		#"Attacks":[
-			#{"Name":"Jet-Pierres","PP":15},
-			#{"Name":"Destruction","PP":5},
-			#{"Name":"Explosion","PP":5},
-			#{"Name":"Séisme","PP":10}
-		#],
-		#"Statut":[]},
 ]
 
 
@@ -306,8 +279,10 @@ var ConfuseCounter = [0,0,0,0,0,0,0,0,0,0,0,0]
 var MimiqueAttack = ["",""]
 var EntraveAttack = ["",""]
 var EntraveCounter = [0,0]
+var BrumeCounter = [0,0]
 var PreRiposteDamages = [0,0]
 var Clones = [null,null]
+var InitalMetamorphs = [null,null]
 var Fainted = [false,false]
 var death_switch = false
 var win_condition = null
@@ -328,6 +303,8 @@ var participants_KO_exp = []
 	"BasePos": $Sprites/ClientPkmn.position,
 	"ExpBar": $UI/Pokemons_UI/Client/Margin/ExpBar,
 	"Clone": $Sprites/ClientClone,
+	"StatutBlock": $UI/Pokemons_UI/Client/Statut,
+	"StatutTexture": $UI/Pokemons_UI/Client/Statut/Texture,
 }
 @onready var OppNodes = {
 	"Sprite": $Sprites/OppPkmn,
@@ -339,6 +316,8 @@ var participants_KO_exp = []
 	"Pokeball": $Sprites/OppBall,
 	"BasePos": $Sprites/OppPkmn.position,
 	"Clone": $Sprites/OppClone,
+	"StatutBlock": $UI/Pokemons_UI/Opp/Statut,
+	"StatutTexture": $UI/Pokemons_UI/Opp/Statut/Texture,
 }
 @onready var TutoUI = {
 	"Label": $UI/Tutorial_UI/Label,
@@ -365,6 +344,7 @@ var participants_KO_exp = []
 	"Atk2": $UI/Pkm_Info_UI/Margin/VBox/VBox/Atk2,
 	"Atk3": $UI/Pkm_Info_UI/Margin/VBox/VBox/Atk3,
 	"Atk4": $UI/Pkm_Info_UI/Margin/VBox/VBox/Atk4,
+	"Statut": $UI/Pkm_Info_UI/Margin/VBox/Label/Statut,
 }
 @onready var DeathSwitchUI = {
 	"Block": $UI/Death_Switch_UI,
@@ -385,6 +365,12 @@ var stats = null
 func get_pokemon_img(face : String,pkm_name : String, shiny : String):
 	var pokedex = stats.POKEMONS.keys().find(pkm_name)+1
 	return "res://Textures/Pokemons/%s/%s/%s.png" % [face,shiny,pokedex]
+
+func get_pkm_nickname(pkm : Dictionary):
+	if pkm.Nickname != null && pkm.Nickname != pkm.Name: return pkm.Nickname
+	else:
+		pkm.Nickname = null
+		return pkm.Name
 
 func get_nodes(plr : int):
 	if plr == 1: return ClientNodes
@@ -411,9 +397,14 @@ func get_opp(plr : int):
 
 func get_types(pkm : Dictionary):
 	var plr = pkm.Owner
+	#Clone patch
 	if Clones[plr-1] != null:
 		if plr == 1: pkm = ClientDeck[ClientPokemon]
 		else: pkm = OppDeck[OppPokemon]
+	#Conversion (atk)
+	for Statut in pkm.Statut:
+		if Statut.begins_with("Conversion"):
+			return [Statut.split(" ")[1],null]
 	return [stats.POKEMONS[pkm.Name].Type1,stats.POKEMONS[pkm.Name].Type2]
 
 func load_stats():
@@ -488,7 +479,9 @@ func restart_game():
 	MimiqueAttack = ["",""]
 	EntraveAttack = ["",""]
 	EntraveCounter = [0,0]
+	BrumeCounter = [0,0]
 	Clones = [null,null]
+	InitalMetamorphs = [null,null]
 	Fainted = [false,false]
 	death_switch = false
 	win_condition = null
@@ -529,7 +522,7 @@ func preparation_phase():
 	if Charging[0] != "":
 		incomming_attacks[0] = Charging[0]
 		attack_phase()
-	if get_active_pokemon(1).Statut.has("Ultralaser"):
+	elif get_active_pokemon(1).Statut.has("Ultralaser"):
 		incomming_attacks[0] = "Ultralaser"
 		attack_phase()
 	elif LockCounter[0] != 0: attack_phase()
@@ -574,7 +567,7 @@ func attack_phase():
 			death_switch_phase()
 
 func end_turn_effects():
-	var effects = ["Frénésie","Entrave","Apeuré","Protection","Mur Lumière","Vampigraine",
+	var effects = ["Brume","Frénésie","Entrave","Apeuré","Protection","Mur Lumière","Vampigraine",
 	"Claquoir","Étreinte","Ligotage","Danse-Flammes","Brûlé","Empoisonné"]
 	var clientfirst = first_pick_calculation()
 	for effect in effects:
@@ -672,26 +665,26 @@ func attack(plr : int):
 		Charging[plr-1] = ""
 		return
 	if Charging[get_opp(plr)-1] == "Tunnel" && atk!="Séisme" && atk!="Abîme":
-		if plr==1: await action_ui_writing("Le %s ennemi a été pris par surprise et ne peut pas bouger !" % pkm.Name)
-		else : await action_ui_writing("%s a été pris par surprise et ne peut pas bouger !" % pkm.Name)
+		if plr==1: await action_ui_writing("Le %s ennemi a été pris par surprise et ne peut pas bouger !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("%s a été pris par surprise et ne peut pas bouger !" % get_pkm_nickname(pkm))
 		LockCounter[plr-1] = 0
 		Charging[plr-1] = ""
 		await wait(2)
 		return
 	if pkm.Statut.has("Ultralaser"):
 		pkm.Statut.erase("Ultralaser")
-		if plr==1: await action_ui_writing("%s a besoin de repos !" % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi a besoin de repos !" % pkm.Name)
+		if plr==1: await action_ui_writing("%s a besoin de repos !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi a besoin de repos !" % get_pkm_nickname(pkm))
 		await wait(2)
 		return
 	var old_pkm = pkm
 	var old_target = pkm
-	if plr==1:await action_ui_writing("%s utilise %s !" % [pkm.Name,atk])
-	else :await action_ui_writing("Le %s ennemi utilise %s !" % [pkm.Name,atk])
+	if plr==1:await action_ui_writing("%s utilise %s !" % [get_pkm_nickname(pkm),atk])
+	else :await action_ui_writing("Le %s ennemi utilise %s !" % [get_pkm_nickname(pkm),atk])
 	await wait(1)
 	Charging[plr-1] = await attack_charge(plr,atk)
 	if Charging[plr-1] != "": return
-	if atk == "Riposte" && (pkm.Damages <= PreRiposteDamages[plr]) && get_types(pkm).has("Spectre"):
+	if atk == "Riposte" && (pkm.Damages <= PreRiposteDamages[plr] || get_types(pkm).has("Spectre")):
 		await action_ui_writing("Mais cela échoue...")
 		await wait(2)
 		return
@@ -701,8 +694,8 @@ func attack(plr : int):
 		return
 	if (atk == "Pied Sauté" || atk == "Pied Voltige") && get_types(pkm).has("Spectre"):
 		await damage_animation(plr,round(stat(pkm,"PV")/2),1)
-		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
+		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	for a in pkm.Attacks:
 		if a.Name == atk:
 			if a.PP == 0:
@@ -716,13 +709,13 @@ func attack(plr : int):
 		attack_animation(plr,atk)
 		await wait(0.5)
 	if !precision_calculation(pkm,target,atk) || (Charging[get_opp(plr)-1]=="Vol" && !(atk=="Tornade" || atk=="Fatal-Foudre")):
-		if plr==1: await action_ui_writing("Le %s ennemi esquive l'attaque !" % target.Name)
-		else : await action_ui_writing("%s esquive l'attaque !" % target.Name)
+		if plr==1: await action_ui_writing("Le %s ennemi esquive l'attaque !" % get_pkm_nickname(target))
+		else : await action_ui_writing("%s esquive l'attaque !" % get_pkm_nickname(target))
 		if atk == "Pied Sauté" || atk == "Pied Voltige":
 			await wait(1)
 			await damage_animation(plr,round(stat(pkm,"PV")/2),1)
-			if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	else :
 		if stats.ATTACKS[atk].Categorie == "Statut" :
 			await attaque_statut(plr,atk)
@@ -731,6 +724,7 @@ func attack(plr : int):
 			var weakness = weakness_calculation(atk,target)
 			var damages = 0
 			var hits_number = get_hits_number(plr)
+			if Clones[plr-1]!=null && atk != "Clonage": await clone_disapear_animation(plr)
 			for i in range(hits_number):
 				damages = damage_calculation(pkm,target,atk,crit,weakness)
 				if !crit && MurLumiereCounter[get_opp(plr)-1]>0 && stats.ATTACKS[atk].Categorie == "Special": damages/=2.0
@@ -758,8 +752,8 @@ func attack(plr : int):
 	if target.Statut.has("Gelé") && stats.ATTACKS[atk].Type == "Feu":
 		await wait(1)
 		target.Statut.erase("Gelé")
-		if plr==1: await action_ui_writing("Le %s ennemi est dégelé !" % target.Name)
-		else : await action_ui_writing("%s est dégelé !" % target.Name)
+		if plr==1: await action_ui_writing("Le %s ennemi est dégelé !" % get_pkm_nickname(target))
+		else : await action_ui_writing("%s est dégelé !" % get_pkm_nickname(target))
 	if atk != "Mimique" && atk != "Métronome":
 		if atk != "Riposte" && atk != "Morphing" && atk != "Lutte" && atk != "Copie":
 			if pkm != old_pkm:
@@ -780,16 +774,16 @@ func before_attack_effects(plr : int):
 			if is_active:
 				Audios.Attack.stream = load("res://Sounds/SFX/Status/Status Sleep.mp3")
 				Audios.Attack.playing = true
-				if plr == 1: await action_ui_writing("%s est endormi..." % pkm.Name)
-				else: await action_ui_writing("Le %s ennemi est endormi..." % pkm.Name)
+				if plr == 1: await action_ui_writing("%s est endormi..." % get_pkm_nickname(pkm))
+				else: await action_ui_writing("Le %s ennemi est endormi..." % get_pkm_nickname(pkm))
 				await wait(2)
 		elif is_active && pkm.Statut.has("Endormi"):
 			Audios.Attack.stream = load("res://Sounds/SFX/Status/Status Sleep.mp3")
 			Audios.Attack.playing = true
 			pkm.Statut.erase("Endormi")
 			status_animation()
-			if plr == 1: await action_ui_writing("%s se réveille !" % pkm.Name)
-			else: await action_ui_writing("Le %s ennemi se réveille !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s se réveille !" % get_pkm_nickname(pkm))
+			else: await action_ui_writing("Le %s ennemi se réveille !" % get_pkm_nickname(pkm))
 			await wait(1)
 	if pkm.Statut.has("Endormi"):
 		return true
@@ -799,17 +793,17 @@ func before_attack_effects(plr : int):
 		if plr == 1:
 			if ConfuseCounter[ClientPokemon] == 0:
 				pkm.Statut.erase("Confus")
-				await action_ui_writing("%s n'est plus confus !" % pkm.Name)
+				await action_ui_writing("%s n'est plus confus !" % get_pkm_nickname(pkm))
 			else:
 				ConfuseCounter[ClientPokemon] -= 1
-				await action_ui_writing("%s est confus !" % pkm.Name)
+				await action_ui_writing("%s est confus !" % get_pkm_nickname(pkm))
 		else:
 			if ConfuseCounter[OppPokemon+6] == 0:
 				pkm.Statut.erase("Confus")
-				await action_ui_writing("Le %s ennemi n'est plus confus !" % pkm.Name)
+				await action_ui_writing("Le %s ennemi n'est plus confus !" % get_pkm_nickname(pkm))
 			else:
 				ConfuseCounter[OppPokemon+6] -= 1
-				await action_ui_writing("Le %s ennemi est confus !" % pkm.Name)
+				await action_ui_writing("Le %s ennemi est confus !" % get_pkm_nickname(pkm))
 		await wait(1)
 		if pkm.Statut.has("Confus"):
 			if random_percent_check(33):
@@ -821,8 +815,8 @@ func before_attack_effects(plr : int):
 	if pkm.Statut.has("Paralysé") && random_percent_check(25):
 		Audios.Attack.stream = load("res://Sounds/SFX/Status/Status Paralyzed.mp3")
 		Audios.Attack.playing = true
-		if plr==1: await action_ui_writing("%s est paralysé ! Il ne peut pas attaquer..." % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi est paralysé ! Il ne peut pas attaquer..." % pkm.Name)
+		if plr==1: await action_ui_writing("%s est paralysé ! Il ne peut pas attaquer..." % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi est paralysé ! Il ne peut pas attaquer..." % get_pkm_nickname(pkm))
 		await wait(1)
 		return true
 	if pkm.Statut.has("Gelé"):
@@ -831,14 +825,19 @@ func before_attack_effects(plr : int):
 		if random_percent_check(20):
 			pkm.Statut.erase("Gelé")
 			status_animation()
-			if plr==1: await action_ui_writing("%s n'est plus gelé !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi n'est plus gelé !" % pkm.Name)
+			if plr==1: await action_ui_writing("%s n'est plus gelé !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi n'est plus gelé !" % get_pkm_nickname(pkm))
 			await wait(1)
 		else:
-			if plr==1: await action_ui_writing("%s est gelé !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi est gelé !" % pkm.Name)
+			if plr==1: await action_ui_writing("%s est gelé !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi est gelé !" % get_pkm_nickname(pkm))
 			await wait(1)
 			return true
+	if pkm.Statut.has("Apeuré"):
+		if plr == 1: await action_ui_writing("%s est apeuré ! Il ne peut pas attaquer !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi est apeuré ! Il ne peut pas attaquer !" % get_pkm_nickname(pkm))
+		await wait(1)
+		return true
 	return false
 
 func get_hits_number(plr : int):
@@ -869,15 +868,15 @@ func attack_charge(plr : int, atk : String):
 		if atk == "Lance Soleil":
 			Audios.Attack.stream = load("res://Sounds/SFX/Attack/Charge/Charge Lance Soleil.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s absorbe la lumière !" % pkm.Name)
-			else: await action_ui_writing("Le %s ennemi absorbe la lumière !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s absorbe la lumière !" % get_pkm_nickname(pkm))
+			else: await action_ui_writing("Le %s ennemi absorbe la lumière !" % get_pkm_nickname(pkm))
 			await wait(2)
 			return atk
 		elif atk == "Coud'Krâne":
 			Audios.Attack.stream = load("res://Sounds/SFX/Attack/Charge/Charge Coud'Krâne.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s baisse la tête !" % pkm.Name)
-			else: await action_ui_writing("Le %s ennemi baisse la tête !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s baisse la tête !" % get_pkm_nickname(pkm))
+			else: await action_ui_writing("Le %s ennemi baisse la tête !" % get_pkm_nickname(pkm))
 			await wait(1)
 			await change_stat_pkm(plr,"Defense",1,true,false)
 			await wait(2)
@@ -885,8 +884,15 @@ func attack_charge(plr : int, atk : String):
 		elif atk == "Tunnel":
 			Audios.Attack.stream = load("res://Sounds/SFX/Attack/Charge/Charge Tunnel.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s se cache dans le sol !" % pkm.Name)
-			else: await action_ui_writing("Le %s ennemi se cache dans le sol !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s se cache dans le sol !" % get_pkm_nickname(pkm))
+			else: await action_ui_writing("Le %s ennemi se cache dans le sol !" % get_pkm_nickname(pkm))
+			await wait(2)
+			return atk
+		elif atk == "Piqué":
+			Audios.Attack.stream = load("res://Sounds/SFX/Attack/Charge/Charge Piqué.mp3")
+			Audios.Attack.playing = true
+			if plr == 1: await action_ui_writing("%s est entouré d'une lumière intense !" % get_pkm_nickname(pkm))
+			else: await action_ui_writing("Le %s ennemi est entouré d'une lumière intense !" % get_pkm_nickname(pkm))
 			await wait(2)
 			return atk
 	return ""
@@ -905,12 +911,12 @@ func attaque_statut(plr : int, atk : String):
 				await action_ui_writing("Mais ça ne l'affecte pas...")
 			else:
 				target.Statut.append("Vampigraine")
-				if plr == 1:await action_ui_writing("Le %s ennemi est infecté !" % target.Name)
-				else : await action_ui_writing("%s est infecté !" % target.Name)
+				if plr == 1:await action_ui_writing("Le %s ennemi est infecté !" % get_pkm_nickname(target))
+				else : await action_ui_writing("%s est infecté !" % get_pkm_nickname(target))
 	elif atk == "Poudre Toxik" || atk == "Gaz Toxik":
 		await poison_pkm(get_opp(plr),true,true)
 	elif atk == "Croissance":
-		if pkm.Stats.Attaque.Modif == 6 && pkm.Stats.AttaqueSpe.Modif == 6:
+		if Modifs[plr].Attaque == 6 && Modifs[plr].AttaqueSpe == 6:
 			await action_ui_writing("Mais cela échoue...")
 		else :
 			await change_stat_pkm(plr,"Attaque",1,false,false)
@@ -953,8 +959,8 @@ func attaque_statut(plr : int, atk : String):
 			pkm.Stats.Critique.Modif += 2
 			Audios.Attack.stream = load("res://Sounds/SFX/Status/Stat Up.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s est prêt à tout donner !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi est prêt à tout donner !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s est prêt à tout donner !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi est prêt à tout donner !" % get_pkm_nickname(pkm))
 	elif atk == "Hâte":
 		await change_stat_pkm(plr,"Vitesse",2,true,false)
 	elif atk == "Jet de Sable" || atk == "Télékinésie" || atk == "Brouillard":
@@ -996,8 +1002,8 @@ func attaque_statut(plr : int, atk : String):
 		else:
 			target.Statut.append("Entrave")
 			EntraveCounter[get_opp(plr)-1] = 4+1
-			if plr == 1: await action_ui_writing("La capacité %s du %s ennemi est mise sous entrave !" % [EntraveAttack[get_opp(plr)-1],target.Name])
-			else : await action_ui_writing("La capacité %s de %s est mise sous entrave !" % [EntraveAttack[get_opp(plr)-1],target.Name])
+			if plr == 1: await action_ui_writing("La capacité %s du %s ennemi est mise sous entrave !" % [EntraveAttack[get_opp(plr)-1],get_pkm_nickname(target)])
+			else : await action_ui_writing("La capacité %s de %s est mise sous entrave !" % [EntraveAttack[get_opp(plr)-1],get_pkm_nickname(target)])
 	elif atk == "Repos":
 		if pkm.Damages >= stat(pkm,"PV"):
 			await action_ui_writing("Mais cela échoue...")
@@ -1012,11 +1018,11 @@ func attaque_statut(plr : int, atk : String):
 			if plr == 1:
 				ConfuseCounter[ClientPokemon] = 0
 				SleepCounter[ClientPokemon] = 2
-				await action_ui_writing("%s a récupéré en dormant !" % pkm.Name)
+				await action_ui_writing("%s a récupéré en dormant !" % get_pkm_nickname(pkm))
 			else:
 				ConfuseCounter[OppPokemon+6] = 0
 				SleepCounter[OppPokemon+6] = 2
-				await action_ui_writing("Le %s ennemi a récupéré en dormant !" % pkm.Name)
+				await action_ui_writing("Le %s ennemi a récupéré en dormant !" % get_pkm_nickname(pkm))
 			await damage_animation(plr,-pkm.Damages,1)
 	elif atk == "Buée Noire":
 		reset_modifs(1)
@@ -1030,8 +1036,8 @@ func attaque_statut(plr : int, atk : String):
 	elif atk == "Soin":
 		var heal = stat(pkm,"PV")/2.0-pkm.Damages
 		await damage_animation(plr,heal,1)
-		if plr == 1: await action_ui_writing("%s a récupéré des PV !" % pkm.Name)
-		else: await action_ui_writing("Le %s ennemi a récupéré des PV !" % pkm.Name)
+		if plr == 1: await action_ui_writing("%s a récupéré des PV !" % get_pkm_nickname(pkm))
+		else: await action_ui_writing("Le %s ennemi a récupéré des PV !" % get_pkm_nickname(pkm))
 	elif atk == "Protection":
 		if ProtectionCounter[plr-1] > 0:
 			await action_ui_writing("Mais cela échoue...")
@@ -1043,7 +1049,7 @@ func attaque_statut(plr : int, atk : String):
 		await change_stat_pkm(plr,"Defense",2,true,false)
 	elif atk == "Danse-Lames":
 		await change_stat_pkm(plr,"Attaque",2,true,false)
-	elif atk == "Yoga":
+	elif atk == "Yoga" || atk == "Affûtage":
 		await change_stat_pkm(plr,"Attaque",1,true,false)
 	elif atk == "Clonage":
 		var cost = round(stat(pkm,"PV")/4)
@@ -1062,8 +1068,8 @@ func attaque_statut(plr : int, atk : String):
 			pkm.Statut.erase("Danse-Flammes")
 			pkm.Statut.erase("Claquoir")
 			pkm.Statut.erase("Ligotage")
-			if plr == 1: await action_ui_writing("%s crée un clone !" % pkm.Name)
-			else: await action_ui_writing("Le %s ennemi crée un clone !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s crée un clone !" % get_pkm_nickname(pkm))
+			else: await action_ui_writing("Le %s ennemi crée un clone !" % get_pkm_nickname(pkm))
 	elif atk == "Trempette":
 		if random_percent_check(0.1):
 			Audios.BGM.stream = load("res://Sounds/BGM/BattleTower.mp3")
@@ -1074,15 +1080,72 @@ func attaque_statut(plr : int, atk : String):
 			await wait(2)
 			Audios.Attack.stream = load("res://Sounds/SFX/Attack/Croissance.mp3")
 			Audios.Attack.playing = true
-			await action_ui_writing("%s CHARGE TOUTE SA PUISSANCE !!!" % pkm.Name)
+			await action_ui_writing("%s CHARGE TOUTE SA PUISSANCE !!!" % get_pkm_nickname(pkm))
 			await wait(2)
 			Audios.Attack.stream = load("res://Sounds/SFX/Attack/Pied Sauté.mp3")
 			Audios.Attack.playing = true
-			await action_ui_writing("%s SAUTE ET IMITE LE METEORE !!!" % pkm.Name)
+			await action_ui_writing("%s SAUTE ET IMITE LE METEORE !!!" % get_pkm_nickname(pkm))
 			await wait(0.9)
 			await damage_animation(get_opp(plr),stat(get_active_pokemon(get_opp(plr)),"PV"),4)
 		else:
 			await action_ui_writing("Mais rien ne se passe...")
+	elif atk == "Brume":
+		if BrumeCounter[plr-1] > 0:
+			await action_ui_writing("Mais cela échoue...")
+		else:
+			BrumeCounter[plr-1] = 5
+			if plr == 1: await action_ui_writing("La brume enveloppe votre équipe !")
+			else : await action_ui_writing("La brume enveloppe l'équipe adverse !")
+	elif atk == "Morphing":
+		if InitalMetamorphs[plr-1] != null:
+			await action_ui_writing("Mais cela échoue...")
+		else:
+			InitalMetamorphs[plr-1] = {
+				"Name":pkm.Name,
+				"Nickname":pkm.Nickname,
+				"Stats":{
+					"PV":{"IV":pkm.Stats.PV.IV,"EV":pkm.Stats.PV.EV},
+					"Attaque":{"IV":pkm.Stats.Attaque.IV,"EV":pkm.Stats.Attaque.EV},
+					"Defense":{"IV":pkm.Stats.Defense.IV,"EV":pkm.Stats.Defense.EV},
+					"AttaqueSpe":{"IV":pkm.Stats.AttaqueSpe.IV,"EV":pkm.Stats.AttaqueSpe.EV},
+					"DefenseSpe":{"IV":pkm.Stats.DefenseSpe.IV,"EV":pkm.Stats.DefenseSpe.EV},
+					"Vitesse":{"IV":pkm.Stats.Vitesse.IV,"EV":pkm.Stats.Vitesse.EV}},
+				"Shiny":"n",
+				"Attacks":[
+					{"Name":"Morphing","PP":10}
+				]}
+			pkm.Nickname = get_pkm_nickname(pkm)
+			pkm.Name = target.Name
+			pkm.Shiny = target.Shiny
+			pkm.Stats = {
+				"PV":{"IV":target.Stats.PV.IV,"EV":target.Stats.PV.EV},
+				"Attaque":{"IV":target.Stats.Attaque.IV,"EV":target.Stats.Attaque.EV},
+				"Defense":{"IV":target.Stats.Defense.IV,"EV":target.Stats.Defense.EV},
+				"AttaqueSpe":{"IV":target.Stats.AttaqueSpe.IV,"EV":target.Stats.AttaqueSpe.EV},
+				"DefenseSpe":{"IV":target.Stats.DefenseSpe.IV,"EV":target.Stats.DefenseSpe.EV},
+				"Vitesse":{"IV":target.Stats.Vitesse.IV,"EV":target.Stats.Vitesse.EV}}
+			await morph_animation(plr)
+			pkm.Attacks.clear()
+			for ta in target.Attacks: pkm.Attacks.append({"Name":ta.Name,"PP":5})
+			if plr == 1: await action_ui_writing("%s prend l'apparence du %s ennemi !" % [get_pkm_nickname(InitalMetamorphs[plr-1]),get_pkm_nickname(target)])
+			else: await action_ui_writing("Le %s ennemi prend l'apparence de %s !" % [get_pkm_nickname(InitalMetamorphs[plr-1]),get_pkm_nickname(target)])
+	elif atk == "Conversion":
+		var type = ""
+		var force = -1
+		var types_target = get_types(target)
+		for type_player in stats.TABLE_TYPE:
+			var force_test = 1
+			force_test *= weak_check(type_player,types_target[0])
+			if types_target[1] != null: force_test *= weak_check(type_player,types_target[1])
+			if force_test > force:
+				force = force_test
+				type = type_player
+		var statut = "Conversion %s" % type
+		if type == "" || pkm.Statut.has(statut): await action_ui_writing("Mais cela échoue...")
+		else:
+			pkm.Statut.append(statut)
+			if plr == 1: await action_ui_writing("%s prend le type %s !" % [get_pkm_nickname(pkm),type])
+			else: await action_ui_writing("Le %s ennemi prend le type %s !" % [get_pkm_nickname(pkm),type])
 	else : return
 	await wait(2)
 
@@ -1096,8 +1159,8 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 	
 	if atk == "Lutte":
 		await damage_animation(plr,round(stat(pkm,"PV")/4),1)#S'inflige lui-même 1/4 de sa vie
-		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
+		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	elif atk == "Flammèche" || atk == "Lance-Flammes" || atk == "Poing de Feu":
 		if random_percent_check(10): await burn_pkm(get_opp(plr),false,true)
 	elif atk == "Frénésie" || atk == "Ultralaser":
@@ -1109,14 +1172,14 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 			target.Statut.append("Danse-Flammes")
 			if plr == 1:
 				DanseFlammeCounter[1] = randi_range(4,5)
-				await action_ui_writing("Le %s ennemi est piégé dans un tourbillon de feu !" % target.Name)
+				await action_ui_writing("Le %s ennemi est piégé dans un tourbillon de feu !" % get_pkm_nickname(target))
 			else :
 				DanseFlammeCounter[0] = randi_range(4,5)
-				await action_ui_writing("%s est piégé dans un tourbillon de feu !" % target.Name)
+				await action_ui_writing("%s est piégé dans un tourbillon de feu !" % get_pkm_nickname(target))
 	elif atk == "Écume" || atk == "Constriction":
 		if random_percent_check(10): await change_stat_pkm(get_opp(plr),"Vitesse",-1,false,true)
 	elif atk == "Morsure" || atk == "Croc de Mort" || atk == "Massd'Os":
-		if random_percent_check(10): await scare_pkm(get_opp(plr),false,true)
+		if random_percent_check(10): await scare_pkm(get_opp(plr),true)
 	elif atk == "Choc Mental" || atk == "Rafale Psy":
 		if random_percent_check(10): await confuse_pkm(get_opp(plr),false,true)
 	elif atk == "Dard-Venin" || atk == "Détritus":
@@ -1128,10 +1191,10 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 			target.Statut.append("Ligotage")
 			if plr == 1:
 				LigotageCounter[1] = randi_range(4,5)
-				await action_ui_writing("Le %s ennemi est ligoté par %s !" % [get_active_pokemon(get_opp(plr)).Name,pkm.Name])
+				await action_ui_writing("Le %s ennemi est ligoté par %s !" % [get_pkm_nickname(get_active_pokemon(get_opp(plr))),get_pkm_nickname(pkm)])
 			else :
 				LigotageCounter[0] = randi_range(4,5)
-				await action_ui_writing("%s est ligoté par %s !" % [get_active_pokemon(get_opp(plr)).Name,pkm.Name])
+				await action_ui_writing("%s est ligoté par %s !" % [get_pkm_nickname(get_active_pokemon(get_opp(plr))),get_pkm_nickname(pkm)])
 	elif atk == "Acide" || atk == "Psyko":
 		if random_percent_check(10): await change_stat_pkm(get_opp(plr),"DefenseSpe",-1,false,true)
 	elif atk == "Éclair" || atk == "Tonnerre" || atk == "Poing-Éclair":
@@ -1145,23 +1208,23 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 			if LockCounter[plr-1] == 0: await confuse_pkm(plr,false,false)
 	elif atk == "Damoclès":
 		await damage_animation(plr,round(bulk.Damages/3),1)
-		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
+		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	elif atk == "Vampirisme" || atk == "Vol-Vie" || atk == "Dévorêve":
 		await damage_animation(plr,-round(bulk.Damages/2),1)
-		if plr == 1: await action_ui_writing("L'énergie du %s ennemi est drainée !" % target.Name)
-		else : await action_ui_writing("L'énergie de %s est drainée !" % target.Name)
+		if plr == 1: await action_ui_writing("L'énergie du %s ennemi est drainée !" % get_pkm_nickname(target))
+		else : await action_ui_writing("L'énergie de %s est drainée !" % get_pkm_nickname(target))
 	elif atk == "Jackpot":
 		if plr == 1: pokedollars_reward += pkm.LvL*5
 		await action_ui_writing("Il pleut des pièces !")
 	elif atk == "Bélier" || atk == "Sacrifice":
 		await damage_animation(plr,round(bulk.Damages/4),1)
-		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % pkm.Name)
+		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	elif atk == "Destruction" || atk == "Explosion":
 		await damage_animation(plr,stat(pkm,"PV"),1)
-	elif atk == "Coup d'Boule" || atk == "Mawashi Geri":
-		if random_percent_check(30): await scare_pkm(get_opp(plr),false,true)
+	elif atk == "Coup d'Boule" || atk == "Mawashi Geri" || atk == "Piqué":
+		if random_percent_check(30): await scare_pkm(get_opp(plr),true)
 	elif atk == "Triplattaque":
 		if random_percent_check(6.67): await burn_pkm(get_opp(plr),false,true)
 		elif random_percent_check(6.67): await froze_pkm(get_opp(plr),false,true)
@@ -1175,25 +1238,25 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 			target.Statut.append("Claquoir")
 			if plr == 1:
 				ClaquoirCounter[1] = randi_range(4,5)
-				await action_ui_writing("Le %s ennemi est pris dans le claquoir de %s !" % [get_active_pokemon(get_opp(plr)).Name,pkm.Name])
+				await action_ui_writing("Le %s ennemi est pris dans le claquoir de %s !" % [get_pkm_nickname(get_active_pokemon(get_opp(plr))),get_pkm_nickname(pkm)])
 			else :
 				ClaquoirCounter[0] = randi_range(4,5)
-				await action_ui_writing("%s est pris dans le claquoir du %s ennemi !" % [get_active_pokemon(get_opp(plr)).Name,pkm.Name])
+				await action_ui_writing("%s est pris dans le claquoir du %s ennemi !" % [get_pkm_nickname(get_active_pokemon(get_opp(plr))),get_pkm_nickname(pkm)])
 	elif atk == "Étreinte" && Clones[get_opp(plr)-1] != null:
 		if !target.Statut.has("Étreinte") && !get_types(pkm).has("Spectre"):
 			target.Statut.append("Étreinte")
 			if plr == 1:
 				EtreinteCounter[1] = randi_range(4,5)
-				await action_ui_writing("Le %s ennemi est pris dans l'étreinte de %s !" % [get_active_pokemon(get_opp(plr)).Name,pkm.Name])
+				await action_ui_writing("Le %s ennemi est pris dans l'étreinte de %s !" % [get_pkm_nickname(get_active_pokemon(get_opp(plr))),get_pkm_nickname(pkm)])
 			else :
 				EtreinteCounter[0] = randi_range(4,5)
-				await action_ui_writing("%s est pris dans l'étreinte du %s ennemi !" % [get_active_pokemon(get_opp(plr)).Name,pkm.Name])
+				await action_ui_writing("%s est pris dans l'étreinte du %s ennemi !" % [get_pkm_nickname(get_active_pokemon(get_opp(plr))),get_pkm_nickname(pkm)])
 	elif atk == "Purédpois":
 		if random_percent_check(40): await poison_pkm(get_opp(plr),false,true)
 	elif atk == "Uppercut":
 		if random_percent_check(20): await confuse_pkm(get_opp(plr),false,true)
 	elif atk == "Cascade":
-		if random_percent_check(20): await scare_pkm(get_opp(plr),false,true)
+		if random_percent_check(20): await scare_pkm(get_opp(plr),true)
 	else : return
 	await wait(2)
 
@@ -1203,14 +1266,19 @@ func end_turn_effect_activation(plr : int, effect : String):
 		pkm.Statut.erase("Frénésie")
 	elif effect == "Entrave" && pkm.Statut.has("Entrave"):
 		EntraveCounter[plr-1] -= 1
+	elif effect == "Brume" && BrumeCounter[plr-1] > 0:
+		BrumeCounter[plr-1] -= 1
+		if BrumeCounter[plr-1] == 0:
+			if plr == 1: await action_ui_writing("La brume n'enveloppe plus votre équipe !")
+			else : await action_ui_writing("La brume n'enveloppe plus l'équipe ennemie !")
 	elif effect == "Apeuré" && pkm.Statut.has("Apeuré"):
 		pkm.Statut.erase("Apeuré")
 	elif effect == "Brûlé" && pkm.Statut.has("Brûlé"):
 		var dmg = round(stat(pkm,"PV")/16)#Inflige 1/16 de la vie
 		Audios.Attack.stream = load("res://Sounds/SFX/Status/Status Burned.mp3")
 		Audios.Attack.playing = true
-		if plr == 1: await action_ui_writing("%s souffre de la brûlure !" % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi souffre de la brûlure !" % pkm.Name)
+		if plr == 1: await action_ui_writing("%s souffre de la brûlure !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi souffre de la brûlure !" % get_pkm_nickname(pkm))
 		await wait(1)
 		await damage_animation(plr,dmg,1)
 		await wait(1)
@@ -1218,8 +1286,8 @@ func end_turn_effect_activation(plr : int, effect : String):
 		var dmg = round(stat(pkm,"PV")/8)#Inflige 1/8 de la vie
 		Audios.Attack.stream = load("res://Sounds/SFX/Status/Status Poisoned.mp3")
 		Audios.Attack.playing = true
-		if plr == 1: await action_ui_writing("%s souffre du poison !" % pkm.Name)
-		else : await action_ui_writing("Le %s ennemi souffre du poison !" % pkm.Name)
+		if plr == 1: await action_ui_writing("%s souffre du poison !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi souffre du poison !" % get_pkm_nickname(pkm))
 		await wait(1)
 		await damage_animation(plr,dmg,1)
 		await wait(1)
@@ -1227,8 +1295,8 @@ func end_turn_effect_activation(plr : int, effect : String):
 		var dmg = round(stat(pkm,"PV")/8)#Drain 1/8 de la vie
 		Audios.Attack.stream = load("res://Sounds/SFX/Damages/VampigraineDamage.mp3")
 		Audios.Attack.playing = true
-		if plr == 1: await action_ui_writing("Vampigraine draine l'énergie de %s !" % pkm.Name)
-		else : await action_ui_writing("Vampigraine draine l'énergie du %s ennemi !" % pkm.Name)
+		if plr == 1: await action_ui_writing("Vampigraine draine l'énergie de %s !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Vampigraine draine l'énergie du %s ennemi !" % get_pkm_nickname(pkm))
 		await wait(1)
 		await damage_animation(plr,dmg,1)
 		await wait(1)
@@ -1245,32 +1313,32 @@ func end_turn_effect_activation(plr : int, effect : String):
 	elif effect == "Danse-Flammes" && pkm.Statut.has("Danse-Flammes"):
 		if DanseFlammeCounter[plr-1] == 0:
 			pkm.Statut.erase("Danse-Flammes")
-			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Danse-Flammes" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Danse-Flammes" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Danse-Flammes" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Danse-Flammes" % get_pkm_nickname(pkm))
 			await wait(1)
 		else :
 			DanseFlammeCounter[plr-1] -= 1
 			var dmg = round(stat(pkm,"PV")/8)#Inflige 1/8 de la vie
 			Audios.Attack.stream = load("res://Sounds/SFX/Damages/Danse-FlammesDamage.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s est blessé par la capacité Danse-Flammes !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Danse-Flammes !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s est blessé par la capacité Danse-Flammes !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Danse-Flammes !" % get_pkm_nickname(pkm))
 			await wait(1)
 			await damage_animation(plr,dmg,1)
 			await wait(1)
 	elif effect == "Ligotage" && pkm.Statut.has("Ligotage"):
 		if LigotageCounter[plr-1] == 0:
 			pkm.Statut.erase("Ligotage")
-			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Ligotage" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Ligotage" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Ligotage" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Ligotage" % get_pkm_nickname(pkm))
 			await wait(1)
 		else :
 			LigotageCounter[plr-1] -= 1
 			var dmg = round(stat(pkm,"PV")/8)#Inflige 1/8 de la vie
 			Audios.Attack.stream = load("res://Sounds/SFX/Damages/LigotageDamage.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s est blessé par la capacité Ligotage !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Ligotage !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s est blessé par la capacité Ligotage !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Ligotage !" % get_pkm_nickname(pkm))
 			await wait(1)
 			await damage_animation(plr,dmg,1)
 			await wait(1)
@@ -1289,32 +1357,32 @@ func end_turn_effect_activation(plr : int, effect : String):
 	elif effect == "Claquoir" && pkm.Statut.has("Claquoir"):
 		if ClaquoirCounter[plr-1] == 0:
 			pkm.Statut.erase("Claquoir")
-			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Claquoir" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Claquoir" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Claquoir" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Claquoir" % get_pkm_nickname(pkm))
 			await wait(1)
 		else :
 			ClaquoirCounter[plr-1] -= 1
 			var dmg = round(stat(pkm,"PV")/8)#Inflige 1/8 de la vie
 			Audios.Attack.stream = load("res://Sounds/SFX/Attack/Claquoir.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s est blessé par la capacité Claquoir !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Claquoir !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s est blessé par la capacité Claquoir !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Claquoir !" % get_pkm_nickname(pkm))
 			await wait(1)
 			await damage_animation(plr,dmg,1)
 			await wait(1)
 	elif effect == "Étreinte" && pkm.Statut.has("Étreinte"):
 		if EtreinteCounter[plr-1] == 0:
 			pkm.Statut.erase("Étreinte")
-			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Étreinte" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Étreinte" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s n'est plus affecté par la capacité Étreinte" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi n'est plus affecté par la capacité Étreinte" % get_pkm_nickname(pkm))
 			await wait(1)
 		else :
 			EtreinteCounter[plr-1] -= 1
 			var dmg = round(stat(pkm,"PV")/8)#Inflige 1/8 de la vie
 			Audios.Attack.stream = load("res://Sounds/SFX/Damages/ÉtreinteDamage.mp3")
 			Audios.Attack.playing = true
-			if plr == 1: await action_ui_writing("%s est blessé par la capacité Étreinte !" % pkm.Name)
-			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Étreinte !" % pkm.Name)
+			if plr == 1: await action_ui_writing("%s est blessé par la capacité Étreinte !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("Le %s ennemi est blessé par la capacité Étreinte !" % get_pkm_nickname(pkm))
 			await wait(1)
 			await damage_animation(plr,dmg,1)
 			await wait(1)
@@ -1336,12 +1404,15 @@ func switch(plr : int, from : Dictionary, to : int):
 	ClaquoirCounter[plr-1] = 0
 	EtreinteCounter[plr-1] = 0
 	LockCounter[plr-1] = 0
+	if InitalMetamorphs[plr-1] != null:
+		await unmorph_animation(plr)
+	InitalMetamorphs = [null,null]
 	ClientNodes.Block.visible = false
 	OppNodes.Block.visible = false
 	if plr == 1: pkm = ClientDeck[to]
 	else: pkm = OppDeck[to]
+	if Clones[plr-1] != null: await clone_disapear_animation(plr)
 	Clones[plr-1] = null
-	await clone_disapear_animation(plr)
 	if from.Statut.has("Claquoir"):
 		pkm.Statut.append("Claquoir")
 	if from.Damages != stat(from,"PV"):
@@ -1352,7 +1423,7 @@ func switch(plr : int, from : Dictionary, to : int):
 		ball.frame_coords.y = 3
 		Audios.SFX.stream = load("res://Sounds/SFX/Pokemon/%s.ogg" % from.Name)
 		Audios.SFX.playing = true
-		await action_ui_writing("%s reviens !" % from.Name)
+		await action_ui_writing("%s reviens !" % get_pkm_nickname(from))
 		Audios.Attack.stream = load("res://Sounds/SFX/Other/Reviens.mp3")
 		Audios.Attack.playing = true
 		var open_timing = 0.0
@@ -1372,6 +1443,7 @@ func switch(plr : int, from : Dictionary, to : int):
 func pokemon_fainted(plr : int):
 	var time = 0.2
 	var divisions = 100.0
+	var pkm = get_active_pokemon(plr)
 	var node = get_nodes(plr).Sprite
 	get_active_pokemon(plr).Statut.clear()
 	if plr == 1:
@@ -1392,6 +1464,11 @@ func pokemon_fainted(plr : int):
 	ClaquoirCounter[plr-1] = 0
 	EtreinteCounter[plr-1] = 0
 	LockCounter[plr-1] = 0
+	if InitalMetamorphs[plr-1] != null:
+		await unmorph_animation(plr)
+	if InitalMetamorphs[get_opp(plr)-1] != null:
+		await unmorph_animation(get_opp(plr))
+	InitalMetamorphs = [null,null]
 	Audios.SFX.stream = load("res://Sounds/SFX/Damages/Mort.mp3")
 	Audios.SFX.playing = true
 	for i in range(divisions):
@@ -1400,8 +1477,8 @@ func pokemon_fainted(plr : int):
 	node.texture = null
 	node.material.set_shader_parameter('death_animation', 0)
 	await wait(0.5)
-	if plr == 1: await action_ui_writing("%s est mis K.O. !" % ClientDeck[ClientPokemon].Name)
-	else : await action_ui_writing("Le %s ennemi est mis K.O. !" % OppDeck[OppPokemon].Name)
+	if plr == 1: await action_ui_writing("%s est mis K.O. !" % get_pkm_nickname(pkm))
+	else : await action_ui_writing("Le %s ennemi est mis K.O. !" % get_pkm_nickname(pkm))
 	await wait(1)
 
 func pokemon_activation(plr : int, number : int):
@@ -1411,16 +1488,16 @@ func pokemon_activation(plr : int, number : int):
 	var divisions = 100.0
 	if plr == 1: ClientPokemon = number
 	else: OppPokemon = number
-	var pkm_name = get_active_pokemon(plr).Name
-	if plr == 1: node.texture = load(get_pokemon_img("Back",pkm_name,ClientDeck[ClientPokemon].Shiny))
-	else: node.texture = load(get_pokemon_img("Front",pkm_name,OppDeck[OppPokemon].Shiny))
+	var pkm = get_active_pokemon(plr)
+	if plr == 1: node.texture = load(get_pokemon_img("Back",pkm.Name,ClientDeck[ClientPokemon].Shiny))
+	else: node.texture = load(get_pokemon_img("Front",pkm.Name,OppDeck[OppPokemon].Shiny))
 	if !participants_KO_exp.has(ClientPokemon) && against_bot: participants_KO_exp.append(ClientPokemon)
 	status_animation()
 	ball.visible = true
 	node.material.set_shader_parameter('avancement',0)
 	ball.rotation = 0
 	ball.frame_coords.y = 3
-	await action_ui_writing("%s envoie %s !" % [Joueurs[plr-1],pkm_name])
+	await action_ui_writing("%s envoie %s !" % [Joueurs[plr-1],get_pkm_nickname(pkm)])
 	var open_timing = 0.0
 	Audios.Attack.stream = load("res://Sounds/SFX/Other/Apparition.mp3")
 	Audios.Attack.playing = true
@@ -1432,7 +1509,7 @@ func pokemon_activation(plr : int, number : int):
 			node.material.set_shader_parameter('avancement', (i-open_timing)/(divisions-open_timing)*3.0)
 		await wait(time/divisions)
 	ball.visible = false
-	Audios.SFX.stream = load("res://Sounds/SFX/Pokemon/%s.ogg" % pkm_name)
+	Audios.SFX.stream = load("res://Sounds/SFX/Pokemon/%s.ogg" % pkm.Name)
 	Audios.SFX.playing = true
 	await wait(1.5)
 	death_switch = false
@@ -1457,12 +1534,17 @@ func change_stat_pkm(plr : int, Stat : String, ChangeValue : int, miss_text : bo
 				Modifs[plr][Stat] -= 1
 	if iterations == 0 || (Clones[plr-1] != null && from_opponent):
 		if miss_text : await action_ui_writing("Mais cela échoue...")
+	elif BrumeCounter[plr-1] > 0 && from_opponent:
+		if miss_text :
+			Audios.SFX.stream = load("res://Sounds/SFX/Status/Brume.mp3")
+			Audios.SFX.playing = true
+			await action_ui_writing("Mais cela échoue...")
 	else:
 		var msg = ""
 		if Stat.begins_with("A") || Stat.begins_with("E"): msg = "L'%s" % Stat
 		else: msg = "La %s" % Stat
-		if plr == 1: msg += " de %s" % pkm.Name
-		else: msg += " du %s ennemi" % pkm.Name
+		if plr == 1: msg += " de %s" % get_pkm_nickname(pkm)
+		else: msg += " du %s ennemi" % get_pkm_nickname(pkm)
 		msg = msg.replace("Precision","Précision")
 		msg = msg.replace("Defense","Défense")
 		msg = msg.replace("Spe"," Spéciale")
@@ -1491,8 +1573,8 @@ func burn_pkm(plr : int, miss_text : bool, from_opponent : bool):
 			Audios.Attack.playing = true
 			pkm.Statut.append("Brûlé")
 			status_animation()
-			if plr == 1: await action_ui_writing("Le %s ennemi est brûlé !" % pkm.Name)
-			else : await action_ui_writing("%s est brûlé !" % pkm.Name)
+			if plr == 1: await action_ui_writing("Le %s ennemi est brûlé !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("%s est brûlé !" % get_pkm_nickname(pkm))
 
 func confuse_pkm(plr : int, miss_text : bool, from_opponent : bool):
 	var pkm = get_active_pokemon(plr)
@@ -1504,10 +1586,10 @@ func confuse_pkm(plr : int, miss_text : bool, from_opponent : bool):
 		pkm.Statut.append("Confus")
 		if plr == 1:
 			ConfuseCounter[ClientPokemon] = randi_range(1,4)
-			await action_ui_writing("%s est confus !" % pkm.Name)
+			await action_ui_writing("%s est confus !" % get_pkm_nickname(pkm))
 		else :
 			ConfuseCounter[OppPokemon+6] = randi_range(1,4)
-			await action_ui_writing("Le %s ennemi est confus !" % pkm.Name)
+			await action_ui_writing("Le %s ennemi est confus !" % get_pkm_nickname(pkm))
 
 func sleep_pkm(plr : int, miss_text : bool, from_opponent : bool):
 	var pkm = get_active_pokemon(plr)
@@ -1520,10 +1602,10 @@ func sleep_pkm(plr : int, miss_text : bool, from_opponent : bool):
 		status_animation()
 		if plr == 1:
 			SleepCounter[ClientPokemon] = randi_range(1,3)
-			await action_ui_writing("%s s'est endormi !" % pkm.Name)
+			await action_ui_writing("%s s'est endormi !" % get_pkm_nickname(pkm))
 		else:
 			SleepCounter[OppPokemon+6] = randi_range(1,3)
-			await action_ui_writing("Le %s ennemi s'est endormi !" % pkm.Name)
+			await action_ui_writing("Le %s ennemi s'est endormi !" % get_pkm_nickname(pkm))
 
 func poison_pkm(plr : int, miss_text : bool, from_opponent : bool):
 	var pkm = get_active_pokemon(plr)
@@ -1537,8 +1619,8 @@ func poison_pkm(plr : int, miss_text : bool, from_opponent : bool):
 			Audios.Attack.playing = true
 			pkm.Statut.append("Empoisonné")
 			status_animation()
-			if plr == 1:await action_ui_writing("%s est empoisonné !" % pkm.Name)
-			else: await action_ui_writing("Le %s ennemi est empoisonné !" % pkm.Name)
+			if plr == 1:await action_ui_writing("%s est empoisonné !" % get_pkm_nickname(pkm))
+			else: await action_ui_writing("Le %s ennemi est empoisonné !" % get_pkm_nickname(pkm))
 
 func paralyse_pkm(plr : int, miss_text : bool, from_opponent : bool):
 	var pkm = get_active_pokemon(plr)
@@ -1552,8 +1634,8 @@ func paralyse_pkm(plr : int, miss_text : bool, from_opponent : bool):
 			Audios.Attack.playing = true
 			pkm.Statut.append("Paralysé")
 			status_animation()
-			if plr == 1:await action_ui_writing("Le %s ennemi est paralysé ! Il aura du mal à attaquer." % pkm.Name)
-			else : await action_ui_writing("%s est paralysé ! Il aura du mal à attaquer." % pkm.Name)
+			if plr == 1:await action_ui_writing("Le %s ennemi est paralysé ! Il aura du mal à attaquer." % get_pkm_nickname(pkm))
+			else : await action_ui_writing("%s est paralysé ! Il aura du mal à attaquer." % get_pkm_nickname(pkm))
 
 func froze_pkm(plr : int, miss_text : bool, from_opponent : bool):
 	var pkm = get_active_pokemon(plr)
@@ -1567,21 +1649,12 @@ func froze_pkm(plr : int, miss_text : bool, from_opponent : bool):
 			Audios.Attack.playing = true
 			pkm.Statut.append("Gelé")
 			status_animation()
-			if plr == 1:await action_ui_writing("Le %s ennemi est gelé !" % pkm.Name)
-			else : await action_ui_writing("%s est gelé !" % pkm.Name)
+			if plr == 1:await action_ui_writing("Le %s ennemi est gelé !" % get_pkm_nickname(pkm))
+			else : await action_ui_writing("%s est gelé !" % get_pkm_nickname(pkm))
 
-func scare_pkm(plr : int, miss_text : bool, from_opponent : bool):
+func scare_pkm(plr : int, from_opponent : bool):
 	var pkm = get_active_pokemon(plr)
-	if pkm.Statut.has("Apeuré") || (Clones[plr-1] != null && from_opponent):
-		if miss_text : await action_ui_writing("Mais cela échoue...")
-	else:
-		pkm.Statut.append("Apeuré")
-		if plr == 1:
-			ConfuseCounter[ClientPokemon] = randi_range(1,4)
-			await action_ui_writing("%s est apeuré !" % pkm.Name)
-		else :
-			ConfuseCounter[OppPokemon+6] = randi_range(1,4)
-			await action_ui_writing("Le %s ennemi est apeuré !" % pkm.Name)
+	if !(pkm.Statut.has("Apeuré") || !(Clones[plr-1] != null && from_opponent)): pkm.Statut.append("Apeuré")
 
 func reset_modifs(plr : int):
 	for modif in Modifs[plr]:
@@ -1701,7 +1774,7 @@ func max_exp_calculation(pkm : Dictionary, next_lvl : int):
 func ia_moves(plr : int):
 	if Charging[plr-1] != "":
 		return Charging[plr-1]
-	if get_active_pokemon(2).Statut.has("Ultralaser"):
+	elif get_active_pokemon(2).Statut.has("Ultralaser"):
 		return "Ultralaser"
 	elif LockCounter[1] != 0: return incomming_attacks[1]
 	else:
@@ -1759,7 +1832,11 @@ func ia_create_game_state():
 			r["Name"] = move.replace(index,pkm.Name)
 			var p_types = get_types(pkm)
 			var t_types = get_types(target)
-			r["Efficiency"] = weak_check(p_types[0],t_types[0]) * weak_check(p_types[1],t_types[0]) * weak_check(p_types[0],t_types[1]) * weak_check(p_types[1],t_types[1])
+			r["Efficiency"] = weak_check(p_types[0],t_types[0])
+			if p_types[1] != null: r["Efficiency"] *= weak_check(p_types[1],t_types[0])
+			if t_types[1] != null:
+				r["Efficiency"] *= weak_check(p_types[0],t_types[1])
+				if p_types[1] != null: r["Efficiency"] *=  weak_check(p_types[1],t_types[1])
 		else:
 			r["Name"] = move
 			r["Efficiency"] = weakness_calculation(move,target)
@@ -1863,42 +1940,31 @@ func reset_ui():
 	OppNodes.Pokeball.position = OppNodes.Sprite.position+Vector2(0,100)
 
 func refresh_ui():
-	if len(ClientDeck) > 0:
-		var pkm = ClientDeck[ClientPokemon]
-		var MaxHealth = stat(pkm,"PV")
-		var Health = MaxHealth - pkm.Damages
-		var MaxEXP = max_exp_calculation(pkm,pkm.LvL+1)
-		var EXP = pkm.EXP
-		ClientNodes.Name.text = "%s" % pkm.Name
-		ClientNodes.LvL.text = "Lv.%s" % pkm.LvL
-		ClientNodes.HealthBar.max_value = MaxHealth
-		ClientNodes.HealthBar.value = Health
-		ClientNodes.ExpBar.max_value = MaxEXP
-		ClientNodes.ExpBar.value = EXP
-		if Health <= MaxHealth/10.0: ClientNodes.HealthBar["theme_override_styles/fill"].bg_color = Color(1,0,0)
-		elif Health <= MaxHealth/2.0: ClientNodes.HealthBar["theme_override_styles/fill"].bg_color = Color(1,1,0)
-		else: ClientNodes.HealthBar["theme_override_styles/fill"].bg_color = Color(0,1,0)
-		ClientNodes.HealthLabel.text = "%s / %s" % [Health,MaxHealth]
-		ClientNodes.Block.visible = true
-		ClientNodes.Sprite.texture = load(get_pokemon_img("Back",pkm.Name,pkm.Shiny))
-	if len(OppDeck) > 0:
-		var pkm = OppDeck[OppPokemon]
-		var MaxHealth = stat(pkm,"PV")
-		var Health = MaxHealth - pkm.Damages
-		OppNodes.Name.text = "%s" % pkm.Name
-		OppNodes.LvL.text = "Lv.%s" % pkm.LvL
-		OppNodes.HealthBar.max_value = MaxHealth
-		OppNodes.HealthBar.value = Health
-		if Health <= MaxHealth/10.0: OppNodes.HealthBar["theme_override_styles/fill"].bg_color = Color(1,0,0)
-		elif Health <= MaxHealth/2.0: OppNodes.HealthBar["theme_override_styles/fill"].bg_color = Color(1,1,0)
-		else: OppNodes.HealthBar["theme_override_styles/fill"].bg_color = Color(0,1,0)
-		OppNodes.HealthLabel.text = "%s / %s" % [Health,MaxHealth]
-		OppNodes.Block.visible = true
-		OppNodes.Sprite.texture = load(get_pokemon_img("Front",pkm.Name,pkm.Shiny))
+	for plr in range(1,3):
+		var nodes = get_nodes(plr)
+		if len(get_deck(plr)) > 0:
+			var pkm = get_active_pokemon(plr)
+			var MaxHealth = stat(pkm,"PV")
+			var Health = MaxHealth - pkm.Damages
+			nodes.Name.text = get_pkm_nickname(pkm)
+			if pkm.Shiny == 's': nodes.Name.text += "☆"
+			nodes.LvL.text = "Lv.%s" % pkm.LvL
+			nodes.HealthBar.max_value = MaxHealth
+			nodes.HealthBar.value = Health
+			if Health <= MaxHealth/10.0: nodes.HealthBar["theme_override_styles/fill"].bg_color = Color(1,0,0)
+			elif Health <= MaxHealth/2.0: nodes.HealthBar["theme_override_styles/fill"].bg_color = Color(1,1,0)
+			else: nodes.HealthBar["theme_override_styles/fill"].bg_color = Color(0,1,0)
+			nodes.HealthLabel.text = "%s / %s" % [Health,MaxHealth]
+			nodes.Block.visible = true
+			if plr == 1:
+				nodes.Sprite.texture = load(get_pokemon_img("Back",pkm.Name,pkm.Shiny))
+				nodes.ExpBar.max_value = max_exp_calculation(pkm,pkm.LvL+1)
+				nodes.ExpBar.value = pkm.EXP
+			else: nodes.Sprite.texture = load(get_pokemon_img("Front",pkm.Name,pkm.Shiny))
+			status_animation()
 
 func attack_animation(plr : int,atk : String):
 	var pkm = get_nodes(plr).Sprite
-	var clone = get_nodes(plr).Clone
 	var s = 0
 	if plr == 1: s = 1
 	else : s = -1
@@ -1911,11 +1977,11 @@ func attack_animation(plr : int,atk : String):
 	#en attendant, l'anim de Charge est donnée pour toutes les attaques
 	####################################################################
 	####################################################################
-	var clone_exchange = clone.visible == true
-	if clone_exchange && atk != "Clonage": await clone_disapear_animation(plr)
-	
+	var clone_exchange = Clones[plr-1] != null
 	if atk == "Clonage":
 		if !clone_exchange: await clone_exchange_animation(plr)
+	elif atk == "Morphing":
+		pass
 	else:#Charge (animation par défaut)
 		var time = 0.1
 		var divisions = 100.0
@@ -1966,6 +2032,55 @@ func clone_exchange_animation(plr : int):
 		clone.offset.x += 90/divisions*s
 		await wait(time/divisions)
 
+func unmorph_animation(plr : int):
+	var pkm = get_active_pokemon(plr)
+	var target = InitalMetamorphs[plr-1]
+	pkm.Nickname = target.Nickname
+	pkm.Name = target.Name
+	pkm.Shiny = target.Shiny
+	pkm.Stats = {
+		"PV":{"IV":target.Stats.PV.IV,"EV":target.Stats.PV.EV},
+		"Attaque":{"IV":target.Stats.Attaque.IV,"EV":target.Stats.Attaque.EV},
+		"Defense":{"IV":target.Stats.Defense.IV,"EV":target.Stats.Defense.EV},
+		"AttaqueSpe":{"IV":target.Stats.AttaqueSpe.IV,"EV":target.Stats.AttaqueSpe.EV},
+		"DefenseSpe":{"IV":target.Stats.DefenseSpe.IV,"EV":target.Stats.DefenseSpe.EV},
+		"Vitesse":{"IV":target.Stats.Vitesse.IV,"EV":target.Stats.Vitesse.EV}}
+	pkm.Attacks.clear()
+	for ta in target.Attacks: pkm.Attacks.append({"Name":ta.Name,"PP":5})
+	var sprite = get_nodes(plr).Sprite
+	sprite.skew = 0
+	var time = 0.1
+	var divisions = 100.0
+	for i in range(1,divisions+1):
+		sprite.skew += deg_to_rad(89.9/divisions)
+		await wait(time/divisions)
+	if plr == 1: sprite.texture = load(get_pokemon_img("Back",pkm.Name,pkm.Shiny))
+	else: sprite.texture = load(get_pokemon_img("Front",pkm.Name,pkm.Shiny))
+	sprite.skew = deg_to_rad(-89.9)
+	for i in range(1,divisions+1):
+		sprite.skew += deg_to_rad(89.9/divisions)
+		await wait(time/divisions)
+	sprite.skew = 0
+	await wait(1.0)
+
+func morph_animation(plr : int):
+	var pkm = get_active_pokemon(plr)
+	var sprite = get_nodes(plr).Sprite
+	sprite.skew = 0
+	var time = 0.1
+	var divisions = 100.0
+	for i in range(1,divisions+1):
+		sprite.skew += deg_to_rad(89.9/divisions)
+		await wait(time/divisions)
+	if plr == 1: sprite.texture = load(get_pokemon_img("Back",pkm.Name,pkm.Shiny))
+	else: sprite.texture = load(get_pokemon_img("Front",pkm.Name,pkm.Shiny))
+	sprite.skew = deg_to_rad(-89.9)
+	for i in range(1,divisions+1):
+		sprite.skew += deg_to_rad(89.9/divisions)
+		await wait(time/divisions)
+	sprite.skew = 0
+	await wait(1.0)
+
 func action_ui_writing(text : String):
 	var time = 0.02
 	ActionUI.Label.text = ""
@@ -1997,8 +2112,8 @@ func damage_animation(plr : int, damages : int, weak : float, ignore_clone : boo
 		Audios.Damages.stream = load("res://Sounds/SFX/Damages/Heal.mp3")
 	Audios.Damages.playing = true
 	if pkm.Name == "Clone":
-		if plr == 1 : await action_ui_writing("Le clone subit les dégâts à la place de %s !" % ClientDeck[ClientPokemon].Name)
-		else : await action_ui_writing("Le clone subit les dégâts à la place du %s ennemi !" % OppDeck[OppPokemon].Name)
+		if plr == 1 : await action_ui_writing("Le clone subit les dégâts à la place de %s !" % get_pkm_nickname(ClientDeck[ClientPokemon]))
+		else : await action_ui_writing("Le clone subit les dégâts à la place du %s ennemi !" % get_pkm_nickname(OppDeck[OppPokemon]))
 		await wait(1)
 	else:
 		for i in range(1,divisions+1):
@@ -2045,18 +2160,35 @@ func weakness_animation(weakness : float):
 func status_animation():
 	for plr in range(1,3):
 		var pkm = get_active_pokemon(plr)
-		var sprite = get_nodes(plr).Sprite
-		if pkm.Statut.has("Brûlé"): sprite.material.set_shader_parameter('status', 1)
-		elif pkm.Statut.has("Gelé"): sprite.material.set_shader_parameter('status', 2)
-		elif pkm.Statut.has("Paralysé"): sprite.material.set_shader_parameter('status', 3)
-		elif pkm.Statut.has("Empoisonné"): sprite.material.set_shader_parameter('status', 4)
-		elif pkm.Statut.has("Endormi"): sprite.material.set_shader_parameter('status', 5)
-		else : sprite.material.set_shader_parameter('status', 0)
+		var nodes = get_nodes(plr)
+		if pkm.Statut.has("Brûlé"):
+			nodes.Sprite.material.set_shader_parameter('status', 1)
+			nodes.StatutBlock.visible = true
+			nodes.StatutTexture.texture = load("res://Textures/Statuts/Brûlé.png")
+		elif pkm.Statut.has("Gelé"):
+			nodes.Sprite.material.set_shader_parameter('status', 2)
+			nodes.StatutBlock.visible = true
+			nodes.StatutTexture.texture = load("res://Textures/Statuts/Gelé.png")
+		elif pkm.Statut.has("Paralysé"):
+			nodes.Sprite.material.set_shader_parameter('status', 3)
+			nodes.StatutBlock.visible = true
+			nodes.StatutTexture.texture = load("res://Textures/Statuts/Paralysé.png")
+		elif pkm.Statut.has("Empoisonné"):
+			nodes.Sprite.material.set_shader_parameter('status', 4)
+			nodes.StatutBlock.visible = true
+			nodes.StatutTexture.texture = load("res://Textures/Statuts/Empoisonné.png")
+		elif pkm.Statut.has("Endormi"):
+			nodes.Sprite.material.set_shader_parameter('status', 5)
+			nodes.StatutBlock.visible = true
+			nodes.StatutTexture.texture = load("res://Textures/Statuts/Endormi.png")
+		else :
+			nodes.Sprite.material.set_shader_parameter('status', 0)
+			nodes.StatutBlock.visible = false
 
 func exp_animation(pkm : Dictionary, EXP : float):
 	pkm.EXP += EXP
 	var is_active = (pkm == get_active_pokemon(pkm.Owner))
-	await action_ui_writing("%s a gagné %s EXP !" % [pkm.Name,EXP])
+	await action_ui_writing("%s a gagné %s EXP !" % [get_pkm_nickname(pkm),EXP])
 	await wait(1)
 	var LvL = lvl_up_calculation(pkm)
 	var time = 1.0
@@ -2072,7 +2204,7 @@ func exp_animation(pkm : Dictionary, EXP : float):
 		pkm.LvL = LvL
 		Audios.SFX.stream = load("res://Sounds/SFX/Other/LvLup.mp3")
 		Audios.SFX.playing = true
-		await action_ui_writing("%s passe Lv.%s !" % [pkm.Name,str(LvL)])
+		await action_ui_writing("%s passe Lv.%s !" % [get_pkm_nickname(pkm),str(LvL)])
 		await wait(1)
 
 func modif_stat_animation(plr : int, raise : bool):
@@ -2115,7 +2247,9 @@ func change_pokemon(a):
 func pokemon_hover(a):
 	if a+1 <= len(ClientDeck):
 		var pkm = ClientDeck[a]
-		PkmInfoUI.Name.text = pkm.Name
+		PkmInfoUI.Name.text = get_pkm_nickname(pkm)
+		if pkm.Nickname != null:
+			PkmInfoUI.Name.text += " (%s)" % pkm.Name
 		PkmInfoUI.LvL.text = "Lv. %s" % pkm.LvL
 		var MaxHealth = stat(pkm,"PV")
 		var Health = MaxHealth-pkm.Damages
@@ -2132,6 +2266,20 @@ func pokemon_hover(a):
 				PkmInfoUI["Atk%s" % i].text = "%s (%s/%s)" % [atk.Name,atk.PP,stats.ATTACKS[atk.Name].PP]
 			else:
 				PkmInfoUI["Atk%s" % i].text = ""
+		if Health <= 0:
+			PkmInfoUI.Statut.texture = load("res://Textures/Statuts/K.O..png")
+		elif pkm.Statut.has("Brûlé"):
+			PkmInfoUI.Statut.texture = load("res://Textures/Statuts/Brûlé.png")
+		elif pkm.Statut.has("Gelé"):
+			PkmInfoUI.Statut.texture = load("res://Textures/Statuts/Gelé.png")
+		elif pkm.Statut.has("Paralysé"):
+			PkmInfoUI.Statut.texture = load("res://Textures/Statuts/Paralysé.png")
+		elif pkm.Statut.has("Empoisonné"):
+			PkmInfoUI.Statut.texture = load("res://Textures/Statuts/Empoisonné.png")
+		elif pkm.Statut.has("Endormi"):
+			PkmInfoUI.Statut.texture = load("res://Textures/Statuts/Endormi.png")
+		else :
+			PkmInfoUI.Statut.texture = null
 		PkmInfoUI.Block.visible = true
 
 func pokemon_unhover():
@@ -2150,7 +2298,9 @@ func _on_attack_pressed():
 		if i < len(attack_list):
 			var Name = attack_list[i].Name
 			Child.text = "%s (%s/%s)" % [Name,attack_list[i].PP,stats.ATTACKS[Name].PP]
-			var color8 = stats.TYPE_COLOR[stats.ATTACKS[Name].Type]
+			Child.icon = load("res://Textures/Types/Expanded/%s.png" % stats.ATTACKS[Name].Type)
+			var color8 = stats.TYPE_COLOR[stats.ATTACKS[Name].Type]*0.8
+			color8.a8 = 255
 			Child["theme_override_styles/normal"].bg_color = color8
 			Child["theme_override_styles/normal"].border_color = color8 - Color8(100,100,100,0)
 			Child["theme_override_styles/hover"].bg_color = color8 + Color8(50,50,50,0)

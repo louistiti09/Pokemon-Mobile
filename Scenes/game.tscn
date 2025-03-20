@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bwlgfuig8hgfd"]
+[gd_scene load_steps=72 format=3 uid="uid://bwlgfuig8hgfd"]
 
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_1pfj7"]
 [ext_resource type="Script" path="res://Script/game.gd" id="1_306b4"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bxd6dfy0r5cv0" path="res://Textures/Combat/CloneBack.png" id="8_glafk"]
 [ext_resource type="Texture2D" uid="uid://b7h1oy1o5hhdb" path="res://Textures/Combat/CloneFront.png" id="9_7jw0q"]
 [ext_resource type="Script" path="res://Script/game_ia.gd" id="10_73u3u"]
+[ext_resource type="Texture2D" uid="uid://dq1bvpugocws6" path="res://Textures/Types/Expanded/Combat.png" id="11_h5cli"]
+[ext_resource type="Texture2D" uid="uid://b11w8w5hvc882" path="res://Textures/Statuts/Brûlé.png" id="11_umnf2"]
+[ext_resource type="Texture2D" uid="uid://dm5bikysmjhpn" path="res://Textures/Types/Expanded/Dragon.png" id="12_k1opx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gowmg"]
 shader = ExtResource("1_1pfj7")
@@ -67,6 +70,13 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjuaw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6o74"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4oc0"]
 bg_color = Color(0, 1, 0, 1)
@@ -332,6 +342,8 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keyei"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.784314, 0.784314, 0.784314, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -341,6 +353,8 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_paend"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.843137, 0.843137, 0.843137, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -350,6 +364,8 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpgbl"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -359,6 +375,8 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj1ys"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -367,7 +385,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7or6u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ey0rj"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.784314, 0.784314, 0.784314, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -376,7 +396,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txqyv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7533j"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.843137, 0.843137, 0.843137, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -385,7 +407,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f33ki"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boon0"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -394,7 +418,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5we3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrmff"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -403,7 +429,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esn3m"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7h2p"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.784314, 0.784314, 0.784314, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -412,7 +440,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6r74"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yctck"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.843137, 0.843137, 0.843137, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -421,7 +451,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yok47"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo4w4"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -430,7 +462,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkr2m"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wiwm"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -439,7 +473,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udxka"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iu50m"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.784314, 0.784314, 0.784314, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -448,7 +484,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvsj1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oda4r"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.843137, 0.843137, 0.843137, 1)
 border_width_bottom = 8
 border_color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -457,7 +495,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tts3n"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwvm8"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -466,7 +506,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lj1jq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qncu2"]
+content_margin_left = 5.0
+content_margin_right = 5.0
 bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 border_width_top = 8
 border_color = Color(1, 1, 1, 0)
@@ -547,10 +589,6 @@ scale = Vector2(3, 3)
 position = Vector2(420, 394)
 scale = Vector2(3, 3)
 
-[node name="AnimNodes" type="Node" parent="Sprites"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprites/AnimNodes"]
-
 [node name="UI" type="Node" parent="."]
 
 [node name="Params" type="Button" parent="UI"]
@@ -568,7 +606,6 @@ expand_icon = true
 [node name="Pokemons_UI" type="Node" parent="UI"]
 
 [node name="Opp" type="Control" parent="UI/Pokemons_UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 50.0
@@ -650,6 +687,27 @@ theme_override_constants/shadow_offset_x = -2
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_vjuaw")
 
+[node name="Statut" type="Panel" parent="UI/Pokemons_UI/Opp"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 42.0
+offset_right = 62.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p6o74")
+
+[node name="Texture" type="TextureRect" parent="UI/Pokemons_UI/Opp/Statut"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 15.0
+texture = ExtResource("11_umnf2")
+expand_mode = 5
+
 [node name="Client" type="Control" parent="UI/Pokemons_UI"]
 layout_mode = 3
 anchors_preset = 0
@@ -667,6 +725,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vaiy6")
+
+[node name="Statut" type="Panel" parent="UI/Pokemons_UI/Client"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = 42.0
+offset_right = -192.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p6o74")
+
+[node name="Texture" type="TextureRect" parent="UI/Pokemons_UI/Client/Statut"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 15.0
+texture = ExtResource("11_umnf2")
+expand_mode = 5
 
 [node name="Margin" type="MarginContainer" parent="UI/Pokemons_UI/Client"]
 layout_mode = 1
@@ -782,8 +861,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "
-"
+text = "Dracaufeu"
 vertical_alignment = 1
 
 [node name="LvL" type="Label" parent="UI/Pkm_Info_UI/Margin/VBox/Label"]
@@ -800,6 +878,14 @@ text = "
 "
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Statut" type="TextureRect" parent="UI/Pkm_Info_UI/Margin/VBox/Label"]
+offset_left = 276.0
+offset_top = 37.0
+offset_right = 336.0
+offset_bottom = 52.0
+texture = ExtResource("11_umnf2")
+expand_mode = 5
 
 [node name="Bar" type="ProgressBar" parent="UI/Pkm_Info_UI/Margin/VBox"]
 layout_mode = 2
@@ -1319,12 +1405,14 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_keyei")
 theme_override_styles/hover = SubResource("StyleBoxFlat_paend")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kpgbl")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_gj1ys")
-text = "Charge"
+text = "Regard Médusant"
+icon = ExtResource("11_h5cli")
+alignment = 0
 
 [node name="Attack2" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
 layout_mode = 2
@@ -1334,12 +1422,14 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_7or6u")
-theme_override_styles/hover = SubResource("StyleBoxFlat_txqyv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_f33ki")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_d5we3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ey0rj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7533j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_boon0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xrmff")
 text = "Rugissement"
+icon = ExtResource("12_k1opx")
+alignment = 0
 
 [node name="Attack3" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
 layout_mode = 2
@@ -1349,11 +1439,12 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_esn3m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j6r74")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yok47")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_lkr2m")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7h2p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yctck")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bo4w4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8wiwm")
+alignment = 0
 
 [node name="Attack4" type="Button" parent="UI/Main_UI/Attack_UI/Margin/HBox/Attacks/VBox"]
 layout_mode = 2
@@ -1363,11 +1454,12 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_udxka")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bvsj1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_tts3n")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_lj1jq")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_iu50m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oda4r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rwvm8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qncu2")
+alignment = 0
 
 [node name="Tutorial_UI" type="Panel" parent="UI"]
 visible = false
@@ -1402,6 +1494,7 @@ theme_override_constants/shadow_offset_y = -1
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
+text = "caca"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1425,6 +1518,10 @@ bus = &"SFX"
 
 [node name="IA" type="Node" parent="."]
 script = ExtResource("10_73u3u")
+
+[node name="AnimNodes" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimNodes"]
 
 [connection signal="pressed" from="UI/Death_Switch_UI/Margin/VBox/Switch" to="." method="_on_switch_pressed"]
 [connection signal="pressed" from="UI/Death_Switch_UI/Margin/VBox/Continue" to="." method="_on_continue_pressed"]

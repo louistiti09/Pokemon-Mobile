@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://dd5n2wb2gp024"]
+
+[ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_ddflw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7oqfx"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0, 1, 1, 1)
+shader_parameter/color2 = Color(0.352941, 0.588235, 1, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 7.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxtpc"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uay1"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/offset = 1.49012e-08
+shader_parameter/pixelise = 1000.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 1.0
+
+[sub_resource type="SystemFont" id="SystemFont_asb1b"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ti0o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rfwm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f82df"]
+
+[node name="team_builder" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7oqfx")
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="Team_Name" type="Panel" parent="."]
+clip_children = 1
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 520.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wxtpc")
+
+[node name="Background" type="ColorRect" parent="Team_Name"]
+material = SubResource("ShaderMaterial_4uay1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="LineEdit" parent="Team_Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.431373)
+theme_override_fonts/font = SubResource("SystemFont_asb1b")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3ti0o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3rfwm")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_f82df")
+placeholder_text = "Nom de l'équipe"
+alignment = 1
+max_length = 20
+context_menu_enabled = false
+flat = true

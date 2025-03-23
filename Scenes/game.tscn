@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bwlgfuig8hgfd"]
+[gd_scene load_steps=73 format=3 uid="uid://bwlgfuig8hgfd"]
 
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_1pfj7"]
 [ext_resource type="Script" path="res://Script/game.gd" id="1_306b4"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dq1bvpugocws6" path="res://Textures/Types/Expanded/Combat.png" id="11_h5cli"]
 [ext_resource type="Texture2D" uid="uid://b11w8w5hvc882" path="res://Textures/Statuts/Brûlé.png" id="11_umnf2"]
 [ext_resource type="Texture2D" uid="uid://dm5bikysmjhpn" path="res://Textures/Types/Expanded/Dragon.png" id="12_k1opx"]
+[ext_resource type="Texture2D" uid="uid://b13my0qcef514" path="res://Textures/Pokemons/Front/n/6.png" id="12_yu8ku"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gowmg"]
 shader = ExtResource("1_1pfj7")
@@ -880,6 +881,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Statut" type="TextureRect" parent="UI/Pkm_Info_UI/Margin/VBox/Label"]
+layout_mode = 0
 offset_left = 276.0
 offset_top = 37.0
 offset_right = 336.0
@@ -1230,12 +1232,14 @@ size_flags_vertical = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 60
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xd034")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0jclc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_r3l5v")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_r3l5v")
+icon = ExtResource("12_yu8ku")
 icon_alignment = 1
 expand_icon = true
 
@@ -1246,6 +1250,7 @@ size_flags_vertical = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 60
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xd034")
@@ -1267,6 +1272,7 @@ size_flags_vertical = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 60
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xd034")
@@ -1283,6 +1289,7 @@ size_flags_vertical = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 60
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xd034")
@@ -1304,6 +1311,7 @@ size_flags_vertical = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 60
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xd034")
@@ -1320,6 +1328,7 @@ size_flags_vertical = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 60
 theme_override_fonts/font = SubResource("SystemFont_v5vqx")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xd034")

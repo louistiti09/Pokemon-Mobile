@@ -953,10 +953,10 @@ func attaque_statut(plr : int, atk : String):
 				var deck_n = deck.find(apkms[apkms_n])
 				await switch(get_opp(plr),get_active_pokemon(get_opp(plr)),deck_n)
 	elif atk == "Puissance":
-		if pkm.Stats.Critique.Modif >= 4:
+		if Modifs[plr].Critique >= 4:
 			await action_ui_writing("Mais cela échoue...")
 		else:
-			pkm.Stats.Critique.Modif += 2
+			Modifs[plr].Critique += 2
 			Audios.Attack.stream = load("res://Sounds/SFX/Status/Stat Up.mp3")
 			Audios.Attack.playing = true
 			if plr == 1: await action_ui_writing("%s est prêt à tout donner !" % get_pkm_nickname(pkm))

@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd5n2wb2gp024"]
+[gd_scene load_steps=57 format=3 uid="uid://dd5n2wb2gp024"]
 
+[ext_resource type="Script" path="res://Script/team_builder.gd" id="1_0bu20"]
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_ddflw"]
+[ext_resource type="Texture2D" uid="uid://b7toeiq2sxbkr" path="res://Textures/Pokemons/Front/n/3.png" id="2_5y0rc"]
+[ext_resource type="Texture2D" uid="uid://c4gp82vdrwpsn" path="res://Textures/Types/Expanded/Plante.png" id="4_2cal3"]
+[ext_resource type="Texture2D" uid="uid://cbrkhipeb55p1" path="res://Textures/Types/Expanded/Poison.png" id="5_5pip6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oqfx"]
 shader = ExtResource("1_ddflw")
 shader_parameter/color1 = Color(0, 1, 1, 1)
 shader_parameter/color2 = Color(0.352941, 0.588235, 1, 1)
-shader_parameter/offset = 0.0
-shader_parameter/pixelise = 7.0
+shader_parameter/offset = -0.05
+shader_parameter/pixelise = 10.0
 shader_parameter/generate_offset = false
 shader_parameter/wavy = 6.0
 shader_parameter/wave_width = 2.0
@@ -37,22 +41,441 @@ font_names = PackedStringArray("Berlin Sans FB")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f82df"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opgcm"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0.541176, 0.827451, 0, 1)
+shader_parameter/color2 = Color(0.619608, 0.227451, 0.92549, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 7.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 50.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlptn"]
+corner_radius_top_left = 15
+corner_radius_top_right = 4
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 4
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yy5ft"]
+corner_radius_top_left = 15
+corner_radius_top_right = 4
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 4
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6atq5"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="SystemFont" id="SystemFont_7buj2"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_by7st"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx3xo"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipm8b"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5xybm"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0.960784, 0.662745, 0.0627451, 1)
+shader_parameter/color2 = Color(0.619608, 0.227451, 0.92549, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 7.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 50.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fbcd"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qb127"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yutgm"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm5eb"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t826s"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0.960784, 0.662745, 0.0627451, 1)
+shader_parameter/color2 = Color(0.619608, 0.227451, 0.92549, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 7.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 50.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrdlc"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lf8s"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbqf4"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cexq1"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnwrh"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0.960784, 0.662745, 0.0627451, 1)
+shader_parameter/color2 = Color(0.619608, 0.227451, 0.92549, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 7.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 50.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uey56"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5438"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g714h"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gr4vx"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7c6gf"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0.960784, 0.662745, 0.0627451, 1)
+shader_parameter/color2 = Color(0.619608, 0.227451, 0.92549, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 7.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 50.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymsqw"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1j33"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5231"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c2qd"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrb10"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0.960784, 0.662745, 0.0627451, 1)
+shader_parameter/color2 = Color(0.619608, 0.227451, 0.92549, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 7.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 50.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4lk1"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m68a"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1v77"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7q2rl"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ory0o"]
+bg_color = Color(0, 0.588235, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6scqo"]
+bg_color = Color(0, 0.588235, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqkk1"]
+shader = ExtResource("1_ddflw")
+shader_parameter/color1 = Color(0.541176, 0.827451, 0, 1)
+shader_parameter/color2 = Color(0.619608, 0.227451, 0.92549, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 8.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 20.0
+shader_parameter/wave_width = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttbxt"]
+corner_radius_top_left = 15
+corner_radius_top_right = 4
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 4
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4xcw"]
+bg_color = Color(0.0392157, 0.00392157, 0.117647, 0.784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1e3ql"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12srm"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h5ip"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44cy0"]
+corner_radius_top_left = 8
+corner_radius_top_right = 15
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 15
+
+[sub_resource type="Animation" id="Animation_bvc33"]
+resource_name = "to_pokemon"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(270, 480), Vector2(1010, -450)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.3, 1),
+"update": 0,
+"values": [0.0, 0.785398]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainMenu/VBox/Pkm1:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainMenu/VBox/Pkm2:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MainMenu/VBox/Pkm3:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainMenu/VBox/Pkm4:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainMenu/VBox/Pkm5:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMenu/VBox/Pkm6:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PkmMenu/Quitter:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n6vi"]
+_data = {
+"to_pokemon": SubResource("Animation_bvc33")
+}
+
 [node name="team_builder" type="Node2D"]
+position = Vector2(1010, -450)
+rotation = 0.785398
+script = ExtResource("1_0bu20")
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_7oqfx")
-offset_right = 540.0
-offset_bottom = 960.0
+offset_left = -270.0
+offset_top = -480.0
+offset_right = 270.0
+offset_bottom = 480.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(270, 480)
 
-[node name="Team_Name" type="Panel" parent="."]
+[node name="MainMenu" type="Node2D" parent="."]
+position = Vector2(-270, -480)
+
+[node name="Team_Name" type="Panel" parent="MainMenu"]
 clip_children = 1
-offset_left = 20.0
-offset_top = 100.0
-offset_right = 520.0
-offset_bottom = 180.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 510.0
+offset_bottom = 100.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wxtpc")
 
-[node name="Background" type="ColorRect" parent="Team_Name"]
+[node name="Background" type="ColorRect" parent="MainMenu/Team_Name"]
 material = SubResource("ShaderMaterial_4uay1")
 layout_mode = 1
 anchors_preset = 15
@@ -61,7 +484,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="LineEdit" parent="Team_Name"]
+[node name="Label" type="LineEdit" parent="MainMenu/Team_Name"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,3 +503,1238 @@ alignment = 1
 max_length = 20
 context_menu_enabled = false
 flat = true
+
+[node name="VBox" type="VBoxContainer" parent="MainMenu"]
+offset_left = 20.0
+offset_top = 120.0
+offset_right = 520.0
+offset_bottom = 840.0
+theme_override_constants/separation = 10
+
+[node name="Pkm1" type="Button" parent="MainMenu/VBox"]
+clip_children = 2
+material = SubResource("ShaderMaterial_opgcm")
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yy5ft")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mlptn")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBox/Pkm1"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 110.0
+offset_bottom = 105.0
+texture = ExtResource("2_5y0rc")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm1"]
+layout_mode = 1
+offset_left = 120.0
+offset_right = 230.0
+offset_bottom = 110.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+text = "Florizarre
+Lv.50"
+vertical_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="MainMenu/VBox/Pkm1"]
+layout_mode = 1
+offset_left = 232.0
+offset_top = 5.0
+offset_right = 362.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk1" type="Panel" parent="MainMenu/VBox/Pkm1/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6atq5")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm1/Left/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk2" type="Panel" parent="MainMenu/VBox/Pkm1/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_by7st")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm1/Left/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="MainMenu/VBox/Pkm1"]
+layout_mode = 1
+offset_left = 365.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk3" type="Panel" parent="MainMenu/VBox/Pkm1/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lx3xo")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm1/Right/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk4" type="Panel" parent="MainMenu/VBox/Pkm1/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipm8b")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm1/Right/Atk4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pkm2" type="Button" parent="MainMenu/VBox"]
+clip_children = 2
+material = SubResource("ShaderMaterial_5xybm")
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yy5ft")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mlptn")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBox/Pkm2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 110.0
+offset_bottom = 105.0
+texture = ExtResource("2_5y0rc")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm2"]
+layout_mode = 1
+offset_left = 120.0
+offset_right = 230.0
+offset_bottom = 110.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+text = "Florizarre
+Lv.50"
+vertical_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="MainMenu/VBox/Pkm2"]
+layout_mode = 1
+offset_left = 232.0
+offset_top = 5.0
+offset_right = 362.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk1" type="Panel" parent="MainMenu/VBox/Pkm2/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7fbcd")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm2/Left/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk2" type="Panel" parent="MainMenu/VBox/Pkm2/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qb127")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm2/Left/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="MainMenu/VBox/Pkm2"]
+layout_mode = 1
+offset_left = 365.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk3" type="Panel" parent="MainMenu/VBox/Pkm2/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yutgm")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm2/Right/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk4" type="Panel" parent="MainMenu/VBox/Pkm2/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rm5eb")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm2/Right/Atk4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pkm3" type="Button" parent="MainMenu/VBox"]
+clip_children = 2
+material = SubResource("ShaderMaterial_t826s")
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yy5ft")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mlptn")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBox/Pkm3"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 110.0
+offset_bottom = 105.0
+texture = ExtResource("2_5y0rc")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm3"]
+layout_mode = 1
+offset_left = 120.0
+offset_right = 230.0
+offset_bottom = 110.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+text = "Florizarre
+Lv.50"
+vertical_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="MainMenu/VBox/Pkm3"]
+layout_mode = 1
+offset_left = 232.0
+offset_top = 5.0
+offset_right = 362.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk1" type="Panel" parent="MainMenu/VBox/Pkm3/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vrdlc")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm3/Left/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk2" type="Panel" parent="MainMenu/VBox/Pkm3/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3lf8s")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm3/Left/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="MainMenu/VBox/Pkm3"]
+layout_mode = 1
+offset_left = 365.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk3" type="Panel" parent="MainMenu/VBox/Pkm3/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gbqf4")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm3/Right/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk4" type="Panel" parent="MainMenu/VBox/Pkm3/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cexq1")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm3/Right/Atk4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pkm4" type="Button" parent="MainMenu/VBox"]
+clip_children = 2
+material = SubResource("ShaderMaterial_gnwrh")
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yy5ft")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mlptn")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBox/Pkm4"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 110.0
+offset_bottom = 105.0
+texture = ExtResource("2_5y0rc")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm4"]
+layout_mode = 1
+offset_left = 120.0
+offset_right = 230.0
+offset_bottom = 110.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+text = "Florizarre
+Lv.50"
+vertical_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="MainMenu/VBox/Pkm4"]
+layout_mode = 1
+offset_left = 232.0
+offset_top = 5.0
+offset_right = 362.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk1" type="Panel" parent="MainMenu/VBox/Pkm4/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uey56")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm4/Left/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk2" type="Panel" parent="MainMenu/VBox/Pkm4/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l5438")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm4/Left/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="MainMenu/VBox/Pkm4"]
+layout_mode = 1
+offset_left = 365.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk3" type="Panel" parent="MainMenu/VBox/Pkm4/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g714h")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm4/Right/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk4" type="Panel" parent="MainMenu/VBox/Pkm4/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gr4vx")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm4/Right/Atk4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pkm5" type="Button" parent="MainMenu/VBox"]
+clip_children = 2
+material = SubResource("ShaderMaterial_7c6gf")
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yy5ft")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mlptn")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBox/Pkm5"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 110.0
+offset_bottom = 105.0
+texture = ExtResource("2_5y0rc")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm5"]
+layout_mode = 1
+offset_left = 120.0
+offset_right = 230.0
+offset_bottom = 110.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+text = "Florizarre
+Lv.50"
+vertical_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="MainMenu/VBox/Pkm5"]
+layout_mode = 1
+offset_left = 232.0
+offset_top = 5.0
+offset_right = 362.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk1" type="Panel" parent="MainMenu/VBox/Pkm5/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ymsqw")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm5/Left/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk2" type="Panel" parent="MainMenu/VBox/Pkm5/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u1j33")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm5/Left/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="MainMenu/VBox/Pkm5"]
+layout_mode = 1
+offset_left = 365.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk3" type="Panel" parent="MainMenu/VBox/Pkm5/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5231")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm5/Right/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk4" type="Panel" parent="MainMenu/VBox/Pkm5/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1c2qd")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm5/Right/Atk4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pkm6" type="Button" parent="MainMenu/VBox"]
+clip_children = 2
+material = SubResource("ShaderMaterial_rrb10")
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mlptn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yy5ft")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mlptn")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBox/Pkm6"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 110.0
+offset_bottom = 105.0
+texture = ExtResource("2_5y0rc")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm6"]
+layout_mode = 1
+offset_left = 120.0
+offset_right = 230.0
+offset_bottom = 110.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+text = "Florizarre
+Lv.50"
+vertical_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="MainMenu/VBox/Pkm6"]
+layout_mode = 1
+offset_left = 232.0
+offset_top = 5.0
+offset_right = 362.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk1" type="Panel" parent="MainMenu/VBox/Pkm6/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i4lk1")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm6/Left/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk2" type="Panel" parent="MainMenu/VBox/Pkm6/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0m68a")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm6/Left/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="MainMenu/VBox/Pkm6"]
+layout_mode = 1
+offset_left = 365.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 105.0
+theme_override_constants/separation = 2
+
+[node name="Atk3" type="Panel" parent="MainMenu/VBox/Pkm6/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1v77")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm6/Right/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk4" type="Panel" parent="MainMenu/VBox/Pkm6/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7q2rl")
+
+[node name="Label" type="Label" parent="MainMenu/VBox/Pkm6/Right/Atk4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quitter" type="Button" parent="MainMenu"]
+clip_children = 2
+offset_left = 195.0
+offset_top = 860.0
+offset_right = 345.0
+offset_bottom = 910.0
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6scqo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ory0o")
+disabled = true
+text = "Quitter"
+
+[node name="PkmMenu" type="Node2D" parent="."]
+position = Vector2(-390, 1040)
+rotation = -0.785398
+
+[node name="Quitter" type="Button" parent="PkmMenu"]
+clip_children = 2
+offset_left = 195.0
+offset_top = 860.0
+offset_right = 345.0
+offset_bottom = 910.0
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6scqo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ory0o")
+text = "Quitter"
+
+[node name="Panel" type="Panel" parent="PkmMenu"]
+material = SubResource("ShaderMaterial_iqkk1")
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 520.0
+offset_bottom = 840.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ttbxt")
+
+[node name="Label" type="Label" parent="PkmMenu/Panel"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 485.0
+offset_bottom = 75.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_font_sizes/font_size = 25
+text = "Florizarre
+"
+vertical_alignment = 2
+
+[node name="Lv" type="Label" parent="PkmMenu/Panel/Label"]
+layout_mode = 0
+offset_right = 470.0
+offset_bottom = 60.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_font_sizes/font_size = 25
+text = "Lv.50
+"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="PkmMenu/Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 280.0
+offset_bottom = 350.0
+texture = ExtResource("2_5y0rc")
+
+[node name="Types" type="Panel" parent="PkmMenu/Panel"]
+layout_mode = 0
+offset_left = 277.5
+offset_top = 95.0
+offset_right = 492.5
+offset_bottom = 125.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b4xcw")
+
+[node name="Type1" type="TextureRect" parent="PkmMenu/Panel/Types"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 100.0
+offset_bottom = 25.0
+texture = ExtResource("4_2cal3")
+
+[node name="Type2" type="TextureRect" parent="PkmMenu/Panel/Types"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 5.0
+offset_right = 210.0
+offset_bottom = 25.0
+texture = ExtResource("5_5pip6")
+
+[node name="Label" type="Label" parent="PkmMenu/Panel/Types"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="Panel" parent="PkmMenu/Panel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 130.0
+offset_right = 490.0
+offset_bottom = 355.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b4xcw")
+
+[node name="MAX" type="Polygon2D" parent="PkmMenu/Panel/Stats"]
+position = Vector2(105, 97)
+scale = Vector2(0.6, 0.686)
+color = Color(0.588235, 0.588235, 0.588235, 0.196078)
+polygon = PackedVector2Array(0, -100, 100, -50, 100, 50, 0, 100, -100, 50, -100, -50)
+
+[node name="Lignes" type="Node2D" parent="PkmMenu/Panel/Stats"]
+position = Vector2(105, 97)
+scale = Vector2(0.6, 0.686)
+
+[node name="Contour" type="Line2D" parent="PkmMenu/Panel/Stats/Lignes"]
+points = PackedVector2Array(0, -100, 100, -50, 100, 50, 0, 100, -100, 50, -100, -50)
+closed = true
+width = 2.0
+
+[node name="L0" type="Line2D" parent="PkmMenu/Panel/Stats/Lignes"]
+points = PackedVector2Array(0, 0, 0, -100)
+closed = true
+width = 2.0
+
+[node name="L1" type="Line2D" parent="PkmMenu/Panel/Stats/Lignes"]
+points = PackedVector2Array(0, 0, 100, -50)
+closed = true
+width = 2.0
+
+[node name="L2" type="Line2D" parent="PkmMenu/Panel/Stats/Lignes"]
+points = PackedVector2Array(0, 0, 100, 50)
+closed = true
+width = 2.0
+
+[node name="L3" type="Line2D" parent="PkmMenu/Panel/Stats/Lignes"]
+points = PackedVector2Array(0, 0, 0, 100)
+closed = true
+width = 2.0
+
+[node name="L4" type="Line2D" parent="PkmMenu/Panel/Stats/Lignes"]
+points = PackedVector2Array(0, 0, -100, -50)
+closed = true
+width = 2.0
+
+[node name="L5" type="Line2D" parent="PkmMenu/Panel/Stats/Lignes"]
+points = PackedVector2Array(0, 0, -100, 50)
+closed = true
+width = 2.0
+
+[node name="PKM" type="Polygon2D" parent="PkmMenu/Panel/Stats"]
+position = Vector2(105, 97)
+scale = Vector2(0.6, 0.686)
+color = Color(0.862745, 0.862745, 0.392157, 0.784314)
+polygon = PackedVector2Array(0, -100, 100, -50, 100, 50, 0, 100, -100, 50, -100, -50)
+
+[node name="LabelPV" type="Label" parent="PkmMenu/Panel/Stats"]
+layout_mode = 0
+offset_left = 90.0
+offset_right = 120.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "PV"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAttaque" type="Label" parent="PkmMenu/Panel/Stats"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 35.0
+offset_right = 200.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Atk"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelDefense" type="Label" parent="PkmMenu/Panel/Stats"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 135.0
+offset_right = 200.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Def"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelVitesse" type="Label" parent="PkmMenu/Panel/Stats"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 172.0
+offset_right = 120.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Vit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAttaqueSpe" type="Label" parent="PkmMenu/Panel/Stats"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 35.0
+offset_right = 40.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "AtkS"
+vertical_alignment = 1
+
+[node name="LabelDefenseSpe" type="Label" parent="PkmMenu/Panel/Stats"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 135.0
+offset_right = 41.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "DefS"
+vertical_alignment = 1
+
+[node name="Nature" type="Label" parent="PkmMenu/Panel/Stats"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 195.0
+offset_right = 205.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Nature : ........."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="PkmMenu/Panel"]
+layout_mode = 1
+offset_left = 48.1627
+offset_top = 383.381
+offset_right = 178.163
+offset_bottom = 483.381
+theme_override_constants/separation = 2
+
+[node name="Atk1" type="Panel" parent="PkmMenu/Panel/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1e3ql")
+
+[node name="Label" type="Label" parent="PkmMenu/Panel/Left/Atk1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk2" type="Panel" parent="PkmMenu/Panel/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_12srm")
+
+[node name="Label" type="Label" parent="PkmMenu/Panel/Left/Atk2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="PkmMenu/Panel"]
+layout_mode = 1
+offset_left = 181.163
+offset_top = 383.381
+offset_right = 311.163
+offset_bottom = 483.381
+theme_override_constants/separation = 2
+
+[node name="Atk3" type="Panel" parent="PkmMenu/Panel/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0h5ip")
+
+[node name="Label" type="Label" parent="PkmMenu/Panel/Right/Atk3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atk4" type="Panel" parent="PkmMenu/Panel/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_44cy0")
+
+[node name="Label" type="Label" parent="PkmMenu/Panel/Right/Atk4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+text = "Poudre Dodo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0n6vi")
+}
+
+[connection signal="pressed" from="MainMenu/VBox/Pkm1" to="." method="_on_pkm_1_pressed"]
+[connection signal="pressed" from="MainMenu/VBox/Pkm2" to="." method="_on_pkm_2_pressed"]
+[connection signal="pressed" from="MainMenu/VBox/Pkm3" to="." method="_on_pkm_3_pressed"]
+[connection signal="pressed" from="MainMenu/VBox/Pkm4" to="." method="_on_pkm_4_pressed"]
+[connection signal="pressed" from="MainMenu/VBox/Pkm5" to="." method="_on_pkm_5_pressed"]
+[connection signal="pressed" from="MainMenu/VBox/Pkm6" to="." method="_on_pkm_6_pressed"]
+[connection signal="pressed" from="MainMenu/Quitter" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="PkmMenu/Quitter" to="." method="_on_quitter_pressed"]

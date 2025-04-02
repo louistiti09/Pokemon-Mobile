@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dd5n2wb2gp024"]
+[gd_scene load_steps=64 format=3 uid="uid://dd5n2wb2gp024"]
 
 [ext_resource type="Script" path="res://Script/team_builder.gd" id="1_0bu20"]
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_ddflw"]
@@ -286,6 +286,42 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5es03"]
+bg_color = Color(0.666667, 0.392157, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a03ji"]
+bg_color = Color(0.666667, 0.392157, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ccx"]
+bg_color = Color(0.666667, 0.392157, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iqkk1"]
 shader = ExtResource("1_ddflw")
 shader_parameter/color1 = Color(0.541176, 0.827451, 0, 1)
@@ -303,32 +339,46 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 4
 shadow_size = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32yqu"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkrn5"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4xcw"]
-bg_color = Color(0.0392157, 0.00392157, 0.117647, 0.784314)
+bg_color = Color(0.0392157, 0.00392157, 0.117647, 0.588235)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1e3ql"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8eoko"]
 corner_radius_top_left = 8
 corner_radius_top_right = 15
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12srm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfspn"]
 corner_radius_top_left = 8
 corner_radius_top_right = 15
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h5ip"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8rec"]
 corner_radius_top_left = 8
 corner_radius_top_right = 15
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44cy0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6755"]
 corner_radius_top_left = 8
 corner_radius_top_right = 15
 corner_radius_bottom_right = 8
@@ -367,10 +417,10 @@ tracks/2/path = NodePath("MainMenu/VBox/Pkm1:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -379,10 +429,10 @@ tracks/3/path = NodePath("MainMenu/VBox/Pkm2:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.01, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, true, false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -391,10 +441,10 @@ tracks/4/path = NodePath("MainMenu/VBox/Pkm3:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.01, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -403,10 +453,10 @@ tracks/5/path = NodePath("MainMenu/VBox/Pkm4:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.01, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, true, false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -415,10 +465,10 @@ tracks/6/path = NodePath("MainMenu/VBox/Pkm5:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.01, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -445,9 +495,257 @@ tracks/8/keys = {
 "values": [false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_pq8ni"]
+resource_name = "to_switch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PkmMenu/SwitchMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(0, 920), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PkmMenu/Quitter:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PkmMenu/Echanger:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PkmMenu/Panel/Moves/Atk1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PkmMenu/Panel/Moves/Atk2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PkmMenu/Panel/Moves/Atk3:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PkmMenu/Panel/Moves/Atk4:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PkmMenu/Quitter:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(115, 860), Vector2(115, 960)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PkmMenu/Echanger:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(275, 860), Vector2(275, 960)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PkmMenu/SwitchMenu:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xsx1o"]
+resource_name = "to_atk_info"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PkmMenu/SwitchMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(0, 920), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PkmMenu/Quitter:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PkmMenu/Echanger:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PkmMenu/Panel/Moves/Atk1:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PkmMenu/Panel/Moves/Atk2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PkmMenu/Panel/Moves/Atk3:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PkmMenu/Panel/Moves/Atk4:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PkmMenu/Quitter:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(115, 860), Vector2(115, 960)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PkmMenu/Echanger:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(275, 860), Vector2(275, 960)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PkmMenu/SwitchMenu:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0n6vi"]
 _data = {
-"to_pokemon": SubResource("Animation_bvc33")
+"to_atk_info": SubResource("Animation_xsx1o"),
+"to_pokemon": SubResource("Animation_bvc33"),
+"to_switch": SubResource("Animation_pq8ni")
 }
 
 [node name="team_builder" type="Node2D"]
@@ -1382,9 +1680,9 @@ rotation = -0.785398
 
 [node name="Quitter" type="Button" parent="PkmMenu"]
 clip_children = 2
-offset_left = 195.0
+offset_left = 115.0
 offset_top = 860.0
-offset_right = 345.0
+offset_right = 265.0
 offset_bottom = 910.0
 size_flags_vertical = 3
 focus_mode = 0
@@ -1397,6 +1695,24 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ory0o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6scqo")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ory0o")
 text = "Quitter"
+
+[node name="Echanger" type="Button" parent="PkmMenu"]
+clip_children = 2
+offset_left = 275.0
+offset_top = 860.0
+offset_right = 425.0
+offset_bottom = 910.0
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_5es03")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a03ji")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l4ccx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5es03")
+text = "Echanger"
 
 [node name="Panel" type="Panel" parent="PkmMenu"]
 material = SubResource("ShaderMaterial_iqkk1")
@@ -1434,6 +1750,20 @@ text = "Lv.50
 "
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="EXP" type="ProgressBar" parent="PkmMenu/Panel"]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 77.5
+offset_right = 475.0
+offset_bottom = 87.5
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_32yqu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mkrn5")
+max_value = 252.0
+step = 1.0
+value = 100.0
+show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="PkmMenu/Panel"]
 layout_mode = 0
@@ -1617,21 +1947,25 @@ text = "Nature : ........."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Left" type="VBoxContainer" parent="PkmMenu/Panel"]
+[node name="Moves" type="VBoxContainer" parent="PkmMenu/Panel"]
 layout_mode = 1
-offset_left = 48.1627
-offset_top = 383.381
-offset_right = 178.163
-offset_bottom = 483.381
+offset_left = 30.0
+offset_top = 370.0
+offset_right = 160.0
+offset_bottom = 574.0
 theme_override_constants/separation = 2
 
-[node name="Atk1" type="Panel" parent="PkmMenu/Panel/Left"]
+[node name="Atk1" type="Button" parent="PkmMenu/Panel/Moves"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1e3ql")
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8eoko")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8eoko")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8eoko")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8eoko")
 
-[node name="Label" type="Label" parent="PkmMenu/Panel/Left/Atk1"]
+[node name="Label" type="Label" parent="PkmMenu/Panel/Moves/Atk1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1648,13 +1982,17 @@ text = "Poudre Dodo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Atk2" type="Panel" parent="PkmMenu/Panel/Left"]
+[node name="Atk2" type="Button" parent="PkmMenu/Panel/Moves"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_12srm")
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_wfspn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wfspn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wfspn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wfspn")
 
-[node name="Label" type="Label" parent="PkmMenu/Panel/Left/Atk2"]
+[node name="Label" type="Label" parent="PkmMenu/Panel/Moves/Atk2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1671,21 +2009,17 @@ text = "Poudre Dodo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Right" type="VBoxContainer" parent="PkmMenu/Panel"]
-layout_mode = 1
-offset_left = 181.163
-offset_top = 383.381
-offset_right = 311.163
-offset_bottom = 483.381
-theme_override_constants/separation = 2
-
-[node name="Atk3" type="Panel" parent="PkmMenu/Panel/Right"]
+[node name="Atk3" type="Button" parent="PkmMenu/Panel/Moves"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0h5ip")
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8rec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i8rec")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i8rec")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_i8rec")
 
-[node name="Label" type="Label" parent="PkmMenu/Panel/Right/Atk3"]
+[node name="Label" type="Label" parent="PkmMenu/Panel/Moves/Atk3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1702,13 +2036,17 @@ text = "Poudre Dodo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Atk4" type="Panel" parent="PkmMenu/Panel/Right"]
+[node name="Atk4" type="Button" parent="PkmMenu/Panel/Moves"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_44cy0")
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_s6755")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s6755")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s6755")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_s6755")
 
-[node name="Label" type="Label" parent="PkmMenu/Panel/Right/Atk4"]
+[node name="Label" type="Label" parent="PkmMenu/Panel/Moves/Atk4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1724,6 +2062,190 @@ theme_override_fonts/font = SubResource("SystemFont_7buj2")
 text = "Poudre Dodo"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EV_IV" type="Panel" parent="PkmMenu/Panel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 370.0
+offset_right = 490.0
+offset_bottom = 574.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b4xcw")
+
+[node name="Label" type="Label" parent="PkmMenu/Panel/EV_IV"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 14.0
+offset_right = 45.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "PV
+Vit
+Atk
+AtkS
+Def
+DefS"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PkmMenu/Panel/EV_IV"]
+layout_mode = 0
+offset_left = 55.0
+offset_right = 95.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "EV"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="PkmMenu/Panel/EV_IV"]
+layout_mode = 0
+offset_left = 165.0
+offset_right = 205.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "IV"
+vertical_alignment = 1
+
+[node name="EV" type="VBoxContainer" parent="PkmMenu/Panel/EV_IV"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 29.0
+offset_right = 155.0
+offset_bottom = 181.0
+
+[node name="PV" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/EV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 252.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Vitesse" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/EV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 252.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Attaque" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/EV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 252.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="AttaqueSpe" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/EV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 252.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Defense" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/EV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 252.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="DefenseSpe" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/EV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 252.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="IV" type="VBoxContainer" parent="PkmMenu/Panel/EV_IV"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 29.0
+offset_right = 275.0
+offset_bottom = 181.0
+
+[node name="PV" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/IV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 31.0
+step = 1.0
+value = 15.0
+show_percentage = false
+
+[node name="Vitesse" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/IV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 31.0
+step = 1.0
+value = 15.0
+show_percentage = false
+
+[node name="Attaque" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/IV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 31.0
+step = 1.0
+value = 15.0
+show_percentage = false
+
+[node name="AttaqueSpe" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/IV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 31.0
+step = 1.0
+value = 15.0
+show_percentage = false
+
+[node name="Defense" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/IV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 31.0
+step = 1.0
+value = 15.0
+show_percentage = false
+
+[node name="DefenseSpe" type="ProgressBar" parent="PkmMenu/Panel/EV_IV/IV"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 31.0
+step = 1.0
+value = 15.0
+show_percentage = false
+
+[node name="SwitchMenu" type="Node2D" parent="PkmMenu"]
+position = Vector2(0, 920)
+
+[node name="Panel" type="Panel" parent="PkmMenu/SwitchMenu"]
+offset_left = 25.0
+offset_top = 45.0
+offset_right = 515.0
+offset_bottom = 835.0
+
+[node name="Label" type="Label" parent="PkmMenu/SwitchMenu/Panel"]
+layout_mode = 0
+offset_right = 490.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "Echanger ce Pokémon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="PkmMenu/SwitchMenu/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 480.0
+offset_bottom = 780.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PkmMenu/SwitchMenu/Panel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1738,3 +2260,4 @@ libraries = {
 [connection signal="pressed" from="MainMenu/VBox/Pkm6" to="." method="_on_pkm_6_pressed"]
 [connection signal="pressed" from="MainMenu/Quitter" to="." method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="PkmMenu/Quitter" to="." method="_on_quitter_pressed"]
+[connection signal="pressed" from="PkmMenu/Echanger" to="." method="_on_echanger_pressed"]

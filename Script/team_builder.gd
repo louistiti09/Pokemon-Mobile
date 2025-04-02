@@ -5,12 +5,12 @@ var Team = [
 	{"Name":"Tygnon",
 		"Nickname":null,
 		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
+			"PV":{"IV":31,"EV":0},
+			"Attaque":{"IV":31,"EV":252},
+			"Defense":{"IV":31,"EV":128},
+			"AttaqueSpe":{"IV":31,"EV":0},
+			"DefenseSpe":{"IV":31,"EV":128},
+			"Vitesse":{"IV":31,"EV":2}},
 		"EXP":0,
 		"LvL":50,
 		"Nature":"Mauvais",
@@ -135,6 +135,17 @@ func load_stats():
 	if FileAccess.file_exists(file_path):
 		stats = load(file_path)
 
+func max_exp_calculation(pkm : Dictionary, next_lvl : int):
+	var curb = stats.POKEMONS[pkm.Name].Courbe_EXP
+	if curb == "Rapide":
+		return 0.8*next_lvl**3
+	elif curb == "Moyenne":
+		return next_lvl**3
+	elif curb == "Parabolique":
+		return 1.2*next_lvl**3 - 15*next_lvl**2 + 100*next_lvl - 140
+	elif curb == "Lente":
+		return 1.25*next_lvl**3
+
 func _ready():
 	load_stats()
 	var i = 0
@@ -168,7 +179,6 @@ func _ready():
 		node.disabled = false
 
 func on_pkm_pressed(n : int):
-	$AnimationPlayer.play_backwards("to_pokemon")
 	$AnimationPlayer.play("to_pokemon")
 	var pkm = Team[n-1]
 	
@@ -196,11 +206,19 @@ func on_pkm_pressed(n : int):
 	#Graph Stats
 	var i = 0
 	for z in pkm.Stats:
+		#Radio
 		var value = stats.POKEMONS[pkm.Name][z]
 		var ratio = value/255.0*$PkmMenu/Panel/Stats/MAX.polygon[i]
 		$PkmMenu/Panel/Stats/PKM.polygon[i] = ratio
 		$PkmMenu/Panel/Stats.find_child("Label%s" % z)["theme_override_colors/font_color"] = Color(1,1,1,1)
 		i += 1
+		#EV / IV
+		$PkmMenu/Panel/EV_IV/EV.find_child(z).value = pkm.Stats[z].EV
+		$PkmMenu/Panel/EV_IV/IV.find_child(z).value = pkm.Stats[z].IV
+	
+	#EXP
+	$PkmMenu/Panel/EXP.max_value = max_exp_calculation(pkm,pkm.LvL+1)
+	$PkmMenu/Panel/EXP.value = pkm.EXP
 	
 	#Nature
 	var nature_boost = stats.NATURE[pkm.Nature]
@@ -208,6 +226,18 @@ func on_pkm_pressed(n : int):
 	if nature_boost != ["",""]:
 		$PkmMenu/Panel/Stats.find_child("Label%s" % nature_boost[0])["theme_override_colors/font_color"] = Color(1,0,0,1)
 		$PkmMenu/Panel/Stats.find_child("Label%s" % nature_boost[1])["theme_override_colors/font_color"] = Color(0,1,1,1)
+	
+	#Moves
+	i = 0
+	for atk in pkm.Attacks:
+		i += 1
+		var node_atk = $PkmMenu/Panel/Moves.find_child("Atk%s" % i)
+		node_atk.find_child("Label").text = atk.Name
+		node_atk["theme_override_styles/normal"].border_width_left = 1
+		node_atk["theme_override_styles/normal"].border_width_top = 1
+		node_atk["theme_override_styles/normal"].border_width_right = 1
+		node_atk["theme_override_styles/normal"].border_width_bottom = 1
+		node_atk["theme_override_styles/normal"].bg_color = stats.TYPE_COLOR[stats.ATTACKS[atk.Name].Type]
 
 func _on_pkm_1_pressed():on_pkm_pressed(1)
 func _on_pkm_2_pressed():on_pkm_pressed(2)
@@ -217,3 +247,5 @@ func _on_pkm_5_pressed():on_pkm_pressed(5)
 func _on_pkm_6_pressed():on_pkm_pressed(6)
 
 func _on_quitter_pressed(): $AnimationPlayer.play_backwards("to_pokemon")
+
+func _on_echanger_pressed(): $AnimationPlayer.play("to_switch")

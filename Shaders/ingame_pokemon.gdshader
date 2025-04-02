@@ -53,7 +53,7 @@ vec3 get_raise_arrows(vec3 color, vec2 uv) {
 void fragment() {
 	//Offset
 	vec2 uv = UV;
-	float offset = get_offset(TEXTURE);
+	float offset = 0.0;//get_offset(TEXTURE);
 	uv.y = mod(uv.y + offset, 1.0);
 	if (uv.y <= offset) {
 		uv.y -= death_animation/100.0;

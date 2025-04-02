@@ -1,6 +1,7 @@
 extends Node2D
 
 #									-----GAME-----
+var FPS = 30.0
 var Joueurs = ["Louistiti","BOT"]
 var against_wildpkm = false
 var against_bot = true
@@ -1167,7 +1168,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 		if !pkm.Statut.has(atk):
 			pkm.Statut.append(atk)
 			return
-	elif atk == "Danse-Flammes" && Clones[get_opp(plr)-1] != null:
+	elif atk == "Danse-Flammes" && Clones[get_opp(plr)-1] == null:
 		if !target.Statut.has("Danse-Flammes"):
 			target.Statut.append("Danse-Flammes")
 			if plr == 1:
@@ -1186,7 +1187,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 		if random_percent_check(30): await poison_pkm(get_opp(plr),false,true)
 	elif atk == "Double-Dard":
 		if random_percent_check(36): await poison_pkm(get_opp(plr),false,true)
-	elif atk == "Ligotage" && Clones[get_opp(plr)-1] != null:
+	elif atk == "Ligotage" && Clones[get_opp(plr)-1] == null:
 		if !target.Statut.has("Ligotage") && !get_types(pkm).has("Spectre"):
 			target.Statut.append("Ligotage")
 			if plr == 1:
@@ -1233,7 +1234,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 		if random_percent_check(10): await change_stat_pkm(get_opp(plr),"Attaque",-1,false,true)
 	elif atk == "Laser Glace" || atk == "Poinglace" || atk == "Blizzard":
 		if random_percent_check(10): await froze_pkm(get_opp(plr),false,true)
-	elif atk == "Claquoir" && Clones[get_opp(plr)-1] != null:
+	elif atk == "Claquoir" && Clones[get_opp(plr)-1] == null:
 		if !target.Statut.has("Claquoir"):
 			target.Statut.append("Claquoir")
 			if plr == 1:
@@ -1242,7 +1243,7 @@ func attack_side_effect(plr : int, atk : String, bulk : Dictionary = {}):
 			else :
 				ClaquoirCounter[0] = randi_range(4,5)
 				await action_ui_writing("%s est pris dans le claquoir du %s ennemi !" % [get_pkm_nickname(get_active_pokemon(get_opp(plr))),get_pkm_nickname(pkm)])
-	elif atk == "Étreinte" && Clones[get_opp(plr)-1] != null:
+	elif atk == "Étreinte" && Clones[get_opp(plr)-1] == null:
 		if !target.Statut.has("Étreinte") && !get_types(pkm).has("Spectre"):
 			target.Statut.append("Étreinte")
 			if plr == 1:
@@ -1392,7 +1393,7 @@ func switch(plr : int, from : Dictionary, to : int):
 	var ball = get_nodes(plr).Pokeball
 	var sprite = get_nodes(plr).Sprite
 	var time = 0.7
-	var divisions = 100.0
+	var divisions = FPS
 	reset_modifs(plr)
 	from.Statut.erase("Lilliput")
 	Charging[plr-1] = ""
@@ -1442,7 +1443,7 @@ func switch(plr : int, from : Dictionary, to : int):
 
 func pokemon_fainted(plr : int):
 	var time = 0.2
-	var divisions = 100.0
+	var divisions = FPS
 	var pkm = get_active_pokemon(plr)
 	var node = get_nodes(plr).Sprite
 	get_active_pokemon(plr).Statut.clear()
@@ -1485,7 +1486,7 @@ func pokemon_activation(plr : int, number : int):
 	var node = get_nodes(plr).Sprite
 	var ball = get_nodes(plr).Pokeball
 	var time = 0.7
-	var divisions = 100.0
+	var divisions = FPS
 	if plr == 1: ClientPokemon = number
 	else: OppPokemon = number
 	var pkm = get_active_pokemon(plr)
@@ -1984,7 +1985,7 @@ func attack_animation(plr : int,atk : String):
 		pass
 	else:#Charge (animation par défaut)
 		var time = 0.1
-		var divisions = 100.0
+		var divisions = FPS
 		for i in range(1,divisions+1):
 			if i > divisions/2:
 				pkm.offset.x -= 10/divisions*s
@@ -2006,7 +2007,7 @@ func clone_disapear_animation(plr : int):
 	pkm.offset.x = -90*s
 	clone.visible = true
 	var time = 0.1
-	var divisions = 100.0
+	var divisions = FPS
 	for i in range(1,divisions+1):
 		pkm.offset.x += 90/divisions*s
 		clone.offset.x -= 90/divisions*s
@@ -2026,7 +2027,7 @@ func clone_exchange_animation(plr : int):
 	pkm.offset.x = 0
 	clone.visible = true
 	var time = 0.1
-	var divisions = 100.0
+	var divisions = FPS
 	for i in range(1,divisions+1):
 		pkm.offset.x -= 90/divisions*s
 		clone.offset.x += 90/divisions*s
@@ -2050,7 +2051,7 @@ func unmorph_animation(plr : int):
 	var sprite = get_nodes(plr).Sprite
 	sprite.skew = 0
 	var time = 0.1
-	var divisions = 100.0
+	var divisions = FPS
 	for i in range(1,divisions+1):
 		sprite.skew += deg_to_rad(89.9/divisions)
 		await wait(time/divisions)
@@ -2068,7 +2069,7 @@ func morph_animation(plr : int):
 	var sprite = get_nodes(plr).Sprite
 	sprite.skew = 0
 	var time = 0.1
-	var divisions = 100.0
+	var divisions = FPS
 	for i in range(1,divisions+1):
 		sprite.skew += deg_to_rad(89.9/divisions)
 		await wait(time/divisions)
@@ -2100,7 +2101,7 @@ func damage_animation(plr : int, damages : int, weak : float, ignore_clone : boo
 	elif total_damages < 0:# Zero Dmg
 		total_damages = 0
 	var time = 1.0
-	var divisions = 100.0
+	var divisions = FPS
 	if damages >= 0:
 		if weak == 1:
 			Audios.Damages.stream = load("res://Sounds/SFX/Damages/Normal.mp3")
@@ -2192,7 +2193,7 @@ func exp_animation(pkm : Dictionary, EXP : float):
 	await wait(1)
 	var LvL = lvl_up_calculation(pkm)
 	var time = 1.0
-	var divisions = 100.0
+	var divisions = FPS
 	if is_active:
 		for i in range(1,divisions+1):
 			var exp_val = pkm.EXP - EXP
@@ -2210,7 +2211,7 @@ func exp_animation(pkm : Dictionary, EXP : float):
 func modif_stat_animation(plr : int, raise : bool):
 	var sprite = get_nodes(plr).Sprite
 	var time = 1.0
-	var divisions = 100.0
+	var divisions = FPS
 	sprite.material.set_shader_parameter('is_raise', raise)
 	for i in range(1,divisions+1):
 		sprite.material.set_shader_parameter('raise_alpha', sin(i/divisions*PI)*200)

@@ -20,6 +20,11 @@ config/icon="res://Textures/icon.png"
 
 buses/default_bus_layout="res://Sounds/default_bus_layout.tres"
 
+[autoload]
+
+SaveManager="*res://Script/SaveManager.gd"
+Stats="*res://Script/Stats.gd"
+
 [display]
 
 window/size/viewport_width=540

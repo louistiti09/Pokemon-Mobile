@@ -7,6 +7,7 @@ uniform bool is_client;
 uniform int status : hint_range(0, 5) = 0;
 uniform float raise_alpha : hint_range(0, 200, 1) = 0.0;
 uniform bool is_raise = true;
+uniform bool is_confused = false;
 
 const vec3 apparition_color = vec3(1,0,0);
 const float status_alpha = 0.3;
@@ -53,7 +54,7 @@ vec3 get_raise_arrows(vec3 color, vec2 uv) {
 void fragment() {
 	//Offset
 	vec2 uv = UV;
-	float offset = 0.0;//get_offset(TEXTURE);
+	float offset = get_offset(TEXTURE);
 	uv.y = mod(uv.y + offset, 1.0);
 	if (uv.y <= offset) {
 		uv.y -= death_animation/100.0;
@@ -80,6 +81,17 @@ void fragment() {
 	
 	//Raise Stats
 	COLOR.rgb = get_raise_arrows(COLOR.rgb, UV);
+	
+	//Confused Effect
+	if (is_confused) {
+		float frequency = 60.0;
+		float speed = 5.0;
+		float force = 1.0;
+		uv.x += sin(uv.y * frequency + TIME * speed) * 0.005 * force;
+		COLOR = texture(TEXTURE,uv);
+		COLOR.r += sin(TIME)*0.15;
+		COLOR.g += cos(TIME)*0.18;
+	}
 }
 
 void vertex(){

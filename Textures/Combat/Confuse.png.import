@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4dn7h337un26"
-path="res://.godot/imported/Empoisoné.png-ee4c424d9a5b36c54b6971c0568bd1bc.ctex"
+uid="uid://drwcfyclgsv4i"
+path="res://.godot/imported/Confuse.png-8efc7b9498a628780a076552ebe4d1f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Statuts/Empoisoné.png"
-dest_files=["res://.godot/imported/Empoisoné.png-ee4c424d9a5b36c54b6971c0568bd1bc.ctex"]
+source_file="res://Textures/Combat/Confuse.png"
+dest_files=["res://.godot/imported/Confuse.png-8efc7b9498a628780a076552ebe4d1f2.ctex"]
 
 [params]
 

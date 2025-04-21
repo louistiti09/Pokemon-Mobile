@@ -1,5 +1,6 @@
 extends Node
 
+#Consts
 const POKEMONS = {
 	"Bulbizarre": {
 		"PV":45,
@@ -24,7 +25,7 @@ const POKEMONS = {
 			{"Attack":"Tranch'Herbe","LvL":27},
 			{"Attack":"Croissance","LvL":34},
 			{"Attack":"Poudre Dodo","LvL":41},
-			{"Attack":"Lance-Soleil","LvL":48},
+			{"Attack":"Lance Soleil","LvL":48},
 		],
 		"Evolution":{"Name":"Herbizarre","LvL":16}},
 	"Herbizarre": {
@@ -50,7 +51,7 @@ const POKEMONS = {
 			{"Attack":"Tranch'Herbe","LvL":30},
 			{"Attack":"Croissance","LvL":38},
 			{"Attack":"Poudre Dodo","LvL":46},
-			{"Attack":"Lance-Soleil","LvL":54},
+			{"Attack":"Lance Soleil","LvL":54},
 		],
 		"Evolution":{"Name":"Florizarre","LvL":32}},
 	"Florizarre": {
@@ -76,7 +77,7 @@ const POKEMONS = {
 			{"Attack":"Tranch'Herbe","LvL":30},
 			{"Attack":"Croissance","LvL":43},
 			{"Attack":"Poudre Dodo","LvL":55},
-			{"Attack":"Lance-Soleil","LvL":65},
+			{"Attack":"Lance Soleil","LvL":65},
 		],
 		"Evolution":null},
 	"Salamèche": {
@@ -100,7 +101,7 @@ const POKEMONS = {
 			{"Attack":"Groz'Yeux","LvL":15},
 			{"Attack":"Frénésie","LvL":22},
 			{"Attack":"Tranche","LvL":30},
-			{"Attack":"Lance-Flamme","LvL":38},
+			{"Attack":"Lance-Flammes","LvL":38},
 			{"Attack":"Danse-Flammes","LvL":46},
 		],
 		"Evolution":{"Name":"Reptincel","LvL":16}},
@@ -125,7 +126,7 @@ const POKEMONS = {
 			{"Attack":"Groz'Yeux","LvL":15},
 			{"Attack":"Frénésie","LvL":24},
 			{"Attack":"Tranche","LvL":33},
-			{"Attack":"Lance-Flamme","LvL":42},
+			{"Attack":"Lance-Flammes","LvL":42},
 			{"Attack":"Danse-Flammes","LvL":56},
 		],
 		"Evolution":{"Name":"Dracaufeu","LvL":36}},
@@ -150,7 +151,7 @@ const POKEMONS = {
 			{"Attack":"Groz'Yeux","LvL":15},
 			{"Attack":"Frénésie","LvL":24},
 			{"Attack":"Tranche","LvL":36},
-			{"Attack":"Lance-Flamme","LvL":46},
+			{"Attack":"Lance-Flammes","LvL":46},
 			{"Attack":"Danse-Flammes","LvL":55},
 		],
 		"Evolution":null},
@@ -866,7 +867,7 @@ const POKEMONS = {
 		"Poids":9.9,
 		"Taux_de_capture":190,
 		"NativeAttacks":[
-			{"Attack":"Flammèce","LvL":0},
+			{"Attack":"Flammèche","LvL":0},
 			{"Attack":"Mimi-Queue","LvL":0},
 			{"Attack":"Vive-Attaque","LvL":16},
 			{"Attack":"Hurlement","LvL":21},
@@ -890,7 +891,7 @@ const POKEMONS = {
 		"Poids":19.9,
 		"Taux_de_capture":75,
 		"NativeAttacks":[
-			{"Attack":"Flammèce","LvL":0},
+			{"Attack":"Flammèche","LvL":0},
 			{"Attack":"Mimi-Queue","LvL":0},
 			{"Attack":"Vive-Attaque","LvL":0},
 			{"Attack":"Hurlement","LvL":0}
@@ -1009,7 +1010,7 @@ const POKEMONS = {
 			{"Attack":"Poudre Dodo","LvL":19},
 			{"Attack":"Acide","LvL":24},
 			{"Attack":"Danse-Fleur","LvL":33},
-			{"Attack":"Lance-Soleil","LvL":46}
+			{"Attack":"Lance Soleil","LvL":46}
 		],
 		"Evolution":{"Name":"Ortide","LvL":21}},
 	"Ortide": {
@@ -1033,7 +1034,7 @@ const POKEMONS = {
 			{"Attack":"Poudre Dodo","LvL":19},
 			{"Attack":"Acide","LvL":28},
 			{"Attack":"Danse-Fleur","LvL":38},
-			{"Attack":"Lance-Soleil","LvL":52}
+			{"Attack":"Lance Soleil","LvL":52}
 		],
 		"Evolution":{"Name":"Rafflesia","Objet":"Pierre Plante"}},
 	"Rafflesia": {
@@ -2134,7 +2135,7 @@ const POKEMONS = {
 			{"Attack":"Ultrason","LvL":18},
 			{"Attack":"Claquoir","LvL":23},
 			{"Attack":"Onde Boréale","LvL":30},
-			{"Attack":"Groz'Yeuxs","LvL":39},
+			{"Attack":"Groz'Yeux","LvL":39},
 			{"Attack":"Laser Glace","LvL":50}
 		],
 		"Evolution": {"Name":"Crustabri","Objet":"Pierre Eau"}},
@@ -2417,7 +2418,7 @@ const POKEMONS = {
 			{"Attack":"Vampigraine","LvL":28},
 			{"Attack":"Para-Spore","LvL":32},
 			{"Attack":"Poudre Toxik","LvL":37},
-			{"Attack":"Lance-Soleil","LvL":42},
+			{"Attack":"Lance Soleil","LvL":42},
 			{"Attack":"Poudre Dodo","LvL":48},
 		],
 		"Evolution": {"Name":"Noadkoko","Objet":"Pierre Plante"}},
@@ -2878,7 +2879,7 @@ const POKEMONS = {
 			{"Attack":"Armure","LvL":0}
 		],
 		"Evolution": null},
-	"M. Mime": {
+	"M.Mime": {
 		"PV":40,
 		"Attaque":45,
 		"Defense":65,
@@ -2958,7 +2959,7 @@ const POKEMONS = {
 		"AttaqueSpe":95,
 		"DefenseSpe":85,
 		"Vitesse":105,
-		"Type1":"Élektrik",
+		"Type1":"Électrik",
 		"Type2":null,
 		"EV":[{"Stat":"Vitesse","Value":2}],
 		"EXP":156,
@@ -3192,7 +3193,7 @@ const POKEMONS = {
 		"AttaqueSpe":110,
 		"DefenseSpe":95,
 		"Vitesse":130,
-		"Type1":"Élektrik",
+		"Type1":"Électrik",
 		"Type2":null,
 		"EV":[{"Stat":"Vitesse","Value":2}],
 		"EXP":197,
@@ -3237,7 +3238,7 @@ const POKEMONS = {
 			{"Attack":"Purédpois","LvL":42},
 			{"Attack":"Groz'Yeux","LvL":47},
 			{"Attack":"Frénésie","LvL":48},
-			{"Attack":"Lance-Flamme","LvL":52}
+			{"Attack":"Lance-Flammes","LvL":52}
 		],
 		"Evolution": null},
 	"Porygon": {
@@ -3432,7 +3433,7 @@ const POKEMONS = {
 		"AttaqueSpe":125,
 		"DefenseSpe":90,
 		"Vitesse":100,
-		"Type1":"Élektrik",
+		"Type1":"Électrik",
 		"Type2":"Vol",
 		"EV":[{"Stat":"AttaqueSpe","Value":3}],
 		"EXP":216,
@@ -3620,6 +3621,7 @@ const NATURE = {#[Boost,Malus]
 
 const ATTACKS = {
 	"Statut_Confus":{
+		"Description": "",
 		"PP":null,
 		"Type":"Normal",
 		"Puissance":40,
@@ -3628,6 +3630,7 @@ const ATTACKS = {
 		"Critique":null,
 		"Categorie":"Physique"},
 	"Lutte": {
+		"Description": "Si la cible a perdu des PVs, le lanceur subit des dégâts de recul égaux à 1/4 de ses PVs maximums. Cette capacité s'utilise automatiquement si le lanceur n'a plus aucun PP pour toutes ses capacités.",
 		"PP":null,
 		"Type":"Normal",
 		"Puissance":50,
@@ -3636,6 +3639,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Charge": {
+		"Description": "",
 		"PP":35,
 		"Type":"Normal",
 		"Puissance":40,
@@ -3644,6 +3648,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Rugissement": {
+		"Description": "Réduit l'Attaque de la cible d' 1 cran.",
 		"PP":40,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3652,6 +3657,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Vampigraine": {
+		"Description": "Le Pokémon à la position du lanceur vole 1/8 des PVs maximums de la cible à la fin de chaque tour. Si la cible quitte le terrain, l'effet prend fin. Les Pokémon de type Plante sont immunisés à cette capacité lors de son utilisation.",
 		"PP":10,
 		"Type":"Plante",
 		"Puissance":null,
@@ -3660,6 +3666,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Fouet Lianes": {
+		"Description": "",
 		"PP":25,
 		"Type":"Plante",
 		"Puissance":45,
@@ -3668,6 +3675,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Poudre Toxik": {
+		"Description": "Empoisonne la cible. Les Pokémon de type Plante et Poison ne sont pas affectés",
 		"PP":35,
 		"Type":"Poison",
 		"Puissance":null,
@@ -3676,6 +3684,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Tranch'Herbe": {
+		"Description": "Cette capacité a plus de chance d'infliger un coup critique.",
 		"PP":25,
 		"Type":"Plante",
 		"Puissance":55,
@@ -3684,6 +3693,7 @@ const ATTACKS = {
 		"Critique":2,
 		"Categorie":"Physique"},
 	"Croissance": {
+		"Description": "Augmente l'Attaque et l'Attaque Spéciale de l'utilisateur d' 1 cran.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3692,6 +3702,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Poudre Dodo": {
+		"Description": "Endort la cible. Les Pokémon de type Plante ne sont pas affectés",
 		"PP":15,
 		"Type":"Plante",
 		"Puissance":null,
@@ -3700,6 +3711,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Lance Soleil": {
+		"Description": "Cette capacité se charge au premier tour et s'exécute au second.",
 		"PP":10,
 		"Type":"Plante",
 		"Puissance":120,
@@ -3708,6 +3720,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Griffe": {
+		"Description": "",
 		"PP":35,
 		"Type":"Normal",
 		"Puissance":40,
@@ -3716,6 +3729,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Flammèche": {
+		"Description": "Cette capacité a 10% de chances de brûler la cible.",
 		"PP":25,
 		"Type":"Feu",
 		"Puissance":40,
@@ -3724,6 +3738,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Groz'Yeux": {
+		"Description": "Réduit la Défense de la cible d' 1 cran.",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3732,6 +3747,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Frénésie": {
+		"Description": "Une fois cette capacité utilisée avec succès, l'Attaque de l'utilisateur est augmentée d' 1 cran à chaque fois qu'il est touché par l'attaque d'un autre Pokémon, tant que cette capacité est utilisée.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":20,
@@ -3740,6 +3756,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Tranche": {
+		"Description": "Cette capacité a plus de chance d'infliger un coup critique.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":70,
@@ -3748,6 +3765,7 @@ const ATTACKS = {
 		"Critique":2,
 		"Categorie":"Physique"},
 	"Lance-Flammes": {
+		"Description": "Cette capacité a 10% de chances de brûler la cible.",
 		"PP":15,
 		"Type":"Feu",
 		"Puissance":90,
@@ -3756,6 +3774,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Danse-Flammes": {
+		"Description": "Cette attaque empêche la cible de quitter le terrain pendant 2 à 5 tours. Elle inflige à la cible des dégâts égaux à 1/8 de ses PVs maximums à la fin de chaque tour. L'effet prend fin si l'utilisateur ou la cible quitte le terrain, ou si la cible utilise Clonage avec succès.",
 		"PP":15,
 		"Type":"Feu",
 		"Puissance":35,
@@ -3764,6 +3783,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Mimi-Queue": {
+		"Description": "Réduit la Défense de la cible d'1 cran.",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3772,6 +3792,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Écume": {
+		"Description": "Cette capacité a 10% de chances de réduire la Vitesse de la cible d' 1 cran.",
 		"PP":30,
 		"Type":"Eau",
 		"Puissance":40,
@@ -3780,6 +3801,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Pistolet à O": {
+		"Description": "",
 		"PP":25,
 		"Type":"Eau",
 		"Puissance":40,
@@ -3788,6 +3810,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Repli": {
+		"Description": "Augmente la Défense du lanceur d' 1 cran.",
 		"PP":40,
 		"Type":"Eau",
 		"Puissance":null,
@@ -3796,6 +3819,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Morsure": {
+		"Description": "Cette capacité a 30% de chances d'apeurer la cible.",
 		"PP":25,
 		"Type":"Normal",
 		"Puissance":60,
@@ -3804,6 +3828,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Coud'Krâne": {
+		"Description": "Cette attaque se charge au premier tour et s'exécute au second. Augmente la Défense du lanceur d' 1 cran au premier tour.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":130,
@@ -3812,6 +3837,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Hydrocanon": {
+		"Description": "",
 		"PP":5,
 		"Type":"Eau",
 		"Puissance":110,
@@ -3820,6 +3846,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Sécrétion": {
+		"Description": "Réduit la Vitesse de la cible de 2 crans.",
 		"PP":40,
 		"Type":"Insecte",
 		"Puissance":null,
@@ -3828,6 +3855,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Armure": {
+		"Description": "Augmente la Défense du lanceur d' 1 cran.",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3836,6 +3864,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Choc Mental": {
+		"Description": "Cette capacité a 10% de chances de plonger la cible dans la Confusion.",
 		"PP":25,
 		"Type":"Psy",
 		"Puissance":50,
@@ -3844,6 +3873,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Para-Spore": {
+		"Description": "Paralyse la cible. Échoue si la cible est de type Plante ou Électrik.",
 		"PP":30,
 		"Type":"Plante",
 		"Puissance":null,
@@ -3852,6 +3882,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Ultrason": {
+		"Description": "Plonge la cible dans la confusion.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3860,6 +3891,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Cyclone": {
+		"Description": "Oblige la cible à quitter le terrain et à être remplacée par un allié aléatoire. Échoue si la cible est le dernier Pokémon de son équipe ou si le niveau de l'utilisateur est inférieur à celui de la cible.\nPriorité : -6",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3868,6 +3900,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Tornade": {
+		"Description": "La puissance est doublée si la cible utilise Vol.",
 		"PP":35,
 		"Type":"Vol",
 		"Puissance":40,
@@ -3876,6 +3909,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Rafale Psy": {
+		"Description": "Cette capacité a 10% de chances de plonger la cible dans la confusion.",
 		"PP":20,
 		"Type":"Psy",
 		"Puissance":65,
@@ -3884,6 +3918,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Dard-Venin": {
+		"Description": "Cette capacité a 30% de chances d'empoisonner la cible.",
 		"PP":35,
 		"Type":"Poison",
 		"Puissance":15,
@@ -3892,6 +3927,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Furie": {
+		"Description": "Frappe 2 à 5 fois, avec 37.5% de chances de toucher 2 ou 3 fois, et 12.5% de chances de toucher 4 ou 5 fois.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":15,
@@ -3900,6 +3936,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Puissance": {
+		"Description": "Augmente les chances de coup critique de l'utilisateur de 2 crans. Échoue si l'utilisateur a déjà l'effet.",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3908,6 +3945,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Double-Dard": {
+		"Description": "Frappe deux fois, chaque coup ayant 20% de chances d'empoisonner la cible.",
 		"PP":20,
 		"Type":"Insecte",
 		"Puissance":25,
@@ -3916,6 +3954,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Dard-Nuée": {
+		"Description": "Frappe 2 à 5 fois. Cette capacité a 35% de chances de toucher 2 ou 3 fois, et 15% de chances de toucher 4 ou 5 fois.",
 		"PP":20,
 		"Type":"Insecte",
 		"Puissance":25,
@@ -3924,6 +3963,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Hâte": {
+		"Description": "Augmente la Vitesse du lanceur de 2 crans.",
 		"PP":30,
 		"Type":"Psy",
 		"Puissance":null,
@@ -3932,6 +3972,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Jet de Sable": {
+		"Description": "Diminue la Précision de la cible d' 1 cran.",
 		"PP":15,
 		"Type":"Sol",
 		"Puissance":null,
@@ -3940,6 +3981,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Vive-Attaque": {
+		"Description": "Priorité : +1",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":40,
@@ -3948,6 +3990,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Cru-Aile": {
+		"Description": "",
 		"PP":35,
 		"Type":"Vol",
 		"Puissance":60,
@@ -3956,6 +3999,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Mimique": {
+		"Description": "Le lanceur utilise la dernière capacité réussie par la cible. Échoue si la cible n'a pas utilisé de capacité, ou si la dernière capacité utilisée était Mimique, Métronome, Morphing, ou tout autre capacité déjà connue du lanceur.",
 		"PP":20,
 		"Type":"Vol",
 		"Puissance":null,
@@ -3964,6 +4008,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Croc de Mort": {
+		"Description": "Cette capacité a 10% de chances d'apeurer la cible.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":80,
@@ -3972,6 +4017,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Croc Fatal": {
+		"Description": "Cette attaque inflige à la cible des dégâts égaux à la moitié de ses PVs actuels.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":null,
@@ -3980,6 +4026,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Picpic": {
+		"Description": "",
 		"PP":35,
 		"Type":"Vol",
 		"Puissance":35,
@@ -3988,6 +4035,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Bec Vrille": {
+		"Description": "",
 		"PP":20,
 		"Type":"Vol",
 		"Puissance":80,
@@ -3996,6 +4044,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Ligotage": {
+		"Description": "Piège la cible sur le terrain pendant 2 à 5 tours. Elle inflige à la cible des dégâts égaux à 1/8 de ses PVs maximums à la fin de chaque tour. La cible peut toujours quitter le terrain si elle utilise Téléport ou Clonage avec succès.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":15,
@@ -4004,6 +4053,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Regard Médusant": {
+		"Description": "Paralyse la cible.",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4012,6 +4062,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Grincement": {
+		"Description": "Réduit la Défense de la cible de 2 crans.",
 		"PP":40,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4020,6 +4071,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Acide": {
+		"Description": "Cette capacité a 10% de chances de baisser la Défense Spéciale de la cible d' 1 cran.",
 		"PP":30,
 		"Type":"Poison",
 		"Puissance":40,
@@ -4028,6 +4080,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Éclair": {
+		"Description": "Cette capacité a 10% de chances de paralyser la cible.",
 		"PP":30,
 		"Type":"Électrik",
 		"Puissance":40,
@@ -4036,6 +4089,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Cage-Éclair": {
+		"Description": "Paralyse la cible.",
 		"PP":20,
 		"Type":"Électrik",
 		"Puissance":null,
@@ -4044,6 +4098,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Reflet": {
+		"Description": "Augmente l'Esquive du lanceur d' 1 cran.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4052,6 +4107,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Souplesse": {
+		"Description": "",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":80,
@@ -4060,6 +4116,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Météores": {
+		"Description": "Cette capacité ne peut pas échouer.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":60,
@@ -4068,6 +4125,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Tonnerre": {
+		"Description": "Cette capacité a 10% de chances de paralyser la cible.",
 		"PP":15,
 		"Type":"Électrik",
 		"Puissance":90,
@@ -4076,6 +4134,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Fatal-Foudre": {
+		"Description": "Cette capacité a 30% de chances de paralyser la cible. Elle peut toucher une cible utilisant Vol.",
 		"PP":10,
 		"Type":"Électrik",
 		"Puissance":110,
@@ -4084,6 +4143,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Mur Lumière": {
+		"Description": "Pendant 5 tours, l'utilisateur et les membres de son groupe subissent la moitié des dégâts des attaques spéciales. Les coups critiques ignorent cet effet. Échoue si l'effet de Mur Lumière est déjà actif pour les Pokémon alliés.",
 		"PP":30,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4092,6 +4152,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Combo-Griffe": {
+		"Description": "Frappe 2 à 5 fois. Cette capacité a 35% de chances de toucher 2 ou 3 fois, et 15% de chances de toucher 4 ou 5 fois.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":18,
@@ -4100,6 +4161,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Double Pied": {
+		"Description": "Frappe deux fois.",
 		"PP":30,
 		"Type":"Combat",
 		"Puissance":30,
@@ -4108,6 +4170,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Plaquage": {
+		"Description": "Cette capacité a 30% de chances de paralyser la cible. Si la cible a utilisé Lilliput, Plaquage ne peut pas échouer (sauf si la cible utilise Vol, Tunnel, Plongée, etc.) et les dégâts sont doublés.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":85,
@@ -4116,6 +4179,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Koud'Korne": {
+		"Description": "",
 		"PP":25,
 		"Type":"Normal",
 		"Puissance":65,
@@ -4124,6 +4188,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Empal'Korne": {
+		"Description": "Inflige à la cible des dégâts égaux à ses PVs maximums. Elle ignore les modificateurs de Précision et d'Esquive. La précision de cette attaque est égale à (niveau de l'utilisateur - niveau de la cible + 30)%, et échoue si la cible est de niveau supérieur.",
 		"PP":5,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4132,6 +4197,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Mania": {
+		"Description": "Le lanceur passe 2 ou 3 tours bloqué sur cette capacité, puis devient confus à la fin du dernier tour. Si l'utilisateur ne peut pas attaquer, s'il est endormi au début d'un tour, ou si l'attaque ne réussit pas contre la cible, il n'est pas confus.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":120,
@@ -4140,6 +4206,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Écras'Face": {
+		"Description": "",
 		"PP":35,
 		"Type":"Normal",
 		"Puissance":40,
@@ -4148,6 +4215,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Berceuse": {
+		"Description": "Endort la cible.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4156,6 +4224,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Torgnoles": {
+		"Description": "Frappe 2 à 5 fois. Cette capacité a 35% de chances de toucher 2 ou 3 fois, et 15% de chances de toucher 4 ou 5 fois.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":15,
@@ -4164,6 +4233,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Lilliput": {
+		"Description": "Augmente l'Esquive du lanceur de 2 crans.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4172,6 +4242,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Métronome": {
+		"Description": "Une capacité aléatoire est choisie pour être utilisée, autre que Riposte, Copie, Morphing, Métronome ou Lutte",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4180,6 +4251,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Boul'Armure": {
+		"Description": "Augmente la Défense du lanceur d' 1 cran.",
 		"PP":40,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4188,6 +4260,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Hurlement": {
+		"Description": "La cible est obligée de quitter le terrain et d'être remplacée par un allié aléatoire. Échoue si la cible est le dernier Pokémon de son groupe, ou si le niveau de l'utilisateur est inférieur à celui de la cible.\nPriorité : -6",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4196,6 +4269,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Onde Folie": {
+		"Description": "Plonge la cible dans la confusion.",
 		"PP":10,
 		"Type":"Spectre",
 		"Puissance":null,
@@ -4204,6 +4278,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Entrave": {
+		"Description": "Pendant 4 tours, la dernière capacité utilisée par la cible est désactivée. Échoue si l'une des capacités de la cible est déjà désactivée, si la cible n'en a pas utilisé, si la cible ne connaît plus la capacité, ou si celle-ci a 0 PP.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4212,6 +4287,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Repos": {
+		"Description": "L'utilisateur s'endort pendant les deux tours suivants et restaure tous ses PVs, se guérissant au passage de tous ses problèmes de statut majeurs. Échoue si l'utilisateur a tous ses PVs, s'il est déjà endormi ou si un autre effet l'empêche de dormir.",
 		"PP":5,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4220,6 +4296,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Damoclès": {
+		"Description": "Si la cible a perdu des PVs, l'utilisateur subit des dégâts de recul égaux à 1/3 des PVs perdus par la cible.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":120,
@@ -4228,6 +4305,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Vampirisme": {
+		"Description": "L'utilisateur récupère la moitié des PVs perdus par la cible.",
 		"PP":10,
 		"Type":"Insecte",
 		"Puissance":80,
@@ -4236,6 +4314,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Buée Noire": {
+		"Description": "Annule les changement de statistiques de tous les Pokémon sur le terrain, même s'ils se trouvent derrière un clone.",
 		"PP":30,
 		"Type":"Glace",
 		"Puissance":null,
@@ -4244,6 +4323,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Vol-Vie": {
+		"Description": "L'utilisateur récupère la moitié des PVs perdus par la cible.",
 		"PP":25,
 		"Type":"Plante",
 		"Puissance":20,
@@ -4252,6 +4332,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Danse-Fleur": {
+		"Description": "L'utilisateur reste bloqué 2 ou 3 tours sur cette capacité et devient confus à la fin du dernier tour. Si l'utilisateur ne peut pas attaquer, s'il est endormi au début d'un tour, ou si l'attaque ne réussit pas contre la cible, l'attaque se termine sans causer de confusion.",
 		"PP":10,
 		"Type":"Plante",
 		"Puissance":120,
@@ -4260,6 +4341,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Spore": {
+		"Description": "Endort la cible.",
 		"PP":15,
 		"Type":"Plante",
 		"Puissance":null,
@@ -4268,6 +4350,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Psyko": {
+		"Description": "Cette capacité a 10% de chances de réduire la Défense Spéciale de la cible d' 1 cran.",
 		"PP":10,
 		"Type":"Psy",
 		"Puissance":90,
@@ -4276,6 +4359,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Tunnel": {
+		"Description": "Cette capacité se charge au premier tour et s'exécute au second. Au premier tour, l'utilisateur évite toutes les attaques autres que Séisme et Ampleur, dont la puissance est doublée lorsqu'elles sont utilisées contre lui.",
 		"PP":10,
 		"Type":"Sol",
 		"Puissance":80,
@@ -4284,6 +4368,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Séisme": {
+		"Description": "Les dégâts sont doublés si la cible utilise Tunnel.",
 		"PP":10,
 		"Type":"Sol",
 		"Puissance":100,
@@ -4292,6 +4377,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Jackpot": {
+		"Description": "",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":40,
@@ -4300,6 +4386,13 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Balayage": {
+		"Description": "La puissance de cette capacité varie selon le poids de la cible :
+			20 si la cible pèse moins de 10 kg
+			, 40 si elle pèse moins de 25 kg
+			, 60 si elle pèse moins de 50 kg
+			, 80 si elle pèse moins de 100 kg
+			, 100 si elle pèse moins de 200 kg
+			, 120 si elle pèse plus de 200 kg",
 		"PP":20,
 		"Type":"Combat",
 		"Puissance":null,
@@ -4308,6 +4401,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Poing-Karaté": {
+		"Description": "Cette capacité a plus de chance d'infliger un coup critique.",
 		"PP":25,
 		"Type":"Combat",
 		"Puissance":50,
@@ -4316,6 +4410,7 @@ const ATTACKS = {
 		"Critique":2,
 		"Categorie":"Physique"},
 	"Frappe Atlas": {
+		"Description": "Inflige à la cible des dégâts égaux au niveau du lanceur.",
 		"PP":20,
 		"Type":"Combat",
 		"Puissance":null,
@@ -4324,6 +4419,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Bélier": {
+		"Description": "Le lanceur subit des dégâts de recul égaux à 1/4 des PVs perdus par la cible durant l'attaque.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":90,
@@ -4332,6 +4428,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Hypnose": {
+		"Description": "Endort la cible.",
 		"PP":20,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4340,6 +4437,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Amnésie": {
+		"Description": "Cette capacité augmente la Défense Spéciale du lanceur de 2 crans.",
 		"PP":20,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4348,6 +4446,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Téléport": {
+		"Description": "Fais fuir lors d'un combat contre un Pokémon sauvage.\nPriorité : -6",
 		"PP":20,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4356,6 +4455,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Télékinésie": {
+		"Description": "Réduit la Précision de la cible d' 1 cran.",
 		"PP":15,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4364,6 +4464,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Soin": {
+		"Description": "L'utilisateur récupère la moitié de ses PVs max.",
 		"PP":5,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4372,6 +4473,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Protection": {
+		"Description": "Pendant 5 tours, le lanceur et les membres de son groupe subissent la moitié des dégâts des attaques physiques. Les coups critiques ignorent cet effet. Échoue si l'effet est déjà actif du côté du lanceur.",
 		"PP":20,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4380,6 +4482,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Sacrifice": {
+		"Description": "Si la cible a perdu des PVs, l'utilisateur subit des dégâts de recul égaux à 1/4 des PVs perdus par la cible.",
 		"PP":20,
 		"Type":"Combat",
 		"Puissance":80,
@@ -4388,6 +4491,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Constriction": {
+		"Description": "Cette capacité a 10% de chances de réduire la Vitesse de la cible d' 1 cran.",
 		"PP":35,
 		"Type":"Normal",
 		"Puissance":10,
@@ -4396,6 +4500,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Bouclier": {
+		"Description": "Augmente la Défense du lanceur de 2 crans.",
 		"PP":20,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4404,6 +4509,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Jet-Pierres": {
+		"Description": "",
 		"PP":15,
 		"Type":"Roche",
 		"Puissance":50,
@@ -4412,6 +4518,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Destruction": {
+		"Description": "L'utilisateur tombe KO après avoir utilisé cette capacité. La Défense de la cible est réduite de moitié lors du calcul des dégâts.",
 		"PP":5,
 		"Type":"Normal",
 		"Puissance":200,
@@ -4420,6 +4527,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Explosion": {
+		"Description": "L'utilisateur tombe KO après avoir utilisé cette capacité, sauf si elle échoue.",
 		"PP":5,
 		"Type":"Normal",
 		"Puissance":250,
@@ -4428,6 +4536,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Écrasement": {
+		"Description": "Cette capacité a 30% de chances d'apeurer la cible. La puissance est doublée si la cible a utilisé Lilliput.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":65,
@@ -4436,6 +4545,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Coup d'Boule": {
+		"Description": "Cette capacité a 30% de chances d'apeurer la cible.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":70,
@@ -4444,6 +4554,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Sonicboom": {
+		"Description": "La cible perd 20 PVs.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4452,6 +4563,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Danse-Lames": {
+		"Description": "Augmente l'Attaque du lanceur de 2 crans.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4460,6 +4572,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Triplattaque": {
+		"Description": "Cette capacité a 20% de chances de brûler, geler ou paralyser la cible.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":80,
@@ -4468,6 +4581,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Onde Boréale": {
+		"Description": "Cette capacité a 10% de chances de réduire l'Attaque de la cible d' 1 cran.",
 		"PP":20,
 		"Type":"Glace",
 		"Puissance":65,
@@ -4476,6 +4590,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Laser Glace": {
+		"Description": "Cette capacité a 10% de chances de geler la cible.",
 		"PP":10,
 		"Type":"Glace",
 		"Puissance":90,
@@ -4484,6 +4599,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Gaz Toxik": {
+		"Description": "Empoisonne la cible.",
 		"PP":40,
 		"Type":"Poison",
 		"Puissance":null,
@@ -4492,6 +4608,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Détritus": {
+		"Description": "Cette capacité a 30% de chances d'empoisonner la cible.",
 		"PP":20,
 		"Type":"Poison",
 		"Puissance":65,
@@ -4500,6 +4617,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Acidarmure": {
+		"Description": "La capacité augmente la Défense du lanceur de 2 crans.",
 		"PP":20,
 		"Type":"Poison",
 		"Puissance":null,
@@ -4508,6 +4626,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Claquoir": {
+		"Description": "Cette attaque piège la cible sur le terrain pendant 2 à 5 tours. Elle inflige à la cible des dégâts égaux à 1/8 de ses PVs maximums à la fin de chaque tour. La cible peut toujours quitter le terrain si elle utilise Téléport. L'effet prend fin si le lanceur ou la cible quitte le terrain, ou si la cible utilise Clonage et réussit.",
 		"PP":15,
 		"Type":"Eau",
 		"Puissance":35,
@@ -4516,6 +4635,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Picanon": {
+		"Description": "Frappe 2 à 5 fois. Cette capacité a 35% de chances de toucher 2 ou 3 fois, et 15% de chances de toucher 4 ou 5 fois.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":20,
@@ -4524,6 +4644,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Léchouille": {
+		"Description": "Cette capacité a 30% de chances de paralyser la cible.",
 		"PP":30,
 		"Type":"Spectre",
 		"Puissance":30,
@@ -4532,6 +4653,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Ombre Nocturne": {
+		"Description": "Inflige à la cible des dégâts d'un nombre de PV égal au niveau du lanceur.",
 		"PP":15,
 		"Type":"Spectre",
 		"Puissance":null,
@@ -4540,6 +4662,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Dévorêve": {
+		"Description": "Cette capacité absorbe et récupère la moitié des PVs perdus par une cible endormie. Échoue si la cible est réveillée ou se trouve derrière un clone.",
 		"PP":15,
 		"Type":"Psy",
 		"Puissance":100,
@@ -4548,6 +4671,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Étreinte": {
+		"Description": "Piège la cible sur le terrain pendant 2 à 5 tours. Elle inflige à la cible des dégâts égaux à 1/8 de ses PVs maximums à la fin de chaque tour. La cible peut toujours quitter le terrain si elle utilise Téléport. L'effet prend fin si le lanceur ou la cible quitte le terrain, ou si la cible utilise Clonage avec succès.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":15,
@@ -4556,6 +4680,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Yoga": {
+		"Description": "Augmente l'Attaque du lanceur d' 1 cran.",
 		"PP":40,
 		"Type":"Psy",
 		"Puissance":null,
@@ -4564,6 +4689,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Force Poigne": {
+		"Description": "",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":55,
@@ -4572,6 +4698,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Guillotine": {
+		"Description": "Cette attaque inflige à la cible des dégâts égaux à ses PVs maximums. Elle ignore les modificateurs de Précision et d'Esquive. La précision de cette attaque est égale à (niveau de l'utilisateur - niveau de la cible + 30)%, et échoue si la cible est de niveau supérieur.",
 		"PP":5,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4580,6 +4707,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Pince-Masse": {
+		"Description": "Cette capacité a plus de chance d'infliger un coup critique.",
 		"PP":10,
 		"Type":"Eau",
 		"Puissance":100,
@@ -4588,6 +4716,7 @@ const ATTACKS = {
 		"Critique":2,
 		"Categorie":"Physique"},
 	"Pilonnage": {
+		"Description": "Frappe 2 à 5 fois. Cette capacité a 35% de chances de toucher 2 ou 3 fois, et 15% de chances de toucher 4 ou 5 fois.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":15,
@@ -4596,6 +4725,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Massd'Os": {
+		"Description": "Cette capacité a 10% de chances d'apeurer la cible.",
 		"PP":20,
 		"Type":"Sol",
 		"Puissance":65,
@@ -4604,6 +4734,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Osmerang": {
+		"Description": "Frappe deux fois.",
 		"PP":10,
 		"Type":"Sol",
 		"Puissance":50,
@@ -4612,6 +4743,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Mawashi Geri": {
+		"Description": "Cette capacité a 30% de chances d'apeurer la cible.",
 		"PP":15,
 		"Type":"Combat",
 		"Puissance":60,
@@ -4620,6 +4752,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Pied Sauté": {
+		"Description": "Si cette attaque échoue, l'utilisateur perd la moitié de ses PVs maximums arrondis à l'unité inférieure.",
 		"PP":10,
 		"Type":"Combat",
 		"Puissance":100,
@@ -4628,7 +4761,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Pied Voltige": {
-		"PP":10,
+		"Description": "Si cette attaque échoue, l'utilisateur perd la moitié de ses PVs maximums arrondis à l'unité inférieure.", "PP":10,
 		"Type":"Combat",
 		"Puissance":130,
 		"Precision":90,
@@ -4636,6 +4769,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Ultimawashi": {
+		"Description": "",
 		"PP":5,
 		"Type":"Normal",
 		"Puissance":120,
@@ -4644,6 +4778,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Poing Comète": {
+		"Description": "Frappe 2 à 5 fois. Cette capacité a 35% de chances de toucher 2 ou 3 fois, et 15% de chances de toucher 4 ou 5 fois.",
 		"PP":15,
 		"Type":"Normal",
 		"Puissance":18,
@@ -4652,6 +4787,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Poing de Feu": {
+		"Description": "Cette capacité a 10% de chances de brûler la cible.",
 		"PP":15,
 		"Type":"Feu",
 		"Puissance":75,
@@ -4660,6 +4796,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Poinglace": {
+		"Description": "Cette capacité a 10% de chances de geler la cible.",
 		"PP":15,
 		"Type":"Glace",
 		"Puissance":75,
@@ -4668,6 +4805,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Poing-Éclair": {
+		"Description": "Cette capacité a 10% de chances de paralyser la cible. Ne peut pas paralyser les Pokémon de type Électrik.",
 		"PP":15,
 		"Type":"Électrik",
 		"Puissance":75,
@@ -4676,6 +4814,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Ultimapoing": {
+		"Description": "",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":80,
@@ -4684,6 +4823,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Riposte": {
+		"Description": "Inflige au dernier Pokémon adverse à toucher l'utilisateur avec une attaque physique ce tour des dégâts égaux à deux fois les PVs perdus par l'utilisateur suite à cette attaque. Seul le dernier coup d'une attaque à plusieurs coups est comptabilisé. Échoue si l'utilisateur n'a pas été touché par une attaque physique d'un Pokémon adverse ce tour-ci.\nPriorité : -5",
 		"PP":20,
 		"Type":"Combat",
 		"Puissance":null,
@@ -4692,6 +4832,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Purédpois": {
+		"Description": "Cette capacité a 40% de chances d'empoisonner la cible.",
 		"PP":20,
 		"Type":"Poison",
 		"Puissance":30,
@@ -4700,6 +4841,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Brouillard": {
+		"Description": "Diminue la Précision de la cible d' 1 cran.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4708,6 +4850,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Uppercut": {
+		"Description": "Cette capacité a 20% de chances de plonger la cible dans la confusion.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":70,
@@ -4716,6 +4859,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Cascade": {
+		"Description": "Cette capacité a 20% de chances d'apeurer la cible.",
 		"PP":15,
 		"Type":"Eau",
 		"Puissance":80,
@@ -4724,6 +4868,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Clonage": {
+		"Description": "Après utilisation de cette capacité, le lanceur sacrifie 1/4 de ses PVs maximums et les investit dans un clone qui prendra sa place durant le combat. Le clone est retiré une fois que suffisamment de dégâts lui ont été infligés, ou si le lanceur quitte le terrain ou tombe KO.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4732,6 +4877,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Grobisou": {
+		"Description": "Endort la cible.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4740,6 +4886,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Blizzard": {
+		"Description": "Cette capacité a 10% de chances de geler la cible.",
 		"PP":5,
 		"Type":"Glace",
 		"Puissance":110,
@@ -4748,6 +4895,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Trempette": {
+		"Description": "",
 		"PP":40,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4756,6 +4904,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Draco-Rage": {
+		"Description": "Inflige 40 PV de dégâts à la cible.",
 		"PP":10,
 		"Type":"Dragon",
 		"Puissance":null,
@@ -4764,6 +4913,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Ultralaser": {
+		"Description": "Le lanceur inflige des dégâts au premier tour et se repose au second tour, ce qui l'empêche d'attaquer.",
 		"PP":5,
 		"Type":"Normal",
 		"Puissance":150,
@@ -4772,6 +4922,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Special"},
 	"Brume": {
+		"Description": "Pendant 5 tours, le lanceur et son équipe sont protégés contre les baisses de statistiques. Échoue si l'effet est déjà actif du côté du lanceur.",
 		"PP":30,
 		"Type":"Glace",
 		"Puissance":null,
@@ -4780,6 +4931,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Morphing": {
+		"Description": "Le lanceur se transforme en sa cible. Les statistiques actuelles de la cible, ses types, ses capacités et son sprite sont copiés. Le niveau et les PVs de l'utilisateur restent les mêmes et chaque capacité copiée ne reçoit que 5 PP. L'attaque échoue si la cible est derrière un clone ou si l'utilisateur est déjà transformé.",
 		"PP":10,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4788,7 +4940,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Conversion": {
-		"PP":30,
+		"Description": "Le type de l'utilisateur change pour l'avantager dans le combat.", "PP":30,
 		"Type":"Normal",
 		"Puissance":null,
 		"Precision":null,
@@ -4796,6 +4948,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Affûtage": {
+		"Description": "Augmente l'Attaque du lanceur d' 1 cran.",
 		"PP":30,
 		"Type":"Normal",
 		"Puissance":null,
@@ -4804,6 +4957,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Statut"},
 	"Piqué": {
+		"Description": "Cette attaque se charge au premier tour et s'exécute au second. Elle a également 30% de chances d'apeurer la cible et a plus de chance d'infliger un coup critique.",
 		"PP":5,
 		"Type":"Vol",
 		"Puissance":140,
@@ -4985,3 +5139,27 @@ const TABLE_TYPE = {
 		"Dragon" : 2
 	}
 }
+
+#Functions
+func get_stat(pkm : Dictionary, Stat : String):
+	var Base = Stats.POKEMONS.get(pkm.Name).get(Stat)
+	var IV = pkm.Stats[Stat].IV
+	var EV = int(pkm.Stats[Stat].EV/4)
+	if Stat == "PV" :
+		return round((((2*Base+IV+EV)*pkm.LvL)/100.0)+pkm.LvL+10)
+	else :
+		var Nat = 1
+		if Stats.NATURE[pkm.Nature][0] == Stat: Nat = 1.1
+		elif Stats.NATURE[pkm.Nature][1] == Stat: Nat = 0.9
+		return (round(((2*Base+IV+EV)*pkm.LvL)/100.0)+5)*Nat
+
+func max_exp_calculation(pkm : Dictionary, next_lvl : int):
+	var curb = Stats.POKEMONS[pkm.Name].Courbe_EXP
+	if curb == "Rapide":
+		return ceil(0.8*next_lvl**3)
+	elif curb == "Moyenne":
+		return ceil(next_lvl**3)
+	elif curb == "Parabolique":
+		return ceil(1.2*next_lvl**3 - 15*next_lvl**2 + 100*next_lvl - 140)
+	elif curb == "Lente":
+		return ceil(1.25*next_lvl**3)

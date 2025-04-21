@@ -32,10 +32,11 @@ shader = ExtResource("4_qljo8")
 shader_parameter/avancement = 3.0
 shader_parameter/resolution = 80
 shader_parameter/death_animation = 0.0
-shader_parameter/is_client = null
+shader_parameter/is_client = true
 shader_parameter/status = 0
 shader_parameter/raise_alpha = 0.0
 shader_parameter/is_raise = true
+shader_parameter/is_confused = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uglnp"]
 shader = ExtResource("4_qljo8")
@@ -46,6 +47,7 @@ shader_parameter/is_client = null
 shader_parameter/status = 0
 shader_parameter/raise_alpha = 0.0
 shader_parameter/is_raise = true
+shader_parameter/is_confused = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi80u"]
 

@@ -7,133 +7,8 @@ var against_wildpkm = false
 var against_bot = true
 var allow_death_switch = false
 var ClientPokemon = 0
-var ClientDeck = [
-	{"Name":"Tygnon",
-		"Nickname":null,
-		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
-		"EXP":0,
-		"LvL":50,
-		"Nature":"Mauvais",
-		"Damages":0,
-		"Shiny":"s",
-		"Attacks":[
-			{"Name":"Riposte","PP":20},
-			{"Name":"Poing de Feu","PP":15},
-			{"Name":"Poinglace","PP":15},
-			{"Name":"Poing-Éclair","PP":15},
-		],
-		"Statut":[]},
-	{"Name":"Alakazam",
-		"Nickname":null,
-		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
-		"EXP":0,
-		"LvL":50,
-		"Nature":"Relax",
-		"Damages":0,
-		"Shiny":"s",
-		"Attacks":[
-			{"Name":"Télékinésie","PP":15},
-			{"Name":"Soin","PP":5},
-			{"Name":"Protection","PP":20},
-			{"Name":"Psyko","PP":10}
-		],
-		"Statut":[]},
-	{"Name":"Mélodelfe",
-		"Nickname":null,
-		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
-		"EXP":0,
-		"LvL":50,
-		"Nature":"Jovial",
-		"Damages":0,
-		"Shiny":"n",
-		"Attacks":[
-			{"Name":"Métronome","PP":10},
-			{"Name":"Lilliput","PP":10},
-			{"Name":"Boul'Armure","PP":40},
-			{"Name":"Torgnoles","PP":10}],
-		"Statut":[]},
-	{"Name":"Nidoking",
-		"Nickname":null,
-		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
-		"EXP":0,
-		"LvL":50,
-		"Nature":"Gentil",
-		"Damages":0,
-		"Shiny":"n",
-		"Attacks":[
-			{"Name":"Dard-Venin","PP":20},
-			{"Name":"Koud'Korne","PP":25},
-			{"Name":"Empal'Korne","PP":5},
-			{"Name":"Mania","PP":10}
-		],
-		"Statut":[]},
-	{"Name":"Pikachu",
-		"Nickname":null,
-		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
-		"EXP":0,
-		"LvL":50,
-		"Nature":"Brave",
-		"Damages":0,
-		"Shiny":"n",
-		"Attacks":[
-			{"Name":"Tonnerre","PP":15},
-			{"Name":"Reflet","PP":15},
-			{"Name":"Mur Lumière","PP":30},
-			{"Name":"Cage-Éclair","PP":20}
-		],
-		"Statut":[]},
-	{"Name":"Rattatac",
-		"Nickname":null,
-		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
-		"EXP":0,
-		"LvL":50,
-		"Nature":"Rigide",
-		"Damages":0,
-		"Shiny":"n",
-		"Attacks":[
-			{"Name":"Croc Fatal","PP":10},
-			{"Name":"Mimi-Queue","PP":30},
-			{"Name":"Vive-Attaque","PP":30},
-			{"Name":"Croc de Mort","PP":15}
-		],
-		"Statut":[]},
-]
+var ClientDeck = []
+var ClientTeamID = 0
 var OppPokemon = 0
 var OppDeck = [
 	{"Name":"Roucarnage",
@@ -151,10 +26,10 @@ var OppDeck = [
 		"Damages":0,
 		"Shiny":"n",
 		"Attacks":[
-			{"Name":"Cyclone","PP":20},
-			{"Name":"Jet de Sable","PP":15},
-			{"Name":"Mimique","PP":20},
-			{"Name":"Cru-Aile","PP":35}
+			{"Name":"Cyclone"},
+			{"Name":"Jet de Sable"},
+			{"Name":"Mimique"},
+			{"Name":"Cru-Aile"}
 		],
 		"Statut":[]},
 	{"Name":"Tortank",
@@ -172,10 +47,10 @@ var OppDeck = [
 		"Damages":0,
 		"Shiny":"n",
 		"Attacks":[
-			{"Name":"Coud'Krâne","PP":10},
-			{"Name":"Mimi-Queue","PP":30},
-			{"Name":"Hydrocanon","PP":5},
-			{"Name":"Écume","PP":30}],
+			{"Name":"Coud'Krâne"},
+			{"Name":"Mimi-Queue"},
+			{"Name":"Hydrocanon"},
+			{"Name":"Écume"}],
 		"Statut":[]},
 	{"Name":"Florizarre",
 		"Nickname":null,
@@ -192,10 +67,10 @@ var OppDeck = [
 		"Damages":0,
 		"Shiny":"n",
 		"Attacks":[
-			{"Name":"Poudre Dodo","PP":15},
-			{"Name":"Croissance","PP":20},
-			{"Name":"Tranch'Herbe","PP":25},
-			{"Name":"Lance Soleil","PP":10}],
+			{"Name":"Poudre Dodo"},
+			{"Name":"Croissance"},
+			{"Name":"Tranch'Herbe"},
+			{"Name":"Lance Soleil"}],
 		"Statut":[]},
 	{"Name":"Dracaufeu",
 		"Nickname":null,
@@ -212,30 +87,10 @@ var OppDeck = [
 		"Damages":0,
 		"Shiny":"s",
 		"Attacks":[
-			{"Name":"Lance-Flammes","PP":15},
-			{"Name":"Danse-Flammes","PP":15},
-			{"Name":"Groz'Yeux","PP":35},
-			{"Name":"Frénésie","PP":20}],
-		"Statut":[]},
-	{"Name":"Feunard",
-		"Nickname":null,
-		"Stats":{
-			"PV":{"IV":0,"EV":0},
-			"Attaque":{"IV":0,"EV":0},
-			"Defense":{"IV":0,"EV":0},
-			"AttaqueSpe":{"IV":0,"EV":0},
-			"DefenseSpe":{"IV":0,"EV":0},
-			"Vitesse":{"IV":0,"EV":0}},
-		"EXP":0,
-		"LvL":50,
-		"Nature":"Docile",
-		"Damages":0,
-		"Shiny":"s",
-		"Attacks":[
-			{"Name":"Hurlement","PP":20},
-			{"Name":"Onde Folie","PP":10},
-			{"Name":"Lance-Flammes","PP":15},
-			{"Name":"Danse-Flammes","PP":15}],
+			{"Name":"Lance-Flammes"},
+			{"Name":"Danse-Flammes"},
+			{"Name":"Groz'Yeux"},
+			{"Name":"Frénésie"}],
 		"Statut":[]},
 	{"Name":"Grolem",
 		"Nickname":null,
@@ -252,11 +107,31 @@ var OppDeck = [
 		"Damages":0,
 		"Shiny":"s",
 		"Attacks":[
-			{"Name":"Jet-Pierres","PP":15},
-			{"Name":"Destruction","PP":5},
-			{"Name":"Explosion","PP":5},
-			{"Name":"Séisme","PP":10}
+			{"Name":"Jet-Pierres"},
+			{"Name":"Destruction"},
+			{"Name":"Explosion"},
+			{"Name":"Séisme"}
 		],
+		"Statut":[]},
+	{"Name":"Feunard",
+		"Nickname":null,
+		"Stats":{
+			"PV":{"IV":0,"EV":0},
+			"Attaque":{"IV":0,"EV":0},
+			"Defense":{"IV":0,"EV":0},
+			"AttaqueSpe":{"IV":0,"EV":0},
+			"DefenseSpe":{"IV":0,"EV":0},
+			"Vitesse":{"IV":0,"EV":0}},
+		"EXP":0,
+		"LvL":50,
+		"Nature":"Docile",
+		"Damages":0,
+		"Shiny":"n",
+		"Attacks":[
+			{"Name":"Hurlement"},
+			{"Name":"Onde Folie"},
+			{"Name":"Lance-Flammes"},
+			{"Name":"Danse-Flammes"}],
 		"Statut":[]},
 ]
 
@@ -361,10 +236,9 @@ var participants_KO_exp = []
 }
 
 
-#									-----STATS-----
-var stats = null
+#									-----Stats-----
 func get_pokemon_img(face : String,pkm_name : String, shiny : String):
-	var pokedex = stats.POKEMONS.keys().find(pkm_name)+1
+	var pokedex = Stats.POKEMONS.keys().find(pkm_name)+1
 	return "res://Textures/Pokemons/%s/%s/%s.png" % [face,shiny,pokedex]
 
 func get_pkm_nickname(pkm : Dictionary):
@@ -406,12 +280,7 @@ func get_types(pkm : Dictionary):
 	for Statut in pkm.Statut:
 		if Statut.begins_with("Conversion"):
 			return [Statut.split(" ")[1],null]
-	return [stats.POKEMONS[pkm.Name].Type1,stats.POKEMONS[pkm.Name].Type2]
-
-func load_stats():
-	var file_path = "res://Script/stats.gd"
-	if FileAccess.file_exists(file_path):
-		stats = load(file_path)
+	return [Stats.POKEMONS[pkm.Name].Type1,Stats.POKEMONS[pkm.Name].Type2]
 
 func stat(pkm : Dictionary, Stat : String):
 	var plr = pkm.Owner
@@ -421,36 +290,34 @@ func stat(pkm : Dictionary, Stat : String):
 		if plr == 1: pkm = ClientDeck[ClientPokemon]
 		else: pkm = OppDeck[OppPokemon]
 	if Stat == "PV" :
-		var Base = stats.POKEMONS.get(pkm.Name).get(Stat)
-		var IV = pkm.Stats.PV.IV
-		var EV = int(pkm.Stats.PV.EV/4)
-		var FinalStat = round((((2*Base+IV+EV)*pkm.LvL)/100.0)+pkm.LvL+10)
-		if is_clone: return round(FinalStat/4)
-		else: return FinalStat
+		if get_active_pokemon(plr)==pkm && InitalMetamorphs[plr-1] != null:
+			pkm = InitalMetamorphs[plr-1]
+			pkm["LvL"] = get_active_pokemon(plr).LvL
+		var Value = Stats.get_stat(pkm,Stat)
+		if is_clone: return round(Value/4)
+		else: return Value
 	elif Stat == "Precision" || Stat == "Esquive" :
-		return round(100*stats.MODIF_PRE[Modif])
+		return round(100*Stats.MODIF_PRE[Modif])
 	else :
 		var is_paralysed = Stat == "Vitesse" && pkm.Statut.has("Paralysé")
-		var Base = stats.POKEMONS.get(pkm.Name).get(Stat)
-		var IV = pkm.Stats[Stat].IV
-		var EV = int(pkm.Stats[Stat].EV/4)
-		var Nat = 1
-		if stats.NATURE[pkm.Nature][0] == Stat:
-			Nat = 1.1
-		elif stats.NATURE[pkm.Nature][1] == Stat:
-			Nat = 0.9
-		var Value = ((round(((2*Base+IV+EV)*pkm.LvL)/100.0)+5)*Nat)*stats.MODIF_STAT[Modif]
+		var Value = Stats.get_stat(pkm,Stat)*Stats.MODIF_STAT[Modif]
 		if is_paralysed: Value /= 2.0
 		return Value
 
-func _ready():game()
+func _ready():
+	OppDeck = create_randomized_team(6,50)
+	game()
 func game():
 	if against_wildpkm:
 		Audios.BGM.stream = load("res://Sounds/BGM/Battle! Wild.mp3")
 	else :
 		Audios.BGM.stream = load("res://Sounds/BGM/Battle! Trainer.mp3")
 	Audios.BGM.playing = true
-	load_stats()
+	
+	var data = SaveManager.load_data()
+	ClientTeamID = data.ActiveTeam
+	ClientDeck = data.Teams[ClientTeamID].Team
+	
 	restart_game()
 	reset_ui()
 	ActionUI.Label.text = ""
@@ -489,18 +356,45 @@ func restart_game():
 	pokedollars_reward = 0
 	participants_KO_exp = []
 	for pkm in ClientDeck:
+		pkm["Damages"] = 0
+		pkm["Statut"] = []
 		pkm["Owner"] = 1
+		for atk in pkm.Attacks:
+			atk["PP"] = Stats.ATTACKS[atk.Name].PP
 	for pkm in OppDeck:
+		pkm["Damages"] = 0
+		pkm["Statut"] = []
 		pkm["Owner"] = 2
+		for atk in pkm.Attacks:
+			atk["PP"] = Stats.ATTACKS[atk.Name].PP
 
 func end_game(issue : String):
+	if InitalMetamorphs[0] != null:
+		await unmorph_animation(1)
+	if InitalMetamorphs[1] != null:
+		await unmorph_animation(2)
+	InitalMetamorphs = [null,null]
+	
 	game_state = ia_create_game_state()
 	IA.feed(game_state)
 	IA.save_q_table()
-	print(issue," ",win_condition)
+	
 	ActionUI.Label.text = ""
 	ActionUI.Block.visible = true
 	MainUI.MainMenu.visible = false
+	print(issue," ",win_condition)
+	
+	restart_game()
+	var data = SaveManager.load_data()
+	for pkm in ClientDeck:
+		pkm.erase("Damages")
+		pkm.erase("Statut")
+		pkm.erase("Owner")
+		for atk in pkm.Attacks:
+			atk.erase("PP")
+	data.Teams[ClientTeamID].Team = ClientDeck
+	SaveManager.save_data(data)
+	
 	await wait(1)
 	if issue == "Victoire":
 		Audios.BGM.playing = false
@@ -513,6 +407,49 @@ func end_game(issue : String):
 		pass
 	elif issue == "Egalité":
 		pass
+
+func create_randomized_team(size : int = 6, team_lvl : int = randi_range(1,100), pool : Array = []):
+	var new_team = []
+	var all_pkm = Stats.POKEMONS.keys()
+	if pool != []: all_pkm = pool
+	for _i in range(size):
+		if all_pkm.size() == 0: return new_team
+		var random_pkm = all_pkm[randi_range(0,all_pkm.size()-1)]
+		all_pkm.erase(random_pkm)
+		var all_natures = Stats.NATURE.keys()
+		var random_nature = all_natures[randi_range(0,all_natures.size()-1)]
+		var is_shiny = ""
+		if random_percent_check(1.0/512.0): is_shiny = "s"
+		else: is_shiny = "n"
+		var random_stats = {
+			"PV":{"IV":randi_range(0,31),"EV":0},
+			"Attaque":{"IV":randi_range(0,31),"EV":0},
+			"Defense":{"IV":randi_range(0,31),"EV":0},
+			"AttaqueSpe":{"IV":randi_range(0,31),"EV":0},
+			"DefenseSpe":{"IV":randi_range(0,31),"EV":0},
+			"Vitesse":{"IV":randi_range(0,31),"EV":0}}
+		var all_moves = Stats.POKEMONS[random_pkm].NativeAttacks
+		var learnable_moves = []
+		for move in all_moves: if move.LvL<=team_lvl: learnable_moves.append(move.Attack)
+		var random_moveset = []
+		for _i2 in range(mini(4,learnable_moves.size())):
+			var new_move = learnable_moves[randi_range(0,learnable_moves.size()-1)]
+			random_moveset.append({"Name":new_move})
+			learnable_moves.erase(new_move)
+		var new_pkm = {
+			"Name":random_pkm,
+			"Nickname":null,
+			"Stats":random_stats,
+			"EXP":0,
+			"LvL":team_lvl,
+			"Nature":random_nature,
+			"Damages":0,
+			"Shiny":is_shiny,
+			"Attacks":random_moveset,
+			"Statut":[]
+		}
+		new_team.append(new_pkm)
+	return new_team
 
 
 #									-----PHASES-----
@@ -531,7 +468,7 @@ func preparation_phase():
 
 func attack_phase():
 	if against_bot:
-		incomming_attacks[1] = ia_moves(2)
+		ia_moves(2)
 	else: pass #SI PVP
 	
 	if win_check_phase(): return
@@ -606,13 +543,15 @@ func death_switch_phase():
 	var pkm2 = OppDeck[OppPokemon]
 	death_switch = true
 	Fainted = [false,false]
-	if pkm1.Damages == stat(pkm1,"PV") && pkm2.Damages == stat(pkm2,"PV"):
+	if pkm1.Damages >= stat(pkm1,"PV") && pkm2.Damages >= stat(pkm2,"PV"):
+		MainUI.PkmBack.visible = false
+		ia_death_switch(2)
+		game_state = ia_create_game_state()
+		_on_pokemon_pressed()
+	elif pkm1.Damages >= stat(pkm1,"PV"):
 		MainUI.PkmBack.visible = false
 		_on_pokemon_pressed()
-	elif pkm1.Damages == stat(pkm1,"PV"):
-		MainUI.PkmBack.visible = false
-		_on_pokemon_pressed()
-	elif pkm2.Damages == stat(pkm2,"PV"):
+	elif pkm2.Damages >= stat(pkm2,"PV"):
 		if allow_death_switch:
 			DeathSwitchUI.Switch.disabled = false
 			DeathSwitchUI.Continue.disabled = false
@@ -637,7 +576,7 @@ func XP_phase():
 	else: a = 1.5
 	var s = 0
 	var target = OppDeck[OppPokemon]
-	var b = stats.POKEMONS[target.Name].EXP
+	var b = Stats.POKEMONS[target.Name].EXP
 	var N = target.LvL
 	for i in participants_KO_exp:
 		var pkm = ClientDeck[i]
@@ -685,7 +624,7 @@ func attack(plr : int):
 	await wait(1)
 	Charging[plr-1] = await attack_charge(plr,atk)
 	if Charging[plr-1] != "": return
-	if atk == "Riposte" && (pkm.Damages <= PreRiposteDamages[plr] || get_types(pkm).has("Spectre")):
+	if atk == "Riposte" && (pkm.Damages <= PreRiposteDamages[plr-1] || get_types(target).has("Spectre")):
 		await action_ui_writing("Mais cela échoue...")
 		await wait(2)
 		return
@@ -693,10 +632,6 @@ func attack(plr : int):
 		await action_ui_writing("Mais cela échoue...")
 		await wait(2)
 		return
-	if (atk == "Pied Sauté" || atk == "Pied Voltige") && get_types(pkm).has("Spectre"):
-		await damage_animation(plr,round(stat(pkm,"PV")/2),1)
-		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
-		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	for a in pkm.Attacks:
 		if a.Name == atk:
 			if a.PP == 0:
@@ -709,6 +644,10 @@ func attack(plr : int):
 	if atk != "Mimique":
 		attack_animation(plr,atk)
 		await wait(0.5)
+	if (atk == "Pied Sauté" || atk == "Pied Voltige") && get_types(target).has("Spectre"):
+		await damage_animation(plr,round(stat(pkm,"PV")/2),1)
+		if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
+		else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	if !precision_calculation(pkm,target,atk) || (Charging[get_opp(plr)-1]=="Vol" && !(atk=="Tornade" || atk=="Fatal-Foudre")):
 		if plr==1: await action_ui_writing("Le %s ennemi esquive l'attaque !" % get_pkm_nickname(target))
 		else : await action_ui_writing("%s esquive l'attaque !" % get_pkm_nickname(target))
@@ -718,50 +657,54 @@ func attack(plr : int):
 			if plr == 1: await action_ui_writing("%s est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 			else : await action_ui_writing("Le %s ennemi est blessé par le contrecoup !" % get_pkm_nickname(pkm))
 	else :
-		if stats.ATTACKS[atk].Categorie == "Statut" :
-			await attaque_statut(plr,atk)
+		var weakness = weakness_calculation(atk,target)
+		if weakness == 0.0:
+			await weakness_animation(weakness)
 		else:
-			var crit = crit_check(plr)
-			var weakness = weakness_calculation(atk,target)
-			var damages = 0
-			var hits_number = get_hits_number(plr)
-			if Clones[plr-1]!=null && atk != "Clonage": await clone_disapear_animation(plr)
-			for i in range(hits_number):
-				damages = damage_calculation(pkm,target,atk,crit,weakness)
-				if !crit && MurLumiereCounter[get_opp(plr)-1]>0 && stats.ATTACKS[atk].Categorie == "Special": damages/=2.0
-				if !crit && ProtectionCounter[get_opp(plr)-1]>0 && stats.ATTACKS[atk].Categorie == "Physique": damages/=2.0
-				await damage_animation(get_opp(plr),damages,weakness,false)
-				if hits_number > i+1:
-					if atk == "Furie" || atk == "Combo-Griffe" || atk == "Torgnoles" || atk == "Pilonnage" || atk == "Poing Comète": crit = false
-					elif atk == "Dard-Nuée" || atk == "Double Pied": crit = crit_check(plr)
+			if Stats.ATTACKS[atk].Categorie == "Statut" :
+				await attaque_statut(plr,atk)
+			else:
+				var crit = crit_check(plr)
+				var damages = 0
+				var hits_number = get_hits_number(plr)
+				if Clones[plr-1]!=null && atk != "Clonage": await clone_disapear_animation(plr)
+				for i in range(hits_number):
+					damages = damage_calculation(pkm,target,atk,crit,weakness)
+					if !crit && MurLumiereCounter[get_opp(plr)-1]>0 && Stats.ATTACKS[atk].Categorie == "Special": damages/=2.0
+					if !crit && ProtectionCounter[get_opp(plr)-1]>0 && Stats.ATTACKS[atk].Categorie == "Physique": damages/=2.0
+					await damage_animation(get_opp(plr),damages,weakness,false)
+					if hits_number > i+1:
+						if atk == "Furie" || atk == "Combo-Griffe" || atk == "Torgnoles" || atk == "Pilonnage" || atk == "Poing Comète": crit = false
+						elif atk == "Dard-Nuée" || atk == "Double Pied": crit = crit_check(plr)
+						await wait(1)
+						attack_animation(plr,atk)
+						await wait(0.5)
+				await attack_side_effect(plr,atk,
+					{
+						"Damages":damages,
+					})
+				if hits_number > 1 :
+					await action_ui_writing("Touché %s fois !" % hits_number)
 					await wait(1)
-					attack_animation(plr,atk)
-					await wait(0.5)
-			await attack_side_effect(plr,atk,
-				{
-					"Damages":damages,
-				})
-			if hits_number > 1 :
-				await action_ui_writing("Touché %s fois !" % hits_number)
-				await wait(1)
-			if crit == true: await crit_animation()
-			ActionUI.Label["theme_override_colors/font_color"] = Color8(255,255,255)
-			if weakness != 1: await weakness_animation(weakness)
-			ActionUI.Label.text = ""
-			if Clones[plr-1]!=null && atk != "Clonage":
-				await clone_exchange_animation(plr)
-	if target.Statut.has("Gelé") && stats.ATTACKS[atk].Type == "Feu":
-		await wait(1)
-		target.Statut.erase("Gelé")
-		if plr==1: await action_ui_writing("Le %s ennemi est dégelé !" % get_pkm_nickname(target))
-		else : await action_ui_writing("%s est dégelé !" % get_pkm_nickname(target))
-	if atk != "Mimique" && atk != "Métronome":
-		if atk != "Riposte" && atk != "Morphing" && atk != "Lutte" && atk != "Copie":
-			if pkm != old_pkm:
-				MimiqueAttack[plr-1] = atk
-			if target != old_target:
-				MimiqueAttack[get_opp(plr)-1] = atk
-		await wait(2)
+				if crit == true: await crit_animation()
+				ActionUI.Label["theme_override_colors/font_color"] = Color8(255,255,255)
+				if weakness != 1: await weakness_animation(weakness)
+				ActionUI.Label.text = ""
+				if Clones[plr-1]!=null && atk != "Clonage":
+					await clone_exchange_animation(plr)
+		if target.Statut.has("Gelé") && Stats.ATTACKS[atk].Type == "Feu":
+			await wait(1)
+			target.Statut.erase("Gelé")
+			status_animation()
+			if plr==1: await action_ui_writing("Le %s ennemi est dégelé !" % get_pkm_nickname(target))
+			else : await action_ui_writing("%s est dégelé !" % get_pkm_nickname(target))
+		if atk != "Mimique" && atk != "Métronome":
+			if atk != "Riposte" && atk != "Morphing" && atk != "Lutte" && atk != "Copie":
+				if pkm != old_pkm:
+					MimiqueAttack[plr-1] = atk
+				if target != old_target:
+					MimiqueAttack[get_opp(plr)-1] = atk
+	await wait(2)
 
 func before_attack_effects(plr : int):
 	var pkm = get_active_pokemon(plr)
@@ -813,6 +756,7 @@ func before_attack_effects(plr : int):
 				await damage_animation(plr,damages,1.0)
 				await wait(1)
 				return true
+		else: status_animation()
 	if pkm.Statut.has("Paralysé") && random_percent_check(25):
 		Audios.Attack.stream = load("res://Sounds/SFX/Status/Status Paralyzed.mp3")
 		Audios.Attack.playing = true
@@ -914,7 +858,12 @@ func attaque_statut(plr : int, atk : String):
 				target.Statut.append("Vampigraine")
 				if plr == 1:await action_ui_writing("Le %s ennemi est infecté !" % get_pkm_nickname(target))
 				else : await action_ui_writing("%s est infecté !" % get_pkm_nickname(target))
-	elif atk == "Poudre Toxik" || atk == "Gaz Toxik":
+	elif atk == "Poudre Toxik":
+		if get_types(pkm).has("Plante"):
+			await action_ui_writing("Mais ça ne l'affecte pas...")
+		else:
+			await poison_pkm(get_opp(plr),true,true)
+	elif atk == "Gaz Toxik":
 		await poison_pkm(get_opp(plr),true,true)
 	elif atk == "Croissance":
 		if Modifs[plr].Attaque == 6 && Modifs[plr].AttaqueSpe == 6:
@@ -946,17 +895,19 @@ func attaque_statut(plr : int, atk : String):
 			incomming_attacks[plr-1] = "Fuite"
 		else :
 			var deck = get_deck(get_opp(plr))
-			var apkms = get_alive_pokemons(deck)
+			var current = get_active_pokemon(get_opp(plr))
+			var apkms = get_alive_pokemons(deck).filter(func(p): return p != current)
 			if pkm.LvL < target.LvL || len(apkms) == 1:
 				await action_ui_writing("Mais cela échoue...")
 			else:
-				var apkms_n = (randi_range(1,len(apkms)-1)+OppPokemon)%len(apkms)
-				var deck_n = deck.find(apkms[apkms_n])
-				await switch(get_opp(plr),get_active_pokemon(get_opp(plr)),deck_n)
+				var apkms_n = apkms[randi_range(0,apkms.size()-1)]
+				var deck_n = deck.find(apkms_n)
+				await switch(get_opp(plr),current,deck_n)
 	elif atk == "Puissance":
-		if Modifs[plr].Critique >= 4:
+		if pkm.Statut.has("Puissance"):
 			await action_ui_writing("Mais cela échoue...")
 		else:
+			pkm.Statut.append("Puissance")
 			Modifs[plr].Critique += 2
 			Audios.Attack.stream = load("res://Sounds/SFX/Status/Stat Up.mp3")
 			Audios.Attack.playing = true
@@ -991,10 +942,14 @@ func attaque_statut(plr : int, atk : String):
 		pkm.Statut.append("Lilliput")
 		await change_stat_pkm(plr,"Esquive",2,true,false)
 	elif atk == "Métronome":
-		var all_atk_list = stats.ATTACKS.keys()
-		var random_atk = all_atk_list[randi() % all_atk_list.size()]
-		while random_atk == "Riposte" && random_atk == "Morphing" && random_atk == "Lutte" && random_atk == "Copie" && random_atk == "Métronome":
-			random_atk = all_atk_list[randi() % all_atk_list.size()]
+		var all_atk_list = Stats.ATTACKS.keys()
+		all_atk_list.erase("Riposte")
+		all_atk_list.erase("Morphing")
+		all_atk_list.erase("Lutte")
+		all_atk_list.erase("Copie")
+		all_atk_list.erase("Métronome")
+		all_atk_list.erase("Statut_Confus")
+		var random_atk = all_atk_list[randi_range(0,all_atk_list.size()-1)]
 		incomming_attacks[plr-1] = random_atk
 		await attack(plr)
 	elif atk == "Entrave":
@@ -1009,7 +964,10 @@ func attaque_statut(plr : int, atk : String):
 		if pkm.Damages >= stat(pkm,"PV"):
 			await action_ui_writing("Mais cela échoue...")
 		else:
-			pkm.Statut.clear()
+			if pkm.Statut.has("Puissance"):
+				pkm.Statut.clear()
+				pkm.Statut.append("Puissance")
+			else: pkm.Statut.clear()
 			DanseFlammeCounter[plr-1] = 0
 			LigotageCounter[plr-1] = 0
 			ClaquoirCounter[plr-1] = 0
@@ -1028,7 +986,7 @@ func attaque_statut(plr : int, atk : String):
 	elif atk == "Buée Noire":
 		reset_modifs(1)
 		reset_modifs(2)
-		await action_ui_writing("Les changements de stats ont tous été annulés !")
+		await action_ui_writing("Les changements de Stats ont tous été annulés !")
 	elif atk == "Amnésie":
 		await change_stat_pkm(plr,"DefenseSpe",2,true,false)
 	elif atk == "Téléport":
@@ -1112,14 +1070,14 @@ func attaque_statut(plr : int, atk : String):
 					"DefenseSpe":{"IV":pkm.Stats.DefenseSpe.IV,"EV":pkm.Stats.DefenseSpe.EV},
 					"Vitesse":{"IV":pkm.Stats.Vitesse.IV,"EV":pkm.Stats.Vitesse.EV}},
 				"Shiny":"n",
-				"Attacks":[
-					{"Name":"Morphing","PP":10}
-				]}
+				"Attacks":[]
+			}
+			for a in pkm.Attacks: InitalMetamorphs[plr-1].Attacks.append({"Name":a.Name,"PP":a.PP})
 			pkm.Nickname = get_pkm_nickname(pkm)
 			pkm.Name = target.Name
 			pkm.Shiny = target.Shiny
 			pkm.Stats = {
-				"PV":{"IV":target.Stats.PV.IV,"EV":target.Stats.PV.EV},
+				"PV":{"IV":pkm.Stats.PV.IV,"EV":pkm.Stats.PV.EV},
 				"Attaque":{"IV":target.Stats.Attaque.IV,"EV":target.Stats.Attaque.EV},
 				"Defense":{"IV":target.Stats.Defense.IV,"EV":target.Stats.Defense.EV},
 				"AttaqueSpe":{"IV":target.Stats.AttaqueSpe.IV,"EV":target.Stats.AttaqueSpe.EV},
@@ -1134,7 +1092,7 @@ func attaque_statut(plr : int, atk : String):
 		var type = ""
 		var force = -1
 		var types_target = get_types(target)
-		for type_player in stats.TABLE_TYPE:
+		for type_player in Stats.TABLE_TYPE:
 			var force_test = 1
 			force_test *= weak_check(type_player,types_target[0])
 			if types_target[1] != null: force_test *= weak_check(type_player,types_target[1])
@@ -1407,7 +1365,7 @@ func switch(plr : int, from : Dictionary, to : int):
 	LockCounter[plr-1] = 0
 	if InitalMetamorphs[plr-1] != null:
 		await unmorph_animation(plr)
-	InitalMetamorphs = [null,null]
+	InitalMetamorphs[plr-1] = null
 	ClientNodes.Block.visible = false
 	OppNodes.Block.visible = false
 	if plr == 1: pkm = ClientDeck[to]
@@ -1416,7 +1374,7 @@ func switch(plr : int, from : Dictionary, to : int):
 	Clones[plr-1] = null
 	if from.Statut.has("Claquoir"):
 		pkm.Statut.append("Claquoir")
-	if from.Damages != stat(from,"PV"):
+	if from.Damages < stat(from,"PV"):
 		ball.visible = true
 		ball.z_index = 1
 		sprite.material.set_shader_parameter('avancement',3)
@@ -1467,9 +1425,7 @@ func pokemon_fainted(plr : int):
 	LockCounter[plr-1] = 0
 	if InitalMetamorphs[plr-1] != null:
 		await unmorph_animation(plr)
-	if InitalMetamorphs[get_opp(plr)-1] != null:
-		await unmorph_animation(get_opp(plr))
-	InitalMetamorphs = [null,null]
+	InitalMetamorphs[plr-1] = null
 	Audios.SFX.stream = load("res://Sounds/SFX/Damages/Mort.mp3")
 	Audios.SFX.playing = true
 	for i in range(divisions):
@@ -1514,8 +1470,12 @@ func pokemon_activation(plr : int, number : int):
 	Audios.SFX.playing = true
 	await wait(1.5)
 	death_switch = false
-	if plr == 1 && OppDeck[OppPokemon].Damages == stat(OppDeck[OppPokemon],"PV"):
-		if against_bot: await pokemon_activation(2, ia_death_switch(2))
+	
+	
+	if allow_death_switch && plr == 1 && OppDeck[OppPokemon].Damages >= stat(OppDeck[OppPokemon],"PV"):
+		if against_bot:
+			ia_death_switch(2)
+			await pokemon_activation(2, int(incomming_attacks[1][-1]))
 		else: pass #SI PVP
 
 
@@ -1585,6 +1545,7 @@ func confuse_pkm(plr : int, miss_text : bool, from_opponent : bool):
 		Audios.Attack.stream = load("res://Sounds/SFX/Status/Status Confused.mp3")
 		Audios.Attack.playing = true
 		pkm.Statut.append("Confus")
+		status_animation()
 		if plr == 1:
 			ConfuseCounter[ClientPokemon] = randi_range(1,4)
 			await action_ui_writing("%s est confus !" % get_pkm_nickname(pkm))
@@ -1675,23 +1636,23 @@ func damage_calculation(pkm : Dictionary,target : Dictionary,atk : String,crit :
 		var Att = 0
 		var Def = 0
 		var CM = randf_range(0.85,1) * weakness
-		if stats.ATTACKS[atk].Categorie == "Physique" :
+		if Stats.ATTACKS[atk].Categorie == "Physique" :
 			Att = stat(pkm,"Attaque")
 			Def = stat(target,"Defense")
 			if pkm.Statut.has("Brûlure") : CM/=2
-		elif stats.ATTACKS[atk].Categorie == "Special" : 
+		elif Stats.ATTACKS[atk].Categorie == "Special" : 
 			Att = stat(pkm,"AttaqueSpe")
 			Def = stat(target,"DefenseSpe")
-		var TypeAtk = stats.ATTACKS[atk].Type
+		var TypeAtk = Stats.ATTACKS[atk].Type
 		if get_types(pkm).has(TypeAtk):
 			if atk != "Lutte":
 				CM *= 1.5#----------------------------STAB
 		var LvL = pkm.LvL
 		if crit:
 			CM *= 1.5#------------------CRIT
-		var Pui = stats.ATTACKS[atk].Puissance
+		var Pui = Stats.ATTACKS[atk].Puissance
 		if atk == "Balayage":
-			var pds = stats.POKEMONS[target.Name].Poids
+			var pds = Stats.POKEMONS[target.Name].Poids
 			if pds <= 9.9: Pui = 20
 			elif pds <= 24.9: Pui = 40
 			elif pds <= 49.9: Pui = 60
@@ -1700,22 +1661,23 @@ func damage_calculation(pkm : Dictionary,target : Dictionary,atk : String,crit :
 			else : Pui = 120
 		if Charging.has("Vol") && atk=="Tornade": Pui *= 2.0
 		if Charging.has("Tunnel") && atk=="Séisme": Pui *= 2.0
+		if atk=="Destruction": Def /= 2.0
 		if atk == "Écrasement" && target.Statut.has("Lilliput"): Pui *= 2.0
 		var damages = round((((((LvL*0.4+2)*Att*Pui)/Def)/50)+2)*CM)
 		if atk == "Plaquage" && target.Statut.has("Lilliput"): damages*=2.0
 		return damages
 
 func weakness_calculation(atk : String,target : Dictionary):
-	var TypeAtk = stats.ATTACKS[atk].Type
+	var TypeAtk = Stats.ATTACKS[atk].Type
 	var Types = get_types(target)
 	var R = 1.0
 	if Types[0] != null: R *= weak_check(TypeAtk,Types[0])
 	if Types[1] != null: R *= weak_check(TypeAtk,Types[1])
-	if atk == "Lutte" && (Types.has("Roche") || Types.has("Acier")): R = 0
+	if atk == "Lutte" && (Types.has("Roche") || Types.has("Acier")): R = 0.0
 	return R
 
 func precision_calculation(pkm : Dictionary,target : Dictionary,atk : String):
-	var Pre = stats.ATTACKS[atk].Precision
+	var Pre = Stats.ATTACKS[atk].Precision
 	if atk == "Empal'Korne" || atk == "Guillotine":
 		return random_percent_check((pkm.LvL - target.LvL) + 30)
 	elif (atk == "Plaquage" || atk == "Écrasement") && target.Statut.has("Lilliput"):
@@ -1728,13 +1690,13 @@ func precision_calculation(pkm : Dictionary,target : Dictionary,atk : String):
 		return random_percent_check(Pre * PreA2 / EsqB)
 
 func first_pick_calculation():
-	var atk1 = stats.ATTACKS.get(incomming_attacks[0])
+	var atk1 = Stats.ATTACKS.get(incomming_attacks[0])
 	var prio1 = 0
 	if atk1 == null:
 		if incomming_attacks[0].begins_with("Switch"): prio1 = 6
 	else:
 		prio1 = atk1.Priorite
-	var atk2 = stats.ATTACKS.get(incomming_attacks[1])
+	var atk2 = Stats.ATTACKS.get(incomming_attacks[1])
 	var prio2 = 0
 	if atk2 == null:
 		if incomming_attacks[1].begins_with("Switch"): prio2 = 6
@@ -1752,49 +1714,37 @@ func lvl_up_calculation(pkm : Dictionary):
 	var targeted_lvl = current_lvl
 	while current_lvl == targeted_lvl:
 		targeted_lvl += 1
-		var required_exp = max_exp_calculation(pkm,targeted_lvl)
+		var required_exp = Stats.max_exp_calculation(pkm,targeted_lvl)
 		if pkm.EXP >= required_exp:
 			pkm.EXP -= required_exp
 			ClientNodes.ExpBar.value = pkm.EXP
 			current_lvl += 1
 	return current_lvl
 
-func max_exp_calculation(pkm : Dictionary, next_lvl : int):
-	var curb = stats.POKEMONS[pkm.Name].Courbe_EXP
-	if curb == "Rapide":
-		return 0.8*next_lvl**3
-	elif curb == "Moyenne":
-		return next_lvl**3
-	elif curb == "Parabolique":
-		return 1.2*next_lvl**3 - 15*next_lvl**2 + 100*next_lvl - 140
-	elif curb == "Lente":
-		return 1.25*next_lvl**3
-
 
 #									-----IA-----
 func ia_moves(plr : int):
 	if Charging[plr-1] != "":
-		return Charging[plr-1]
+		incomming_attacks[plr-1] = Charging[plr-1]
 	elif get_active_pokemon(2).Statut.has("Ultralaser"):
-		return "Ultralaser"
-	elif LockCounter[1] != 0: return incomming_attacks[1]
+		incomming_attacks[plr-1] = "Ultralaser"
+	elif LockCounter[plr-1] != 0: incomming_attacks[plr-1] = incomming_attacks[plr-1]
 	else:
 		IA.possible_moves = []
 		ia_attack_list(plr)
 		ia_switch_list(plr)
-		if IA.possible_moves == []: return "Lutte"
+		if IA.possible_moves == []: incomming_attacks[plr-1] = "Lutte"
 		else:
 			var res = IA.play(game_state)
 			if res.begins_with("Switch "):
 				res = "Switch %s" % ia_find_pokemon_index(plr, res.split(" ")[1])
-			return res
+			incomming_attacks[plr-1] = res
 func ia_death_switch(plr : int):
 	game_state = ia_create_game_state()
 	IA.possible_moves = []
 	ia_switch_list(plr)
 	var res = IA.play(game_state)
-	if res.begins_with("Switch "):
-		return ia_find_pokemon_index(plr, res.split(" ")[1])
+	incomming_attacks[1] = "Switch %s" % ia_find_pokemon_index(plr, res.split(" ")[1])
 func ia_find_pokemon_index(plr : int, pkm_name : String):
 	var deck = get_deck(plr)
 	for i in range(len(deck)):
@@ -1812,7 +1762,6 @@ func ia_switch_list(plr : int):
 			IA.possible_moves.append("Switch %s" % deck[i].Name)
 func ia_create_game_state():
 	var gs = {}
-	gs["IA"] = {}
 	var pkm_func = func(pkm):
 		var r = {}
 		r["Name"]=pkm.Name
@@ -1843,12 +1792,8 @@ func ia_create_game_state():
 			r["Efficiency"] = weakness_calculation(move,target)
 		return r
 	
+	gs["IA"] = {}
 	gs["IA"]["Active"] = pkm_func.call(get_active_pokemon(2))
-	var bench = get_deck(2)
-	bench.erase(gs["IA"]["Active"])
-	gs["IA"]["Bench"] = []
-	for pkm in bench:
-		gs["IA"]["Bench"].append(pkm_func.call(pkm))
 	gs["IA"]["Last_Move"] = move_func.call(2)
 	
 	gs["Opp"] = {}
@@ -1856,7 +1801,6 @@ func ia_create_game_state():
 	gs["Opp"]["Last_Move"] = move_func.call(2)
 	
 	gs["Modifs"]=Modifs
-	gs["Turn"]=turn
 	return gs
 
 
@@ -1866,15 +1810,15 @@ func random_percent_check(percent : float):
 
 func crit_check(plr : int):
 	var atk = incomming_attacks[plr-1]
-	var crit = stats.ATTACKS[atk].Critique+Modifs[plr].get("Critique")
+	var crit = Stats.ATTACKS[atk].Critique+Modifs[plr].get("Critique")
 	if crit > 5 : crit = 5
-	return random_percent_check(stats.CRIT_OCCUR[crit]*100.0)
+	return random_percent_check(Stats.CRIT_OCCUR[crit]*100.0)
 
 func weak_check(TypeA : String, TypeB : String):
 	#Type A -> Atk
 	#Type B -> Subit
-	if stats.TABLE_TYPE[TypeA].has(TypeB):
-		return stats.TABLE_TYPE[TypeA][TypeB]
+	if Stats.TABLE_TYPE[TypeA].has(TypeB):
+		return Stats.TABLE_TYPE[TypeA][TypeB]
 	else:
 		return 1.0
 
@@ -1915,7 +1859,7 @@ func can_use_move(plr : int, move : String, i : int):
 		if plr==1:number=ClientPokemon
 		else:number=OppPokemon
 		var MaxHealth = stat(deck[i],"PV")
-		return i!=number && deck[i].Damages!=MaxHealth && DanseFlammeCounter[plr-1]==0 && LigotageCounter[plr-1]==0
+		return i!=number && deck[i].Damages<MaxHealth && DanseFlammeCounter[plr-1]==0 && LigotageCounter[plr-1]==0
 	elif move == "Attaque":
 		return get_active_pokemon(plr).Attacks[i].PP>0
 
@@ -1959,7 +1903,7 @@ func refresh_ui():
 			nodes.Block.visible = true
 			if plr == 1:
 				nodes.Sprite.texture = load(get_pokemon_img("Back",pkm.Name,pkm.Shiny))
-				nodes.ExpBar.max_value = max_exp_calculation(pkm,pkm.LvL+1)
+				nodes.ExpBar.max_value = Stats.max_exp_calculation(pkm,pkm.LvL+1)
 				nodes.ExpBar.value = pkm.EXP
 			else: nodes.Sprite.texture = load(get_pokemon_img("Front",pkm.Name,pkm.Shiny))
 			status_animation()
@@ -2047,7 +1991,7 @@ func unmorph_animation(plr : int):
 		"DefenseSpe":{"IV":target.Stats.DefenseSpe.IV,"EV":target.Stats.DefenseSpe.EV},
 		"Vitesse":{"IV":target.Stats.Vitesse.IV,"EV":target.Stats.Vitesse.EV}}
 	pkm.Attacks.clear()
-	for ta in target.Attacks: pkm.Attacks.append({"Name":ta.Name,"PP":5})
+	for ta in target.Attacks: pkm.Attacks.append({"Name":ta.Name,"PP":ta.PP})
 	var sprite = get_nodes(plr).Sprite
 	sprite.skew = 0
 	var time = 0.1
@@ -2133,13 +2077,13 @@ func damage_animation(plr : int, damages : int, weak : float, ignore_clone : boo
 			await wait(time/divisions)
 	pkm.Damages = total_damages
 	if pkm.Name == "Clone":
-		if pkm.Damages == MaxHealth:
+		if pkm.Damages >= MaxHealth:
 			Clones[plr-1] = null
 			await action_ui_writing("Le clone disparaît !")
 			await clone_disapear_animation(plr)
 			await wait(1)
 	else:
-		if pkm.Damages >= MaxHealth*0.9 && pkm.Damages != MaxHealth:# Low
+		if pkm.Damages >= MaxHealth*0.9 && pkm.Damages < MaxHealth:# Low
 			Audios.Damages.stream = load("res://Sounds/SFX/Damages/Low.mp3")
 			Audios.Damages.playing = true
 	await wait(0.2)
@@ -2162,6 +2106,7 @@ func status_animation():
 	for plr in range(1,3):
 		var pkm = get_active_pokemon(plr)
 		var nodes = get_nodes(plr)
+		nodes.Sprite.material.set_shader_parameter('is_confused', pkm.Statut.has("Confus"))
 		if pkm.Statut.has("Brûlé"):
 			nodes.Sprite.material.set_shader_parameter('status', 1)
 			nodes.StatutBlock.visible = true
@@ -2264,7 +2209,7 @@ func pokemon_hover(a):
 		for i in range(1,5):
 			if i <= len(attack_list):
 				var atk = attack_list[i-1]
-				PkmInfoUI["Atk%s" % i].text = "%s (%s/%s)" % [atk.Name,atk.PP,stats.ATTACKS[atk.Name].PP]
+				PkmInfoUI["Atk%s" % i].text = "%s (%s/%s)" % [atk.Name,atk.PP,Stats.ATTACKS[atk.Name].PP]
 			else:
 				PkmInfoUI["Atk%s" % i].text = ""
 		if Health <= 0:
@@ -2298,9 +2243,9 @@ func _on_attack_pressed():
 		var Child = VBox.find_child("Attack%s" % str(i+1))
 		if i < len(attack_list):
 			var Name = attack_list[i].Name
-			Child.text = "%s (%s/%s)" % [Name,attack_list[i].PP,stats.ATTACKS[Name].PP]
-			Child.icon = load("res://Textures/Types/Expanded/%s.png" % stats.ATTACKS[Name].Type)
-			var color8 = stats.TYPE_COLOR[stats.ATTACKS[Name].Type]*0.8
+			Child.text = "%s (%s/%s)" % [Name,attack_list[i].PP,Stats.ATTACKS[Name].PP]
+			Child.icon = load("res://Textures/Types/Expanded/%s.png" % Stats.ATTACKS[Name].Type)
+			var color8 = Stats.TYPE_COLOR[Stats.ATTACKS[Name].Type]*0.8
 			color8.a8 = 255
 			Child["theme_override_styles/normal"].bg_color = color8
 			Child["theme_override_styles/normal"].border_color = color8 - Color8(100,100,100,0)
@@ -2312,7 +2257,8 @@ func _on_attack_pressed():
 			if Child.disabled == false: use_lutte = false
 		else:
 			Child.text = ""
-			var color8 = stats.TYPE_COLOR["Normal"]
+			var color8 = Stats.TYPE_COLOR["Normal"]
+			Child.icon = null
 			Child["theme_override_styles/disabled"].bg_color = color8 - Color8(100,100,100,0)
 			Child.disabled = true
 	if use_lutte:
@@ -2387,7 +2333,8 @@ func _on_continue_pressed():
 	death_switch = false
 	await wait(1)
 	if against_bot:
-		await pokemon_activation(2, ia_death_switch(2))
+		ia_death_switch(2)
+		await pokemon_activation(2, int(incomming_attacks[1][-1]))
 		game_state = ia_create_game_state()
 		IA.feed(game_state)
 		preparation_phase()

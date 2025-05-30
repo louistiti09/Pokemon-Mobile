@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo68ujguf0gc2"]
+
+[ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_a5sub"]
+[ext_resource type="Texture2D" uid="uid://diasym3xfdjw1" path="res://Textures/P.Chen.png" id="2_e42b5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6bg4"]
+shader = ExtResource("1_a5sub")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0.623529, 0.807843, 0.694118, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 10.0
+shader_parameter/generate_offset = true
+shader_parameter/wavy = 0.0
+shader_parameter/wave_width = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04kae"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gtyrh"]
+shader = ExtResource("1_a5sub")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/offset = 1.49012e-08
+shader_parameter/pixelise = 1000.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 1.0
+
+[sub_resource type="SystemFont" id="SystemFont_lgo83"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[node name="Intro" type="Node2D"]
+
+[node name="BG" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_i6bg4")
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="P_Chen" type="TextureRect" parent="."]
+offset_left = 137.0
+offset_top = 200.0
+offset_right = 403.667
+offset_bottom = 600.0
+texture = ExtResource("2_e42b5")
+expand_mode = 3
+
+[node name="Tutorial_UI" type="Panel" parent="."]
+clip_children = 1
+offset_left = 20.0
+offset_top = 600.0
+offset_right = 520.0
+offset_bottom = 680.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_04kae")
+
+[node name="Background" type="ColorRect" parent="Tutorial_UI"]
+material = SubResource("ShaderMaterial_gtyrh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Tutorial_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = -1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_lgo83")
+theme_override_font_sizes/font_size = 25
+text = "Texte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BG2" type="ColorRect" parent="."]
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

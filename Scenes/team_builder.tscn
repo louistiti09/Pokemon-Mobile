@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dd5n2wb2gp024"]
+[gd_scene load_steps=47 format=3 uid="uid://dd5n2wb2gp024"]
 
 [ext_resource type="Script" path="res://Script/team_builder.gd" id="1_0bu20"]
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_ddflw"]
@@ -6,7 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://c4gp82vdrwpsn" path="res://Textures/Types/Expanded/Plante.png" id="4_2cal3"]
 [ext_resource type="Texture2D" uid="uid://cbrkhipeb55p1" path="res://Textures/Types/Expanded/Poison.png" id="5_5pip6"]
 [ext_resource type="Texture2D" uid="uid://beab34ulh4kns" path="res://Textures/CategorieCapa/Statut.png" id="6_jprwf"]
-[ext_resource type="Texture2D" uid="uid://3v4ysnopjnlq" path="res://Textures/move.png" id="7_7vs1y"]
+[ext_resource type="Texture2D" uid="uid://3v4ysnopjnlq" path="res://Textures/TeamBuilder/move.png" id="7_7vs1y"]
+[ext_resource type="Texture2D" uid="uid://do6lxs3410gn7" path="res://Textures/TeamBuilder/switchmove.png" id="7_tv2bi"]
+[ext_resource type="Texture2D" uid="uid://b13my0qcef514" path="res://Textures/Pokemons/Front/n/6.png" id="9_vkcgm"]
+[ext_resource type="AudioStream" uid="uid://bg2eky4hj7k4e" path="res://Sounds/SFX/Pokemon/Pikachu.ogg" id="9_y4xi0"]
+[ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="10_ig0ej"]
+[ext_resource type="AudioStream" uid="uid://ddetr6704c5so" path="res://Sounds/BGM/Lillie's Theme.mp3" id="11_noki1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oqfx"]
 shader = ExtResource("1_ddflw")
@@ -105,6 +110,126 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp1w3"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5blco"]
+border_width_top = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_s7tep"]
+resource_name = "add_atk"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PkmMenu/AddAtk:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(540, -10), Vector2(0, -10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PkmMenu/Panel/AtkInfo/Change:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PkmMenu/QuitterPkm:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PkmMenu/AddAtk/Panel/Annuler:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ns4ro"]
+resource_name = "add_pokemon"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu/AddPokemon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(540, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMenu/AddPokemon/Panel/Annuler:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainMenu/Quitter:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainMenu/Edit:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
 [sub_resource type="Animation" id="Animation_bvc33"]
 resource_name = "to_pokemon"
 tracks/0/type = "value"
@@ -115,7 +240,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.3, 0.3),
+"transitions": PackedFloat32Array(3, 0.3),
 "update": 0,
 "values": [Vector2(270, 480), Vector2(1010, -450)]
 }
@@ -127,7 +252,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1.3, 1.29),
+"transitions": PackedFloat32Array(3, 1.29),
 "update": 0,
 "values": [0.0, 0.785398]
 }
@@ -167,9 +292,35 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PkmMenu/AddAtk:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Audios/SFX:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0n6vi"]
 _data = {
+"add_atk": SubResource("Animation_s7tep"),
+"add_pokemon": SubResource("Animation_ns4ro"),
 "to_pokemon": SubResource("Animation_bvc33")
 }
 
@@ -424,6 +575,55 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ory0o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6scqo")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ory0o")
 text = "Editer"
+
+[node name="AddPokemon" type="Node2D" parent="MainMenu"]
+position = Vector2(540, 0)
+
+[node name="Panel" type="Panel" parent="MainMenu/AddPokemon"]
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="Titre" type="Label" parent="MainMenu/AddPokemon/Panel"]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "Ajouter un Pokémon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="MainMenu/AddPokemon/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 530.0
+offset_bottom = 850.0
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="MainMenu/AddPokemon/Panel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Annuler" type="Button" parent="MainMenu/AddPokemon/Panel"]
+clip_children = 2
+layout_mode = 0
+offset_left = 185.0
+offset_top = 860.0
+offset_right = 335.0
+offset_bottom = 910.0
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6scqo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ory0o")
+disabled = true
+text = "Annuler"
 
 [node name="PkmMenu" type="Node2D" parent="."]
 position = Vector2(-390, 1040)
@@ -931,12 +1131,129 @@ offset_bottom = 190.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 15
+text = "Devine."
 autowrap_mode = 2
+
+[node name="Change" type="TextureButton" parent="PkmMenu/Panel/AtkInfo"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 10.0
+offset_right = 470.0
+offset_bottom = 60.0
+rotation = 0.349066
+pivot_offset = Vector2(25, 25)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_tv2bi")
+texture_pressed = ExtResource("7_tv2bi")
+texture_hover = ExtResource("7_tv2bi")
+texture_disabled = ExtResource("7_tv2bi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AddAtk" type="Node2D" parent="PkmMenu"]
+visible = false
+position = Vector2(540, -10)
+
+[node name="Panel" type="Panel" parent="PkmMenu/AddAtk"]
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="Titre" type="Label" parent="PkmMenu/AddAtk/Panel"]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "Ajouter une attaque"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="PkmMenu/AddAtk/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 530.0
+offset_bottom = 850.0
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="PkmMenu/AddAtk/Panel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LabelNiveau" type="Label" parent="PkmMenu/AddAtk/Panel/Scroll/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_jp1w3")
+text = "Par Niveau"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxLvL" type="VBoxContainer" parent="PkmMenu/AddAtk/Panel/Scroll/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Separateur" type="HSeparator" parent="PkmMenu/AddAtk/Panel/Scroll/VBox"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxFlat_5blco")
+
+[node name="LabelCTCS" type="Label" parent="PkmMenu/AddAtk/Panel/Scroll/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_jp1w3")
+text = "Par CT/CS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxCTCS" type="VBoxContainer" parent="PkmMenu/AddAtk/Panel/Scroll/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Annuler" type="Button" parent="PkmMenu/AddAtk/Panel"]
+clip_children = 2
+layout_mode = 0
+offset_left = 195.0
+offset_top = 870.0
+offset_right = 345.0
+offset_bottom = 920.0
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ory0o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6scqo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ory0o")
+disabled = true
+text = "Annuler"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0n6vi")
 }
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="Button" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("10_ig0ej")
+bus = &"SFX"
+
+[node name="SFX" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("9_y4xi0")
+bus = &"SFX"
+
+[node name="BGM" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("11_noki1")
+bus = &"BGM"
 
 [node name="Sample" type="Button" parent="."]
 visible = false
@@ -1084,6 +1401,58 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_312ha")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_312ha")
 text = "X"
 
+[node name="AtkSample" type="Button" parent="."]
+visible = false
+clip_children = 2
+custom_minimum_size = Vector2(400, 50)
+offset_left = -786.0
+offset_top = 395.0
+offset_right = -386.0
+offset_bottom = 445.0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6atq5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6atq5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6atq5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6atq5")
+
+[node name="Label" type="Label" parent="AtkSample"]
+layout_mode = 1
+offset_right = 400.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+theme_override_font_sizes/font_size = 20
+text = "Attaque"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HLabel" type="Label" parent="AtkSample"]
+layout_mode = 1
+offset_top = 33.0
+offset_right = 355.0
+offset_bottom = 50.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+theme_override_font_sizes/font_size = 12
+text = "(Dracaufeu Lv.50)"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HTexture" type="TextureRect" parent="AtkSample"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 363.0
+offset_top = 15.0
+offset_right = 403.0
+offset_bottom = 55.0
+texture = ExtResource("9_vkcgm")
+expand_mode = 3
+
 [node name="AddPkmSample" type="Button" parent="."]
 visible = false
 clip_children = 2
@@ -1091,7 +1460,7 @@ custom_minimum_size = Vector2(0, 111)
 offset_left = -236.0
 offset_top = 210.0
 offset_right = 264.0
-offset_bottom = 321.0
+offset_bottom = 260.0
 size_flags_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -1102,6 +1471,44 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_lb8t4")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_lb8t4")
 text = "+"
 
+[node name="AddAtkSample" type="Button" parent="."]
+visible = false
+clip_children = 2
+custom_minimum_size = Vector2(0, 49)
+offset_left = -236.0
+offset_top = 210.0
+offset_right = 264.0
+offset_bottom = 260.0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lb8t4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wuk1q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lb8t4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lb8t4")
+
+[node name="Label" type="Label" parent="AddAtkSample"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/shadow_offset_x = -2
+theme_override_fonts/font = SubResource("SystemFont_7buj2")
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="text_changed" from="MainMenu/Team_Name/Label" to="." method="_on_label_text_changed"]
+[connection signal="pressed" from="MainMenu/Quitter" to="." method="_on_quitter_teambuilder_pressed"]
 [connection signal="pressed" from="MainMenu/Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="MainMenu/AddPokemon/Panel/Annuler" to="." method="_on_annuler_pressed"]
 [connection signal="pressed" from="PkmMenu/QuitterPkm" to="." method="_on_quitter_pressed"]
+[connection signal="pressed" from="PkmMenu/Panel/AtkInfo/Change" to="." method="_on_change_atk_pressed"]
+[connection signal="pressed" from="PkmMenu/AddAtk/Panel/Annuler" to="." method="_on_annuler_atk_pressed"]

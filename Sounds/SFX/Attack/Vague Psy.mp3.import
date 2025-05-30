@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dn20u2mlh2ben"
+path="res://.godot/imported/Vague Psy.mp3-c4836ecfbc2698213070f612300d4cc2.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/Attack/Vague Psy.mp3"
+dest_files=["res://.godot/imported/Vague Psy.mp3-c4836ecfbc2698213070f612300d4cc2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

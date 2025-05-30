@@ -1,10 +1,10 @@
 shader_type canvas_item;
 
-uniform float avancement : hint_range(0.0, 3.0, 0.1) = 3.0;
-uniform int resolution = 80;//6400 iterations
+uniform float spawn_anim : hint_range(0.0, 3.0, 0.1) = 3.0;
+uniform float offset : hint_range(0.0, 1.0) = 0.0;
 uniform float death_animation : hint_range(0.0, 100.0) = 0.0;
 uniform bool is_client;
-uniform int status : hint_range(0, 5) = 0;
+uniform int status : hint_range(0, 6) = 0;
 uniform float raise_alpha : hint_range(0, 200, 1) = 0.0;
 uniform bool is_raise = true;
 uniform bool is_confused = false;
@@ -16,6 +16,7 @@ const vec3 frozen_color = vec3(0,1,1);
 const vec3 paralyzed_color = vec3(1,1,0);
 const vec3 poisoned_color = vec3(0.5,0,0.5);
 const vec3 sleep_color = vec3(-0.9,-0.9,-0.3);
+const vec3 poisonedG_color = vec3(0.7,-1,0.7);
 
 const vec3 raise_color = vec3(1.0,0.5,0.3);
 const vec3 unraise_color = vec3(0.3,0.5,1.0);
@@ -23,18 +24,6 @@ const float arrow_width = 0.7;
 const float arrow_speed = 0.8;
 const float num_v_x = 5.0;
 const float num_v_y = 5.0;
-
-float get_offset(sampler2D TXTR) {
-	vec2 uv;
-	for (int y = resolution; y>=0; y--){
-		for (int x = resolution; x>=0; x--){
-			uv = vec2(float(x)/float(resolution),float(y)/float(resolution));
-			if (texture(TXTR,uv).a > 0.0){
-				return uv.y + 1.0/float(resolution);
-			}
-		}
-	}
-}
 
 vec3 get_raise_arrows(vec3 color, vec2 uv) {
 	vec3 effect_color = is_raise ? raise_color : unraise_color;
@@ -52,23 +41,19 @@ vec3 get_raise_arrows(vec3 color, vec2 uv) {
 }
 
 void fragment() {
-	//Offset
+	//Death anim
 	vec2 uv = UV;
-	float offset = get_offset(TEXTURE);
-	uv.y = mod(uv.y + offset, 1.0);
-	if (uv.y <= offset) {
-		uv.y -= death_animation/100.0;
-	} 
+	uv.y -= death_animation/100.0;
 	COLOR = texture(TEXTURE,uv);
 	
 	//Animation pokeball
-	if (avancement <= 1.0) {
+	if (spawn_anim <= 1.0) {
 		vec3 inv_color = vec3(abs(1.0-apparition_color.x),abs(1.0-apparition_color.y),abs(1.0-apparition_color.z));
-		vec3 modulation = vec3(1,1,1)-(inv_color*(1.0-pow(avancement,2)));
+		vec3 modulation = vec3(1,1,1)-(inv_color*(1.0-pow(spawn_anim,2)));
 		COLOR.rgb = modulation;
-		COLOR.a *= sqrt(avancement);
+		COLOR.a *= sqrt(spawn_anim);
 	} else {
-		vec3 modulation = vec3((avancement-1.0)/2.0);
+		vec3 modulation = vec3((spawn_anim-1.0)/2.0);
 		COLOR.rgb /= modulation;
 	}
 	
@@ -78,6 +63,7 @@ void fragment() {
 	else if (status == 3) { COLOR.rgb += paralyzed_color*status_alpha;}
 	else if (status == 4) { COLOR.rgb += poisoned_color*status_alpha;}
 	else if (status == 5) { COLOR.rgb += sleep_color*status_alpha;}
+	else if (status == 6) { COLOR.rgb += poisonedG_color*status_alpha;}
 	
 	//Raise Stats
 	COLOR.rgb = get_raise_arrows(COLOR.rgb, UV);
@@ -95,7 +81,10 @@ void fragment() {
 }
 
 void vertex(){
-	VERTEX.y += 2.1;
+	//Offset
+	VERTEX.y += 2.1 + offset;
+	
+	//Status Anim
 	if (status == 3) {
 		float gap = 4.0;
 		float anim = 0.7;

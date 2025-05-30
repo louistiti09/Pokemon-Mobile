@@ -1508,7 +1508,7 @@ const POKEMONS = {
 			{"Attack":"Psyko","LvL":38},
 			{"Attack":"Protection","LvL":42},
 		],
-		"Evolution": {"Name":"Kadabra","Autre":"Échange"}},
+		"Evolution": {"Name":"Alakazam","Autre":"Échange"}},
 	"Alakazam": {
 		"PV":55,
 		"Attaque":50,
@@ -4377,7 +4377,7 @@ const ATTACKS = {
 		"Critique":1,
 		"Categorie":"Physique"},
 	"Jackpot": {
-		"Description": "",
+		"Description": "Fait pleuvoir des pièces.",
 		"PP":20,
 		"Type":"Normal",
 		"Puissance":40,
@@ -4965,6 +4965,563 @@ const ATTACKS = {
 		"Priorite":0,
 		"Critique":2,
 		"Categorie":"Physique"},
+	"Coupe-Vent": {
+		"Description": "Cette capacité a plus de chance d'infliger un coup critique. Cette attaque se charge au premier tour et s'exécute au second.",
+		"PP":10,
+		"Type":"Normal",
+		"Puissance":80,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":2,
+		"Categorie":"Special"},
+	"Toxik": {
+		"Description": "Empoisonne gravement la cible.",
+		"PP":10,
+		"Type":"Poison",
+		"Puissance":null,
+		"Precision":90,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Statut"},
+	"Bulles d'O": {
+		"Description": "Cette capacité a 10% de chances de réduire la Vitesse de la cible d' 1 cran.",
+		"PP":20,
+		"Type":"Eau",
+		"Puissance":65,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Special"},
+	"Méga-Sangsue": {
+		"Description": "L'utilisateur récupère la moitié des PVs perdus par la cible, arrondie à l'unité supérieure.",
+		"PP":15,
+		"Type":"Plante",
+		"Puissance":40,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Special"},
+	"Abîme": {
+		"Description": "L'attaque inflige à la cible des dégâts égaux à ses PVs maximums. Elle ignore aussi les modificateurs de Précision et d'Esquive. Sa précision est égale à (niveau de l'utilisateur - niveau de la cible + 30, et échoue si la cible est de niveau supérieur.",
+		"PP":5,
+		"Type":"Sol",
+		"Puissance":null,
+		"Precision":null,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Physique"},
+	"Copie": {
+		"Description": "Cette capacité est remplacée par la dernière capacité utilisée par la cible. La capacité copiée a ses PPs au maximum et demeure tant que le Pokémon l'ayant copiée ne tombe pas KO. Échoue si la cible n'a pas utilisé d'attaque, si l'utilisateur s'est transformé, si l'utilisateur connaît déjà la capacité, ou si la capacité est Métronome, Copie, Morphing ou Lutte.",
+		"PP":10,
+		"Type":"Normal",
+		"Puissance":null,
+		"Precision":null,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Statut"},
+	"Patience": {
+		"Description": "Le lanceur passe deux tours bloqué sur cette capacité sans frapper, puis il attaque l'adversaire en lui infligeant le double des PVs qu'il a perdus pendant ces tours. Cette capacité ne vérifie pas la Précision et ignore l'immunité de type, elle ne peut pas toucher un Pokémon en Vol ou sous Tunnel.\nPriorité : +1",
+		"PP":10,
+		"Type":"Normal",
+		"Puissance":null,
+		"Precision":null,
+		"Priorite":1,
+		"Critique":1,
+		"Categorie":"Physique"},
+	"Bomb'Oeuf": {
+		"Description": "",
+		"PP":10,
+		"Type":"Normal",
+		"Puissance":100,
+		"Precision":75,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Physique"},
+	"Déflagration": {
+		"Description": "Cette capacité a 10% de chances de brûler la cible.",
+		"PP":5,
+		"Type":"Feu",
+		"Puissance":110,
+		"Precision":85,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Special"},
+	"E-Coque": {
+		"Description": "L'utilisateur récupère la moitié de ses PVs maximums.",
+		"PP":5,
+		"Type":"Normal",
+		"Puissance":null,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Statut"},
+	"Vague Psy": {
+		"Description": "Inflige à la cible des dégâts égaux à (niveau du lanceur) × (X + 5) / 10, où X est un nombre aléatoire compris entre 0 et 10.",
+		"PP":15,
+		"Type":"Psy",
+		"Puissance":null,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Special"},
+	"Éboulement": {
+		"Description": "Cette capacité a 30% de chances d'apeurer la cible.",
+		"PP":10,
+		"Type":"Roche",
+		"Puissance":75,
+		"Precision":90,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Physique"},
+}
+
+const CTCS = {
+	"Ultimapoing": {
+		"ID":"CT01",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank","Pikachu","Raichu",
+			"Nidoqueen","Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Psykokwak","Akwakwak",
+			"Férosinge","Colossinge","Têtarte","Tartard","Abra", "Kadabra","Alakazam","Machoc",
+			"Machopeur","Mackogneur","Racaillou","Gravalanch","Grolem","Flagadoss","Ectoplasma",
+			"Soporifik","Hypnomade","Osselait","Ossatueur","Kicklee","Tygnon","Excelangue","Rhinoféros",
+			"Leveinard","Kangourex","M.Mime","Lippoutou","Élektek","Magmar","Ronflex","Mewtwo","Mew"
+		]},
+	"Coupe-Vent": {
+		"ID":"CT02",
+		"Pokemons":[
+			"Papilusion","Roucool","Roucoups","Roucarnage","Piafabec","Rapasdepic","Nosferapti",
+			"Nosferalto","Aéromite","Canarticho","Kabuto","Kabutops","Ptéra","Artikodin","Électhor",
+			"Sulfura","Dracolosse","Mew"
+		]},
+	"Danse-Lames": {
+		"ID":"CT03",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Salamèche","Reptincel","Dracaufeu",
+			"Dardargnan","Sabelette","Sablaireau","Mystherbe","Ortide","Rafflesia","Paras","Parasect",
+			"Chétiflor","Boustiflor","Empliflor","Tentacool","Tentacruel","Canarticho","Krabby",
+			"Krabboss","Excelangue","Saquedeneu","Insécateur","Scarabrute","Kabuto","Kabutops","Mew"
+		]},
+	"Cyclone": {
+		"ID":"CT04",
+		"Pokemons":[
+			"Papilusion","Roucool","Roucoups","Roucarnage","Piafabec","Rapasdepic","Nosferapti",
+			"Nosferalto","Aéromite","Canarticho","Doduo","Dodrio","Ptéra","Artikodin","Électhor",
+			"Sulfura","Mew"
+		]},
+	"Ultimawashi": {
+		"ID":"CT05",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank","Pikachu","Raichu",
+			"Nidoqueen","Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Psykokwak","Akwakwak",
+			"Férosinge","Colossinge","Têtarte","Tartard","Abra", "Kadabra","Alakazam","Machoc",
+			"Machopeur","Mackogneur","Racaillou","Gravalanch","Grolem","Flagadoss","Ectoplasma",
+			"Soporifik","Hypnomade","Osselait","Ossatueur","Kicklee","Tygnon","Excelangue","Rhinoféros",
+			"Leveinard","Kangourex","M.Mime","Lippoutou","Élektek","Magmar","Kabuto","Kabutops","Ronflex",
+			"Mewtwo","Mew"
+		]},
+	"Toxik": {
+		"ID":"CT06",
+		"Pokemons":"All"},
+	"Empal'Korne": {
+		"ID":"CT07",
+		"Pokemons":[
+			"Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking","Ponyta","Galopa","Otaria","Lamantine",
+			"Rhinocorne","Rhinoféros","Poissirène","Poissoroy","Tauros","Lokhlass","Amonistar","Draco",
+			"Dracolosse","Mew"
+		]},
+	"Plaquage": {
+		"ID":"CT08",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Salamèche","Reptincel","Dracaufeu","Carapuce",
+			"Carabaffe","Tortank","Rattata","Rattatac","Abo","Arbok","Pikachu","Raichu","Sabelette",
+			"Sablaireau","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking",
+			"Mélofée","Mélodelfe","Goupix","Feunard","Rondoudou","Grodoudou","Rafflesia","Paras","Parasect",
+			"Taupiqueur","Triopiqueur","Miaouss","Persian","Psykokwak","Akwakwak","Férosinge","Colossinge",
+			"Caninos","Arcanin","Ptitard","Têtarte","Tartard","Abra","Kadabra","Alakazam","Machoc",
+			"Machopeur","Mackogneur","Empliflor","Racaillou","Gravalanch","Grolem","Ponyta","Galopa",
+			"Ramoloss","Flagadoss","Canarticho","Doduo","Dodrio","Otaria","Lamantine","Tadmorv","Grotadmorv",
+			"Ectoplasma","Onix","Soporifik","Hypnomade","Krabby","Krabboss","Osselait","Ossatueur","Kicklee",
+			"Tygnon","Excelangue","Rhinoféros","Leveinard","Saquedeneu","Kangourex","M.Mime","Lippoutou",
+			"Élektek","Magmar","Scarabrute","Tauros","Léviator","Lokhlass","Évoli","Aquali","Voltali","Pyroli",
+			"Amonita","Amonistar","Kabuto","Kabutops","Ronflex","Minidraco","Draco","Dracolosse","Mewtwo","Mew"
+		]},
+	"Bélier": {
+		"ID":"CT09",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Salamèche","Reptincel","Dracaufeu","Carapuce",
+			"Carabaffe","Tortank","Papilusion","Dardargnan","Roucool","Roucoups","Roucarnage",
+			"Rattata","Rattatac","Piafabec","Rapasdepic","Abo","Arbok","Pikachu","Raichu",
+			"Sabelette","Sablaireau","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking",
+			"Mélofée","Mélodelfe","Goupix","Feunard","Rondoudou","Grodoudou","Nosferapti","Nosferalto",
+			"Mystherbe","Ortide","Rafflesia","Paras","Parasect","Mimitoss","Aéromite","Taupiqueur",
+			"Triopiqueur","Miaouss","Persian","Psykokwak","Akwakwak","Férosinge","Colossinge",
+			"Caninos","Arcanin","Ptitard","Têtarte","Tartard","Abra","Kadabra","Alakazam","Machoc",
+			"Machopeur","Mackogneur","Chétiflor","Boustiflor","Empliflor","Tentacool","Tentacruel",
+			"Racaillou","Gravalanch","Grolem","Ponyta","Galopa","Ramoloss","Flagadoss","Magnéti",
+			"Magnéton","Canarticho","Doduo","Dodrio","Otaria","Lamantine","Kokiyas","Crustabri",
+			"Ectoplasma","Onix","Soporifik","Hypnomade","Krabby","Krabboss","Voltorbe","Électrode",
+			"Noeunoeuf","Noadkoko","Osselait","Ossatueur","Kicklee","Tygnon","Excelangue","Rhinocorne",
+			"Rhinoféros","Leveinard","Saquedeneu","Kangourex","Hypotrempe","Hypocéan","Poissirène","Poissoroy",
+			"Stari","Staross","M.Mime","Insécateur","Lippoutou","Élektek","Magmar","Scarabrute","Tauros",
+			"Léviator","Lokhlass","Évoli","Aquali","Voltali","Pyroli","Porygon","Amonita","Amonistar",
+			"Kabuto","Kabutops","Ptéra","Ronflex","Artikodin","Électhor","Sulfura","Minidraco","Draco",
+			"Dracolosse","Mewtwo","Mew"
+		]},
+	"Damoclès": {
+		"ID":"CT10",
+		"Pokemons":[
+			"Tadmorv","Grotadmorv","Fantominus","Spectrum","Voltorbe","Électrode","Smogo","Smogogo"
+		]},
+	"Bulles d'O": {
+		"ID":"CT11",
+		"Pokemons":[
+			"Carapuce","Carabaffe","Tortank","Rattata","Rattatac","Nidorina","Nidoqueen","Nidorino",
+			"Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Miaouss","Persian","Psykokwak",
+			"Akwakwak","Ptitard","Têtarte","Tartard","Tentacool","Tentacruel","Ramoloss","Flagadoss",
+			"Otaria","Lamantine","Kokiyas","Crustabri","Krabby","Krabboss","Osselait","Ossatueur",
+			"Excelangue","Rhinoféros","Leveinard","Kangourex","Hypotrempe","Hypocéan","Poissirène",
+			"Poissoroy","Stari","Staross","Lippoutou","Léviator","Lokhlass","Aquali","Amonita",
+			"Amonistar","Kabuto","Kabutops","Ronflex","Artikodin","Minidraco","Draco","Dracolosse",
+			"Mewtwo","Mew"
+		]},
+	"Pistolet à O": {
+		"ID":"CT12",
+		"Pokemons":[
+			"Carapuce","Carabaffe","Tortank","Ptitard","Têtarte","Tartard","Tentacool","Tentacruel",
+			"Ramoloss","Flagadoss","Hypotrempe","Hypocéan","Stari","Staross","Lokhlass",
+			"Aquali","Amonita","Amonistar"
+		]},
+	"Laser Glace": {
+		"ID":"CT13",
+		"Pokemons":[
+			"Carapuce","Carabaffe","Tortank","Rattata","Rattatac","Nidorina","Nidoqueen","Nidorino",
+			"Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Psykokwak","Akwakwak","Ptitard",
+			"Têtarte","Tartard","Tentacool","Tentacruel","Ramoloss","Flagadoss","Otaria","Lamantine",
+			"Kokiyas","Crustabri","Krabby","Krabboss","Osselait","Ossatueur","Excelangue","Rhinocorne",
+			"Rhinoféros","Leveinard","Kangourex","Hypotrempe","Hypocéan","Poissirène","Poissoroy",
+			"Stari","Staross","Lippoutou","Tauros","Léviator","Lokhlass","Aquali","Porygon","Amonita",
+			"Amonistar","Kabuto","Kabutops","Ronflex","Artikodin","Minidraco","Draco","Dracolosse",
+			"Mewtwo","Mew"
+		]},
+	"Blizzard": {
+		"ID":"CT14",
+		"Pokemons":[
+			"Carapuce","Carabaffe","Tortank","Rattata","Rattatac","Nidoran♀","Nidorina","Nidoqueen",
+			"Nidoran♂","Nidorino","Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Psykokwak",
+			"Akwakwak","Ptitard","Têtarte","Tartard","Tentacool","Tentacruel","Ramoloss","Flagadoss",
+			"Otaria","Lamantine","Kokiyas","Crustabri","Krabby","Krabboss","Osselait","Ossatueur",
+			"Excelangue","Rhinoféros","Leveinard","Kangourex","Hypotrempe","Hypocéan","Poissirène",
+			"Poissoroy","Stari","Staross","Lippoutou","Tauros","Léviator","Lokhlass","Aquali","Porygon",
+			"Amonita","Amonistar","Kabuto","Kabutops","Ronflex","Artikodin","Minidraco","Draco","Dracolosse",
+			"Mewtwo","Mew"
+		]},
+	"Ultralaser": {
+		"ID":"CT15",
+		"Pokemons":[
+			"Florizarre","Dracaufeu","Tortank","Papilusion","Dardargnan","Roucarnage",
+			"Rattatac","Rapasdepic","Arbok","Raichu","Sablaireau","Nidoqueen","Nidoking",
+			"Feunard","Grodoudou","Nosferalto","Rafflesia","Parasect","Aéromite","Triopiqueur",
+			"Persian","Akwakwak","Colossinge","Arcanin","Tartard","Alakazam","Mackogneur",
+			"Empliflor","Tentacruel","Grolem","Galopa","Flagadoss","Magnéton","Dodrio","Lamantine",
+			"Grotadmorv","Crustabri","Ectoplasma","Hypnomade","Krabboss","Électrode","Noadkoko",
+			"Ossatueur","Excelangue","Smogogo","Rhinoféros","Leveinard","Saquedeneu","Kangourex",
+			"Hypocéan","Poissoroy","Staross","M.Mime","Insécateur","Lippoutou","Élektek","Magmar",
+			"Scarabrute","Tauros","Léviator","Lokhlass","Aquali","Voltali","Pyroli","Porygon","Amonistar",
+			"Kabutops","Ptéra","Ronflex","Artikodin","Électhor","Sulfura","Minidraco","Draco",
+			"Dracolosse","Mewtwo","Mew"
+		]},
+	"Jackpot": {
+		"ID":"CT16",
+		"Pokemons":[
+			"Pikachu","Raichu","Nidoqueen","Nidoking","Miaouss","Persian","Psykokwak","Akwakwak",
+			"Férosinge","Colossinge","Ramoloss","Flagadoss","Otaria","Lamantine",
+			"Rhinoféros","Ronflex","Mew"
+		]},
+	"Sacrifice": {
+		"ID":"CT17",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank","Pikachu","Raichu",
+			"Sabelette","Sablaireau","Nidoqueen","Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou",
+			"Psykokwak","Akwakwak","Férosinge","Colossinge","Têtarte","Tartard","Abra","Kadabra",
+			"Alakazam","Machoc","Machopeur","Mackogneur","Racaillou","Gravalanch","Grolem",
+			"Flagadoss","Ectoplasma","Soporifik","Hypnomade","Osselait","Ossatueur","Kicklee","Tygnon",
+			"Excelangue","Rhinoféros","Leveinard","Kangourex","M.Mime","Lippoutou","Élektek","Magmar",
+			"Scarabrute","Amonistar","Kabutops","Ronflex","Mewtwo","Mew"
+		]},
+	"Riposte": {
+		"ID":"CT18",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank","Nidoqueen",
+			"Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Psykokwak","Akwakwak",
+			"Férosinge","Colossinge","Têtarte","Tartard","Abra","Kadabra","Alakazam","Machoc",
+			"Machopeur","Mackogneur","Racaillou","Gravalanch","Grolem","Flagadoss","Ectoplasma",
+			"Soporifik","Hypnomade","Osselait","Ossatueur","Kicklee","Tygnon","Excelangue",
+			"Rhinoféros","Leveinard","Kangourex","M.Mime","Lippoutou","Élektek","Magmar",
+			"Ronflex","Mewtwo","Mew"
+		]},
+	"Frappe Atlas": {
+		"ID":"CT19",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank","Pikachu","Raichu",
+			"Sabelette","Sablaireau","Nidoqueen","Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou",
+			"Psykokwak","Akwakwak","Férosinge","Colossinge","Têtarte","Tartard","Abra","Kadabra",
+			"Alakazam","Machoc","Machopeur","Mackogneur","Racaillou","Gravalanch","Grolem",
+			"Flagadoss","Ectoplasma","Soporifik","Hypnomade","Osselait","Ossatueur","Kicklee","Tygnon",
+			"Excelangue","Rhinoféros","Leveinard","Kangourex","M.Mime","Lippoutou","Élektek","Magmar",
+			"Scarabrute","Amonistar","Kabuto","Kabutops","Ronflex","Mewtwo","Mew"
+		]},
+	"Frénésie": {
+		"ID":"CT20",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Salamèche","Reptincel","Dracaufeu","Carapuce",
+			"Carabaffe","Tortank","Papilusion","Dardargnan","Roucool","Roucoups","Roucarnage",
+			"Rattata","Rattatac","Piafabec","Rapasdepic","Abo","Arbok","Pikachu","Raichu",
+			"Sabelette","Sablaireau","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking",
+			"Mélofée","Mélodelfe","Goupix","Feunard","Rondoudou","Grodoudou","Nosferapti","Nosferalto",
+			"Mystherbe","Ortide","Rafflesia","Paras","Parasect","Mimitoss","Aéromite","Taupiqueur",
+			"Triopiqueur","Miaouss","Persian","Psykokwak","Akwakwak","Férosinge","Colossinge",
+			"Caninos","Arcanin","Ptitard","Têtarte","Tartard","Abra","Kadabra","Alakazam","Machoc",
+			"Machopeur","Mackogneur","Chétiflor","Boustiflor","Empliflor","Tentacool","Tentacruel",
+			"Racaillou","Gravalanch","Grolem","Ponyta","Galopa","Ramoloss","Flagadoss","Magnéti",
+			"Magnéton","Canarticho","Doduo","Dodrio","Otaria","Lamantine","Tadmorv","Grotadmorv",
+			"Kokiyas","Crustabri","Fantominus","Spectrum","Ectoplasma","Onix","Soporifik","Hypnomade",
+			"Krabby","Krabboss","Voltorbe","Électrode","Noeunoeuf","Noadkoko","Osselait","Ossatueur",
+			"Kicklee","Tygnon","Excelangue","Smogo","Smogogo","Rhinocorne","Rhinoféros","Leveinard",
+			"Saquedeneu","Kangourex","Hypotrempe","Hypocéan","Poissirène","Poissoroy","Stari",
+			"Staross","M.Mime","Insécateur","Lippoutou","Élektek","Magmar","Scarabrute","Tauros",
+			"Léviator","Lokhlass","Évoli","Aquali","Voltali","Pyroli","Porygon","Amonita","Amonistar",
+			"Kabuto","Kabutops","Ptéra","Ronflex","Artikodin","Électhor","Sulfura","Minidraco","Draco",
+			"Dracolosse","Mewtwo","Mew"
+		]},
+	"Méga-Sangsue": {
+		"ID":"CT21",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Papilusion","Dardargnan","Abo","Arbok",
+			"Nosferapti","Nosferalto","Mystherbe","Ortide","Rafflesia","Paras","Parasect",
+			"Mimitoss","Aéromite","Chétiflor","Boustiflor","Empliflor","Tentacool","Tentacruel",
+			"Tadmorv","Grotadmorv","Fantominus","Spectrum","Ectoplasma","Noadkoko","Saquedeneu","Mew"
+		]},
+	"Lance-Soleil": {
+		"ID":"CT22",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Papilusion","Mélofée","Mélodelfe","Rondoudou",
+			"Grodoudou","Mystherbe","Ortide","Rafflesia","Paras","Parasect","Mimitoss","Aéromite",
+			"Chétiflor","Boustiflor","Empliflor","Noeunoeuf","Noadkoko","Leveinard","Saquedeneu",
+			"M.Mime","Lokhlass","Ronflex","Mewtwo","Mew"
+		]},
+	"Draco-Rage": {
+		"ID":"CT23",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Caninos","Arcanin","Léviator","Lokhlass","Ptéra",
+			"Minidraco","Draco","Dracolosse","Mew"
+		]},
+	"Tonnerre": {
+		"ID":"CT24",
+		"Pokemons":[
+			"Rattata","Rattatac","Pikachu","Raichu","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂",
+			"Nidorino","Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Miaouss","Persian",
+			"Férosinge","Colossinge","Magnéti","Magnéton","Tadmorv","Grotadmorv","Fantominus","Spectrum",
+			"Ectoplasma","Voltorbe","Électrode","Excelangue","Smogo","Smogogo","Rhinocorne","Rhinoféros",
+			"Leveinard","Kangourex","Stari","Staross","M.Mime","Élektek","Tauros","Léviator","Lokhlass",
+			"Voltali","Porygon","Ronflex","Électhor","Minidraco","Draco","Dracolosse","Mewtwo","Mew"
+		]},
+	"Fatal-Foudre": {
+		"ID":"CT25",
+		"Pokemons":[
+			"Rattata","Rattatac","Pikachu","Raichu","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂",
+			"Nidorino","Nidoking","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Miaouss","Persian",
+			"Férosinge","Colossinge","Magnéti","Magnéton","Tadmorv","Grotadmorv","Fantominus","Spectrum",
+			"Ectoplasma","Voltorbe","Électrode","Excelangue","Smogo","Smogogo","Rhinocorne","Rhinoféros",
+			"Leveinard","Kangourex","Stari","Staross","M.Mime","Élektek","Tauros","Léviator","Lokhlass",
+			"Voltali","Porygon","Ronflex","Électhor","Minidraco","Draco","Dracolosse","Mewtwo","Mew"
+		]},
+	"Séisme": {
+		"ID":"CT26",
+		"Pokemons":[
+			"Dracaufeu","Tortank","Abo","Arbok","Sabelette","Sablaireau","Nidoqueen","Nidoking",
+			"Taupiqueur","Triopiqueur","Têtarte","Tartard","Machoc","Machopeur","Mackogneur",
+			"Racaillou","Gravalanch","Grolem","Ramoloss","Flagadoss","Onix","Osselait","Ossatueur",
+			"Excelangue","Rhinocorne","Rhinoféros","Kangourex","Tauros","Ronflex","Mew"
+		]},
+	"Abîme": {
+		"ID":"CT27",
+		"Pokemons":[
+			"Dracaufeu","Tortank","Abo","Arbok","Sabelette","Sablaireau","Nidoqueen","Nidoking",
+			"Taupiqueur","Triopiqueur","Têtarte","Tartard","Machoc","Machopeur","Mackogneur",
+			"Racaillou","Gravalanch","Grolem","Ramoloss","Flagadoss","Onix","Osselait","Ossatueur",
+			"Excelangue","Rhinocorne","Rhinoféros","Kangourex","Tauros","Ronflex","Mew"
+		]},
+	"Tunnel": {
+		"ID":"CT28",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank",
+			"Rattata","Rattatac","Abo","Arbok","Sabelette","Sablaireau","Goupix","Feunard",
+			"Paras","Parasect","Taupiqueur","Triopiqueur","Psykokwak","Akwakwak","Férosinge",
+			"Colossinge","Caninos","Arcanin","Kadabra","Alakazam","Machoc","Machopeur","Mackogneur",
+			"Racaillou","Gravalanch","Grolem","Ramoloss","Flagadoss","Onix","Osselait","Ossatueur",
+			"Rhinocorne","Rhinoféros","Mew"
+		]},
+	"Psyko": {
+		"ID":"CT29",
+		"Pokemons":[
+			"Papilusion","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Mimitoss","Aéromite",
+			"Ptitard","Têtarte","Tartard","Abra","Kadabra","Alakazam","Ramoloss","Flagadoss",
+			"Fantominus","Spectrum","Ectoplasma","Soporifik","Hypnomade","Noeunoeuf","Noadkoko",
+			"Leveinard","Stari","Staross","M.Mime","Lippoutou","Élektek","Magmar","Lokhlass",
+			"Porygon","Ronflex","Mewtwo","Mew"
+		]},
+	"Téléport": {
+		"ID":"CT30",
+		"Pokemons":[
+			"Papilusion","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Arcanin","Abra",
+			"Kadabra","Alakazam","Ramoloss","Flagadoss","Magnéti","Magnéton","Kokiyas",
+			"Crustabri","Soporifik","Hypnomade","Voltorbe","Électrode","Noeunoeuf","Noadkoko",
+			"Leveinard","Stari","Staross","M.Mime","Lippoutou","Élektek","Magmar","Porygon",
+			"Mewtwo","Mew"
+		]},
+	"Copie": {
+		"ID":"CT31",
+		"Pokemons":"All"},
+	"Reflet": {
+		"ID":"CT32",
+		"Pokemons":"All"},
+	"Protection": {
+		"ID":"CT33",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Salamèche","Reptincel","Dracaufeu","Carapuce",
+			"Carabaffe","Tortank","Papilusion","Dardargnan","Roucool","Roucoups","Roucarnage",
+			"Pikachu","Raichu","Sabelette","Sablaireau","Nidoran♀","Nidorina","Nidoqueen",
+			"Nidoran♂","Nidorino","Nidoking","Mélofée","Mélodelfe","Goupix","Feunard","Rondoudou",
+			"Grodoudou","Mystherbe","Ortide","Rafflesia","Paras","Parasect","Mimitoss","Aéromite",
+			"Caninos","Arcanin","Tartard","Abra","Kadabra","Alakazam","Chétiflor","Boustiflor",
+			"Empliflor","Tentacool","Tentacruel","Ponyta","Galopa","Ramoloss","Flagadoss","Magnéti",
+			"Magnéton","Doduo","Dodrio","Kokiyas","Crustabri","Soporifik","Hypnomade",
+			"Voltorbe","Électrode","Noeunoeuf","Noadkoko","Leveinard","Stari","Staross","M.Mime",
+			"Lippoutou","Élektek","Léviator","Lokhlass","Évoli","Aquali","Voltali","Pyroli","Porygon",
+			"Amonita","Amonistar","Kabuto","Kabutops","Ptéra","Ronflex","Artikodin","Électhor",
+			"Sulfura","Minidraco","Draco","Dracolosse","Mewtwo","Mew"
+		]},
+	"Patience": {
+		"ID":"CT34",
+		"Pokemons":"All"},
+	"Métronome": {
+		"ID":"CT35",
+		"Pokemons":[
+			"Mélofée","Mélodelfe","Férosinge","Colossinge","Têtarte","Tartard","Abra","Kadabra",
+			"Alakazam","Machoc","Machopeur","Mackogneur","Racaillou","Gravalanch","Grolem",
+			"Ectoplasma","Soporifik","Hypnomade","Kicklee","Tygnon","Leveinard","M.Mime",
+			"Lippoutou","Élektek","Magmar","Ronflex","Mewtwo","Mew"
+		]},
+	"Destruction": {
+		"ID":"CT36",
+		"Pokemons":[
+			"Racaillou","Gravalanch","Grolem","Tadmorv","Grotadmorv","Kokiyas","Crustabri",
+			"Fantominus","Spectrum","Ectoplasma","Onix","Voltorbe","Électrode","Noeunoeuf",
+			"Noadkoko","Smogo","Smogogo","Ronflex","Mewtwo","Mew"
+		]},
+	"Bomb'Oeuf": {
+		"ID":"CT37",
+		"Pokemons":[
+			"Noeunoeuf","Noadkoko","Leveinard","Mew"
+		]},
+	"Déflagration": {
+		"ID":"CT38",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Nidoqueen","Nidoking","Mélofée","Mélodelfe",
+			"Goupix","Feunard","Rondoudou","Grodoudou","Caninos","Arcanin","Machoc","Machopeur",
+			"Mackogneur","Racaillou","Gravalanch","Grolem","Ponyta","Galopa","Ramoloss","Flagadoss",
+			"Tadmorv","Grotadmorv","Osselait","Ossatueur","Excelangue","Smogo","Smogogo",
+			"Rhinocorne","Rhinoféros","Leveinard","Kangourex","Magmar","Tauros","Léviator","Pyroli",
+			"Ptéra","Ronflex","Sulfura","Minidraco","Draco","Dracolosse","Mewtwo","Mew"
+		]},
+	"Météores": {
+		"ID":"CT39",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Papilusion","Dardargnan","Roucool","Roucoups",
+			"Roucarnage","Rattata","Rattatac","Piafabec","Rapasdepic","Pikachu","Raichu",
+			"Sabelette","Sablaireau","Goupix","Feunard","Nosferapti","Nosferalto","Mimitoss",
+			"Aéromite","Miaouss","Persian","Psykokwak","Akwakwak","Férosinge","Colossinge",
+			"Caninos","Arcanin","Ponyta","Galopa","Ramoloss","Flagadoss","Magnéti",
+			"Magnéton","Canarticho","Kokiyas","Crustabri","Voltorbe","Électrode","Kicklee",
+			"Tygnon","Hypotrempe","Hypocéan","Poissirène","Poissoroy","Stari","Staross",
+			"Insécateur","Élektek","Évoli","Aquali","Voltali","Pyroli","Porygon","Ptéra",
+			"Artikodin","Électhor","Sulfura","Minidraco","Draco","Dracolosse","Mew"
+		]},
+	"Coud'Krâne": {
+		"ID":"CT40",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank","Dardargnan",
+			"Rattata","Rattatac","Abo","Arbok","Pikachu","Raichu","Sabelette","Sablaireau",
+			"Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking","Mélofée",
+			"Mélodelfe","Goupix","Feunard","Rondoudou","Grodoudou","Paras","Parasect",
+			"Miaouss","Persian","Psykokwak","Akwakwak","Férosinge","Colossinge",
+			"Caninos","Arcanin","Ptitard","Têtarte","Tartard","Abra","Kadabra","Alakazam","Machoc",
+			"Machopeur","Mackogneur","Tentacool","Tentacruel","Ponyta","Galopa","Ramoloss",
+			"Flagadoss","Canarticho","Doduo","Dodrio","Otaria","Lamantine","Ectoplasma","Onix",
+			"Soporifik","Hypnomade","Électrode","Osselait","Ossatueur","Kicklee","Tygnon",
+			"Excelangue","Rhinocorne","Rhinoféros","Leveinard","Saquedeneu","Kangourex",
+			"Hypotrempe","Hypocéan","Poissirène","Poissoroy","Stari","Staross","M.Mime",
+			"Insécateur","Lippoutou","Élektek","Magmar","Tauros","Léviator","Lokhlass",
+			"Évoli","Aquali","Voltali","Pyroli","Porygon","Amonistar","Kabutops","Ptéra",
+			"Ronflex","Minidraco","Draco","Dracolosse","Mewtwo","Mew"
+		]},
+	"E-Coque": {
+		"ID":"CT41",
+		"Pokemons":["Leveinard","Mew"]},
+	"Dévorêve": {
+		"ID":"CT42",
+		"Pokemons":["Fantominus","Spectrum","Ectoplasma","Soporifik","Hypnomade","Mew"]},
+	"Piqué": {
+		"ID":"CT43",
+		"Pokemons":[
+			"Roucool","Roucoups","Roucarnage","Piafabec","Rapasdepic","Doduo","Dodrio","Ptéra",
+			"Artikodin","Électhor","Sulfura","Mew"
+		]},
+	"Repos": {
+		"ID":"CT44",
+		"Pokemons":"All"},
+	"Cage-Éclair": {
+		"ID":"CT45",
+		"Pokemons":[
+			"Pikachu","Raichu","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Abra","Kadabra",
+			"Alakazam","Ramoloss","Flagadoss","Magnéti","Magnéton","Soporifik","Hypnomade",
+			"Voltorbe","Électrode","Leveinard","Stari","Staross","M.Mime","Élektek",
+			"Voltali","Porygon","Électhor","Minidraco","Draco","Dracolosse","Mewtwo","Mew"
+		]},
+	"Vague Psy": {
+		"ID":"CT46",
+		"Pokemons":[
+			"Papilusion","Mélofée","Mélodelfe","Rondoudou","Grodoudou","Mimitoss","Aéromite",
+			"Ptitard","Têtarte","Tartard","Abra","Kadabra","Alakazam","Ramoloss","Flagadoss",
+			"Fantominus","Spectrum","Ectoplasma","Soporifik","Hypnomade","Noeunoeuf","Noadkoko",
+			"Leveinard","Stari","Staross","M.Mime","Lippoutou","Élektek","Magmar","Lokhlass",
+			"Porygon","Ronflex","Mewtwo","Mew"
+		]},
+	"Explosion": {
+		"ID":"CT47",
+		"Pokemons":[
+			"Racaillou","Gravalanch","Grolem","Tadmorv","Grotadmorv","Kokiyas","Crustabri",
+			"Fantominus","Spectrum","Ectoplasma","Onix","Voltorbe","Électrode","Noeunoeuf",
+			"Noadkoko","Smogo","Smogogo","Mew"
+		]},
+	"Éboulement": {
+		"ID":"CT48",
+		"Pokemons":[
+			"Abo","Arbok","Sabelette","Sablaireau","Nidoqueen","Nidoking","Taupiqueur",
+			"Triopiqueur","Férosinge","Colossinge","Machoc","Machopeur","Mackogneur",
+			"Racaillou","Gravalanch","Grolem","Onix","Rhinocorne","Rhinoféros","Kangourex",
+			"Ronflex","Mew"
+		]},
+	"Triplattaque": {
+		"ID":"CT49",
+		"Pokemons":[
+			"Mélofée","Mélodelfe","Rondoudou","Grodoudou","Abra","Kadabra","Alakazam",
+			"Ramoloss","Flagadoss","Doduo","Dodrio","Kokiyas","Crustabri","Soporifik",
+			"Hypnomade","Leveinard","Stari","Staross","Porygon","Mewtwo","Mew"
+		]},
+	"Clonage": {
+		"ID":"CT49",
+		"Pokemons":"All"},
 }
 
 const TYPE_COLOR = {

@@ -1,14 +1,15 @@
-[gd_scene load_steps=73 format=3 uid="uid://bwlgfuig8hgfd"]
+[gd_scene load_steps=74 format=3 uid="uid://bwlgfuig8hgfd"]
 
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_1pfj7"]
 [ext_resource type="Script" path="res://Script/game.gd" id="1_306b4"]
-[ext_resource type="Texture2D" uid="uid://dqseokaqvxt8j" path="res://Textures/basis.png" id="2_1pvcr"]
-[ext_resource type="Texture2D" uid="uid://cpxechcig0c0s" path="res://Textures/settings.png" id="2_xuqmb"]
+[ext_resource type="Texture2D" uid="uid://dqseokaqvxt8j" path="res://Textures/Combat/basis.png" id="2_1pvcr"]
+[ext_resource type="Texture2D" uid="uid://cpxechcig0c0s" path="res://Textures/Logos/settings.png" id="2_xuqmb"]
 [ext_resource type="Shader" path="res://Shaders/ingame_pokemon.gdshader" id="4_qljo8"]
 [ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="5_hty7j"]
-[ext_resource type="Texture2D" uid="uid://dv1ptqos3vro6" path="res://Textures/pokeball_spritesheet.png" id="5_ng0dg"]
+[ext_resource type="Texture2D" uid="uid://dv1ptqos3vro6" path="res://Textures/Combat/pokeball_spritesheet.png" id="5_ng0dg"]
 [ext_resource type="Texture2D" uid="uid://da2thwgwbw068" path="res://Textures/Pokemons/Back/n/150.png" id="6_kbn3q"]
 [ext_resource type="Texture2D" uid="uid://cfwutjmrhtbmq" path="res://Textures/Pokemons/Front/s/1.png" id="7_7q42y"]
+[ext_resource type="Script" path="res://Script/PkmnShaderSetup.gd" id="7_85vpr"]
 [ext_resource type="Texture2D" uid="uid://bxd6dfy0r5cv0" path="res://Textures/Combat/CloneBack.png" id="8_glafk"]
 [ext_resource type="Texture2D" uid="uid://b7h1oy1o5hhdb" path="res://Textures/Combat/CloneFront.png" id="9_7jw0q"]
 [ext_resource type="Script" path="res://Script/game_ia.gd" id="10_73u3u"]
@@ -19,8 +20,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gowmg"]
 shader = ExtResource("1_1pfj7")
-shader_parameter/color1 = Color(0.941176, 1, 1, 1)
-shader_parameter/color2 = Color(0.352941, 0.588235, 0.152941, 1)
+shader_parameter/color1 = Color(0.913725, 1, 1, 1)
+shader_parameter/color2 = Color(0.0745098, 0.721569, 0.490196, 1)
 shader_parameter/offset = 0.4
 shader_parameter/pixelise = 7.0
 shader_parameter/generate_offset = false
@@ -29,8 +30,8 @@ shader_parameter/wave_width = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_an1l4"]
 shader = ExtResource("4_qljo8")
-shader_parameter/avancement = 3.0
-shader_parameter/resolution = 80
+shader_parameter/spawn_anim = 3.0
+shader_parameter/offset = 0.0
 shader_parameter/death_animation = 0.0
 shader_parameter/is_client = true
 shader_parameter/status = 0
@@ -40,10 +41,10 @@ shader_parameter/is_confused = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uglnp"]
 shader = ExtResource("4_qljo8")
-shader_parameter/avancement = 3.0
-shader_parameter/resolution = 80
+shader_parameter/spawn_anim = 3.0
+shader_parameter/offset = 0.0
 shader_parameter/death_animation = 0.0
-shader_parameter/is_client = null
+shader_parameter/is_client = false
 shader_parameter/status = 0
 shader_parameter/raise_alpha = 0.0
 shader_parameter/is_raise = true
@@ -531,10 +532,12 @@ offset_right = 540.0
 offset_bottom = 960.0
 
 [node name="ClientBasis" type="Sprite2D" parent="Sprites/Background"]
+modulate = Color(0, 0, 0, 0.196078)
 position = Vector2(140, 670)
 texture = ExtResource("2_1pvcr")
 
 [node name="OpponentBasis" type="Sprite2D" parent="Sprites/Background"]
+modulate = Color(0, 0, 0, 0.196078)
 position = Vector2(420, 430)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_1pvcr")
@@ -562,12 +565,14 @@ material = SubResource("ShaderMaterial_an1l4")
 position = Vector2(140, 580)
 scale = Vector2(3, 3)
 texture = ExtResource("6_kbn3q")
+script = ExtResource("7_85vpr")
 
 [node name="OppPkmn" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_uglnp")
 position = Vector2(420, 337)
 scale = Vector2(3, 3)
 texture = ExtResource("7_7q42y")
+script = ExtResource("7_85vpr")
 
 [node name="ClientClone" type="Sprite2D" parent="Sprites"]
 visible = false
@@ -1534,6 +1539,8 @@ script = ExtResource("10_73u3u")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimNodes"]
 
+[connection signal="texture_changed" from="Sprites/ClientPkmn" to="Sprites/ClientPkmn" method="_on_texture_changed"]
+[connection signal="texture_changed" from="Sprites/OppPkmn" to="Sprites/OppPkmn" method="_on_texture_changed"]
 [connection signal="pressed" from="UI/Death_Switch_UI/Margin/VBox/Switch" to="." method="_on_switch_pressed"]
 [connection signal="pressed" from="UI/Death_Switch_UI/Margin/VBox/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="UI/Main_UI/Basis_UI/Attack" to="." method="_on_attack_pressed"]

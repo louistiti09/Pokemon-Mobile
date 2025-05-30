@@ -14,7 +14,7 @@ config/name="Pokemon Mobile"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
-config/icon="res://Textures/icon.png"
+config/icon="res://Textures/Logos/IconTR.png"
 
 [audio]
 
@@ -33,6 +33,12 @@ window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
+window/vsync/vsync_mode=0
+
+[editor]
+
+movie_writer/disable_vsync=true
+movie_writer/fps=30
 
 [file_customization]
 
@@ -43,6 +49,10 @@ folder_colors={
 "res://Sounds/": "green",
 "res://Textures/": "teal"
 }
+
+[physics]
+
+common/physics_ticks_per_second=30
 
 [rendering]
 

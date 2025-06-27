@@ -1,16 +1,17 @@
-[gd_scene load_steps=74 format=3 uid="uid://bwlgfuig8hgfd"]
+[gd_scene load_steps=79 format=3 uid="uid://bwlgfuig8hgfd"]
 
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_1pfj7"]
 [ext_resource type="Script" path="res://Script/game.gd" id="1_306b4"]
 [ext_resource type="Texture2D" uid="uid://dqseokaqvxt8j" path="res://Textures/Combat/basis.png" id="2_1pvcr"]
 [ext_resource type="Texture2D" uid="uid://cpxechcig0c0s" path="res://Textures/Logos/settings.png" id="2_xuqmb"]
 [ext_resource type="Shader" path="res://Shaders/ingame_pokemon.gdshader" id="4_qljo8"]
+[ext_resource type="Texture2D" uid="uid://chcux540pw5vk" path="res://Textures/Trainers.png" id="4_t8ruj"]
 [ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="5_hty7j"]
 [ext_resource type="Texture2D" uid="uid://dv1ptqos3vro6" path="res://Textures/Combat/pokeball_spritesheet.png" id="5_ng0dg"]
-[ext_resource type="Texture2D" uid="uid://da2thwgwbw068" path="res://Textures/Pokemons/Back/n/150.png" id="6_kbn3q"]
-[ext_resource type="Texture2D" uid="uid://cfwutjmrhtbmq" path="res://Textures/Pokemons/Front/s/1.png" id="7_7q42y"]
+[ext_resource type="Texture2D" uid="uid://cayihlp2eaq8o" path="res://Textures/Pokemons/Back/n/152.png" id="6_4gnjm"]
 [ext_resource type="Script" path="res://Script/PkmnShaderSetup.gd" id="7_85vpr"]
 [ext_resource type="Texture2D" uid="uid://bxd6dfy0r5cv0" path="res://Textures/Combat/CloneBack.png" id="8_glafk"]
+[ext_resource type="Texture2D" uid="uid://bv2r3ow56o8rw" path="res://Textures/Pokemons/Front/n/152.png" id="8_psif2"]
 [ext_resource type="Texture2D" uid="uid://b7h1oy1o5hhdb" path="res://Textures/Combat/CloneFront.png" id="9_7jw0q"]
 [ext_resource type="Script" path="res://Script/game_ia.gd" id="10_73u3u"]
 [ext_resource type="Texture2D" uid="uid://dq1bvpugocws6" path="res://Textures/Types/Expanded/Combat.png" id="11_h5cli"]
@@ -27,6 +28,30 @@ shader_parameter/pixelise = 7.0
 shader_parameter/generate_offset = false
 shader_parameter/wavy = 6.0
 shader_parameter/wave_width = 2.0
+
+[sub_resource type="Shader" id="Shader_lbw7i"]
+code = "shader_type canvas_item;
+
+uniform vec4 removing_color : source_color;
+uniform float tolerance : hint_range(0,1.0,0.01) = 0.0;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	vec4 d4 = abs(COLOR - removing_color);
+	float d = max(max(d4.r, d4.g), d4.b);
+	if (d <= tolerance) {
+		COLOR = vec4(0,0,0,0);
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ubcux"]
+shader = SubResource("Shader_lbw7i")
+shader_parameter/removing_color = Color(1, 0.498039, 0.152941, 1)
+shader_parameter/tolerance = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_an1l4"]
 shader = ExtResource("4_qljo8")
@@ -521,7 +546,28 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[node name="Game" type="Node2D"]
+[sub_resource type="Animation" id="Animation_xwqrl"]
+resource_name = "Show_Opponent"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Opponent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(660, 280), Vector2(340, 280)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxfmu"]
+_data = {
+"Show_Opponent": SubResource("Animation_xwqrl")
+}
+
+[node name="game" type="Node2D"]
 script = ExtResource("1_306b4")
 
 [node name="Sprites" type="Node" parent="."]
@@ -541,6 +587,16 @@ modulate = Color(0, 0, 0, 0.196078)
 position = Vector2(420, 430)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_1pvcr")
+
+[node name="Opponent" type="Sprite2D" parent="Sprites"]
+material = SubResource("ShaderMaterial_ubcux")
+position = Vector2(660, 280)
+scale = Vector2(3, 3)
+texture = ExtResource("4_t8ruj")
+hframes = 7
+vframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 564, 160)
 
 [node name="ClientBall" type="Sprite2D" parent="Sprites"]
 visible = false
@@ -564,14 +620,14 @@ vframes = 32
 material = SubResource("ShaderMaterial_an1l4")
 position = Vector2(140, 580)
 scale = Vector2(3, 3)
-texture = ExtResource("6_kbn3q")
+texture = ExtResource("6_4gnjm")
 script = ExtResource("7_85vpr")
 
 [node name="OppPkmn" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_uglnp")
 position = Vector2(420, 337)
 scale = Vector2(3, 3)
-texture = ExtResource("7_7q42y")
+texture = ExtResource("8_psif2")
 script = ExtResource("7_85vpr")
 
 [node name="ClientClone" type="Sprite2D" parent="Sprites"]
@@ -1538,6 +1594,11 @@ script = ExtResource("10_73u3u")
 [node name="AnimNodes" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimNodes"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yxfmu")
+}
 
 [connection signal="texture_changed" from="Sprites/ClientPkmn" to="Sprites/ClientPkmn" method="_on_texture_changed"]
 [connection signal="texture_changed" from="Sprites/OppPkmn" to="Sprites/OppPkmn" method="_on_texture_changed"]

@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform float spawn_anim : hint_range(0.0, 3.0, 0.1) = 3.0;
-uniform float offset : hint_range(0.0, 1.0) = 0.0;
+uniform float offset : hint_range(0.0, 80.0) = 0.0;
 uniform float death_animation : hint_range(0.0, 100.0) = 0.0;
 uniform bool is_client;
 uniform int status : hint_range(0, 6) = 0;
@@ -43,7 +43,7 @@ vec3 get_raise_arrows(vec3 color, vec2 uv) {
 void fragment() {
 	//Death anim
 	vec2 uv = UV;
-	uv.y -= death_animation/100.0;
+	uv.y -= min(death_animation/100.0,1.0);
 	COLOR = texture(TEXTURE,uv);
 	
 	//Animation pokeball

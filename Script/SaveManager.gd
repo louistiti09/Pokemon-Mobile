@@ -1,6 +1,6 @@
 extends Node
 
-const EmptyData = {"Pokemons":[],"CTCS":[],"ActiveTeam":0,"Teams":[{"Team":[],"Name":""}]}
+const EmptyData = {"Pseudo":"","Avatar":0,"Pokemons":[],"CTCS":[],"ActiveTeam":0,"Teams":[{"Team":[],"Name":""}]}
 
 func load_data() -> Dictionary:
 	if FileAccess.file_exists("user://save_file.json"):

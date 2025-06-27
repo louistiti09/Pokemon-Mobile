@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dy68dcwghu8vq"]
+[gd_scene load_steps=19 format=3 uid="uid://dy68dcwghu8vq"]
 
 [ext_resource type="Script" path="res://Script/title_scene.gd" id="1_n276v"]
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_vw7wa"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cqo6j14qxhg6h" path="res://Sounds/BGM/Title Screen.mp3" id="3_iivyo"]
 [ext_resource type="Texture2D" uid="uid://bnfrnwrmr2hmk" path="res://Textures/Pokemons/Back/n/6.png" id="3_uafod"]
 [ext_resource type="Texture2D" uid="uid://lk1iplb4ybio" path="res://Textures/Logos/LogoBW.png" id="6_j207v"]
+[ext_resource type="AudioStream" uid="uid://bg2eky4hj7k4e" path="res://Sounds/SFX/Pokemon/Pikachu.ogg" id="6_p7yp7"]
 [ext_resource type="Texture2D" uid="uid://b2hcflr0bb2a6" path="res://Textures/Pokemons/Front/n/132.png" id="7_iuv0v"]
 [ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="8_vslog"]
 [ext_resource type="Script" path="res://Script/PkmnShaderSetup.gd" id="9_2dw0h"]
@@ -34,7 +35,7 @@ tracks/0/path = NodePath("BGM:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -49,7 +50,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(50, 50)]
+"values": [Vector2(1, 1), Vector2(52, 52)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -86,6 +87,42 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Start:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Pikachu:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BGM:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -80.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_11qn5"]
@@ -369,6 +406,7 @@ offset_right = 540.0
 offset_bottom = 960.0
 
 [node name="Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 show_behind_parent = true
 material = SubResource("ShaderMaterial_b4vvs")
 offset_left = -391.0
@@ -378,9 +416,11 @@ offset_bottom = 1321.0
 rotation = -0.436332
 
 [node name="ClickText" type="Label" parent="."]
-offset_top = 530.0
+modulate = Color(1, 1, 1, 0)
+offset_top = 480.0
 offset_right = 540.0
-offset_bottom = 580.0
+offset_bottom = 530.0
+scale = Vector2(0.75, 1)
 pivot_offset = Vector2(270, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.313726, 0.392157, 0.470588, 1)
@@ -392,10 +432,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Subtitle" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = -10.0
-offset_top = 10.0
+offset_top = -15.0
 offset_right = 530.0
-offset_bottom = 60.0
+offset_bottom = 35.0
 pivot_offset = Vector2(270, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.313726, 0.392157, 0.470588, 1)
@@ -415,11 +456,12 @@ texture = ExtResource("6_j207v")
 expand_mode = 1
 
 [node name="Credits" type="Label" parent="."]
-offset_top = 910.0
+modulate = Color(1, 1, 1, 0)
+offset_top = 530.0
 offset_right = 540.0
-offset_bottom = 960.0
+offset_bottom = 580.0
 pivot_offset = Vector2(270, 0)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.313726, 0.392157, 0.470588, 1)
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = SubResource("SystemFont_cdlxh")
@@ -434,9 +476,9 @@ offset_right = 540.0
 offset_bottom = 960.0
 
 [node name="Title" type="Label" parent="."]
-offset_top = 350.0
+offset_top = 200.0
 offset_right = 540.0
-offset_bottom = 535.003
+offset_bottom = 385.003
 pivot_offset = Vector2(270, 92)
 theme_override_colors/font_color = Color(0, 0.156863, 0.717647, 1)
 theme_override_colors/font_shadow_color = Color(0.0784314, 0, 0.196078, 1)
@@ -451,6 +493,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Click" type="Button" parent="."]
+visible = false
 offset_right = 540.0
 offset_bottom = 960.0
 focus_mode = 0
@@ -459,6 +502,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ll1wl")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ll1wl")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ll1wl")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ll1wl")
+disabled = true
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iivyo")
@@ -466,6 +510,10 @@ bus = &"BGM"
 
 [node name="Start" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vslog")
+bus = &"SFX"
+
+[node name="Pikachu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p7yp7")
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -476,9 +524,8 @@ libraries = {
 [node name="Pokemon1" type="Sprite2D" parent="."]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_x53rc")
-position = Vector2(-6, 63)
+position = Vector2(-279, -124)
 rotation = 0.174533
-scale = Vector2(4, 4)
 texture = ExtResource("7_iuv0v")
 centered = false
 offset = Vector2(0, -10)
@@ -488,9 +535,9 @@ script = ExtResource("9_2dw0h")
 [node name="Pokemon2" type="Sprite2D" parent="."]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_r7vx7")
-position = Vector2(290, 640)
+position = Vector2(600, 900)
 rotation = 0.174533
-scale = Vector2(5, 5)
+scale = Vector2(8, 8)
 texture = ExtResource("3_uafod")
 centered = false
 offset = Vector2(-5, -15)

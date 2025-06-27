@@ -3589,6 +3589,36 @@ const POKEMONS = {
 			{"Attack":"Psyko","LvL":40}
 		],
 		"Evolution": null},
+	"PikachuSurf": {
+		"PV":35,
+		"Attaque":55,
+		"Defense":40,
+		"AttaqueSpe":70,
+		"DefenseSpe":50,
+		"Vitesse":99,
+		"Type1":"Électrik",
+		"Type2":"Eau",
+		"EV":[{"Stat":"Vitesse","Value":2}],
+		"EXP":100,
+		"Courbe_EXP":"Lente",
+		"Poids":6,
+		"Taux_de_capture":190,
+		"NativeAttacks":[
+			{"Attack":"Surf","LvL":0},
+			{"Attack":"Éclair","LvL":0},
+			{"Attack":"Rugissement","LvL":0},
+			{"Attack":"Mimi-Queue","LvL":6},
+			{"Attack":"Cage-Éclair","LvL":8},
+			{"Attack":"Vive-Attaque","LvL":11},
+			{"Attack":"Reflet","LvL":15},
+			{"Attack":"Souplesse","LvL":20},
+			{"Attack":"Météores","LvL":25},
+			{"Attack":"Tonnerre","LvL":26},
+			{"Attack":"Hâte","LvL":33},
+			{"Attack":"Fatal-Foudre","LvL":41},
+			{"Attack":"Mur Lumière","LvL":50},
+		],
+		"Evolution":null}
 }
 
 const NATURE = {#[Boost,Malus]
@@ -5073,6 +5103,51 @@ const ATTACKS = {
 		"Priorite":0,
 		"Critique":1,
 		"Categorie":"Physique"},
+	"Coupe": {
+		"Description": "",
+		"PP":30,
+		"Type":"Normal",
+		"Puissance":50,
+		"Precision":95,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Physique"},
+	"Vol": {
+		"Description": "Cette attaque se charge au premier tour et s'exécute au second. Au premier tour, le lanceur évite toutes les attaques autres que Tornadeet Fatal-Foudre. Et Tornade a une puissance doublée lorsqu'elle est utilisées contre lui.",
+		"PP":15,
+		"Type":"Vol",
+		"Puissance":90,
+		"Precision":95,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Physique"},
+	"Surf": {
+		"Description": "",
+		"PP":15,
+		"Type":"Eau",
+		"Puissance":90,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Special"},
+	"Force": {
+		"Description": "",
+		"PP":15,
+		"Type":"Normal",
+		"Puissance":80,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Physique"},
+	"Flash": {
+		"Description": "Diminue la Précision de la cible d' 1 cran.",
+		"PP":20,
+		"Type":"Normal",
+		"Puissance":null,
+		"Precision":100,
+		"Priorite":0,
+		"Critique":1,
+		"Categorie":"Statut"},
 }
 
 const CTCS = {
@@ -5522,6 +5597,53 @@ const CTCS = {
 	"Clonage": {
 		"ID":"CT49",
 		"Pokemons":"All"},
+	"Coupe": {
+		"ID":"CS01",
+		"Pokemons":[
+			"Bulbizarre","Herbizarre","Florizarre","Salamèche","Reptincel","Dracaufeu",
+			"Dardargnan","Sabelette","Sablaireau","Mystherbe","Ortide","Rafflesia","Paras",
+			"Parasect","Taupiqueur","Triopikeur","Chétiflor","Boustiflor","Empliflor",
+			"Tentacool","Tentacruel","Canarticho","Krabby","Krabboss","Excelangue",
+			"Saquedeneu","Insécateur","Scarabrute","Kabutops","Mew"
+		]},
+	"Vol": {
+		"ID":"CS02",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Roucoups","Roucarnage","Piafabec",
+			"Rapasdepic","Canarticho","Doduo","Dodrio","Ptéra",
+			"Artikodin","Électhor","Sulfura","Mew"
+		]},
+	"Surf": {
+		"ID":"CS03",
+		"Pokemons":[
+			"Carapuce","Carabaffe","Tortank","Nidoqueen","Nidoking","Psykokwak",
+			"Akwakwak","Ptitard","Têtarte","Tartard","Tentacool","Tentacruel","Ramoloss",
+			"Flagadoss","Otaria","Lamantine","Kokiyas","Crustabri","Krabby","Krabboss",
+			"Excelangue","Rhinoféros","Kangourex","Hypotrempe","Hypocéan","Poissirène",
+			"Poissoroy","Stari","Staross","Léviator","Lokhlass","Aquali","Amonita",
+			"Amonistar","Kabuto","Kabutops","Ronflex","Minidraco","Draco","Dracolosse","Mew"
+		]},
+	"Force": {
+		"ID":"CS04",
+		"Pokemons":[
+			"Salamèche","Reptincel","Dracaufeu","Carapuce","Carabaffe","Tortank","Abo","Arbok",
+			"Sabelette","Sablaireau","Nidoqueen","Nidoking","Mélofée","Mélodelfe","Rondoudou",
+			"Grodoudou","Psykokwak","Akwakwak","Férosinge","Colossinge","Têtarte","Tartard",
+			"Machoc","Machopeur","Mackogneur","Racaillou","Gravalanch","Grolem","Ramoloss",
+			"Flagadoss","Otaria","Lamantine","Ectoplasma","Onix","Krabby","Krabboss","Noadkoko",
+			"Osselait","Ossatueur","Kicklee","Tygnon","Excelangue","Rhinocorne","Rhinoféros",
+			"Leveinard","Kangourex","Élektek","Magmar","Scarabrute","Tauros",
+			"Léviator","Lokhlass","Ronflex","Dracolosse","Mewtwo","Mew"
+		]},
+	"Flash": {
+		"ID":"CS05",
+		"Pokemons":[
+			"Papilusion","Pikachu","Raichu","Mélofée","Mélodelfe","Rondoudou",
+			"Grodoudou","Abra","Kadabra","Alakazam","Ramoloss","Flagadoss",
+			"Magnéti","Soporifik","Hypnomade","Voltorbe","Électrode","Leveinard",
+			"Stari","Staross","M.Mime","Élektek","Voltali","Porygon","Électhor",
+			"Mewtwo","Mew"
+		]}
 }
 
 const TYPE_COLOR = {

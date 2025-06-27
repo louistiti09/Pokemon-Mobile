@@ -11,8 +11,8 @@ func create_offset():
 			for x in range(0,width):
 				var pixel_color = image.get_pixel(x,y)
 				if pixel_color.a > 0.0:
-					shader_offset = float(y)/float(height)
-		material.set_shader_parameter('offset',(1-shader_offset)*height)
+					shader_offset = y
+		material.set_shader_parameter('offset',height-shader_offset)
 
 func _ready(): create_offset()
 func _on_texture_changed(): create_offset()

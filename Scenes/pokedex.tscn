@@ -1,0 +1,233 @@
+[gd_scene load_steps=15 format=3 uid="uid://cvwj1815sfkea"]
+
+[ext_resource type="Script" path="res://Script/pokedex.gd" id="1_hg3hl"]
+[ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_tf5ly"]
+[ext_resource type="Texture2D" uid="uid://bv2r3ow56o8rw" path="res://Textures/Pokemons/Front/n/152.png" id="2_b4lq8"]
+[ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="4_fjcva"]
+[ext_resource type="AudioStream" uid="uid://bq8u3cy6ltlu0" path="res://Sounds/BGM/Aether Paradise.mp3" id="5_klle2"]
+[ext_resource type="AudioStream" uid="uid://bg2eky4hj7k4e" path="res://Sounds/SFX/Pokemon/Pikachu.ogg" id="6_d56sr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xbw3"]
+shader = ExtResource("1_tf5ly")
+shader_parameter/color1 = Color(0.533333, 0.34902, 0.196078, 1)
+shader_parameter/color2 = Color(0.811765, 0.639216, 0.4, 1)
+shader_parameter/offset = 0.0
+shader_parameter/pixelise = 20.0
+shader_parameter/generate_offset = true
+shader_parameter/wavy = 20.0
+shader_parameter/wave_width = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fj1g"]
+bg_color = Color(0, 0.588235, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14ipt"]
+bg_color = Color(0, 0.588235, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="SystemFont" id="SystemFont_sgxm4"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16jv6"]
+bg_color = Color(0.239216, 0.129412, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.152941, 0.0784314, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qpbq"]
+bg_color = Color(0.317647, 0.207843, 0.0784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.152941, 0.0784314, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+
+[sub_resource type="SystemFont" id="SystemFont_tjtbg"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a8ae"]
+bg_color = Color(0.784314, 0.784314, 0.784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.392157, 0.392157, 0.392157, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+
+[node name="pokedex" type="Node2D"]
+script = ExtResource("1_hg3hl")
+
+[node name="BG" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2xbw3")
+offset_right = 540.0
+offset_bottom = 960.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Quitter" type="Button" parent="BG"]
+clip_children = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 22.0
+offset_right = 160.0
+offset_bottom = 72.0
+size_flags_vertical = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_7fj1g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fj1g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_14ipt")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7fj1g")
+text = "Quitter"
+
+[node name="Label" type="Label" parent="BG"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 520.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_sgxm4")
+theme_override_font_sizes/font_size = 40
+text = "POKEDEX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="BG"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 520.0
+offset_bottom = 960.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="BG/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="Sample" type="HBoxContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 520.0
+offset_bottom = 200.0
+size_flags_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="Pkm" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(96, 0)
+offset_left = 120.0
+offset_top = 100.0
+offset_right = 216.0
+offset_bottom = 200.0
+size_flags_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_16jv6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2qpbq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_16jv6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_16jv6")
+
+[node name="Label" type="Label" parent="Pkm"]
+offset_right = 96.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.588235)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_tjtbg")
+theme_override_font_sizes/font_size = 50
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Pkm"]
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 90.0
+offset_bottom = 92.0
+texture = ExtResource("2_b4lq8")
+
+[node name="PkmName" type="Panel" parent="."]
+visible = false
+offset_left = -5.0
+offset_top = 200.0
+offset_right = 145.0
+offset_bottom = 250.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0a8ae")
+
+[node name="Label" type="Label" parent="PkmName"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_tjtbg")
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="Button" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("4_fjcva")
+bus = &"SFX"
+
+[node name="BGM" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("5_klle2")
+bus = &"BGM"
+
+[node name="SFX" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("6_d56sr")
+bus = &"SFX"
+
+[connection signal="pressed" from="BG/Quitter" to="." method="_on_quitter_pressed"]

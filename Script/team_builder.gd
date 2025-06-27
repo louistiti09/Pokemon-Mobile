@@ -58,7 +58,7 @@ func save_team_builder():
 	data.Teams[TeamNumber] = {"Team":Team,"Name":TeamName}
 	data.Pokemons = Pokemons
 	SaveManager.save_data(data)
-func _ready(): team_builder(0)
+func _ready(): if get_parent().get_class() == "Window": team_builder(0)
 
 
 #									-----NODES-----

@@ -1,0 +1,293 @@
+[gd_scene load_steps=24 format=3 uid="uid://bf0inobufwta8"]
+
+[ext_resource type="Script" path="res://Script/menu.gd" id="1_iffam"]
+[ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_w71ya"]
+[ext_resource type="AudioStream" uid="uid://tjrdv10ve6k4" path="res://Sounds/SFX/Other/button.mp3" id="2_jfvju"]
+[ext_resource type="Shader" path="res://Shaders/ingame_pokemon.gdshader" id="3_d0coi"]
+[ext_resource type="Texture2D" uid="uid://dqseokaqvxt8j" path="res://Textures/Combat/basis.png" id="3_eiqod"]
+[ext_resource type="AudioStream" uid="uid://bfthsvbowvhvo" path="res://Sounds/BGM/Galar Mines.mp3" id="3_nilox"]
+[ext_resource type="Texture2D" uid="uid://b13my0qcef514" path="res://Textures/Pokemons/Front/n/6.png" id="5_li12e"]
+[ext_resource type="Script" path="res://Script/PkmnShaderSetup.gd" id="5_sxqpv"]
+[ext_resource type="Texture2D" uid="uid://chcux540pw5vk" path="res://Textures/Trainers.png" id="6_ycfmc"]
+[ext_resource type="Texture2D" uid="uid://wtdc6y5ui0rg" path="res://Textures/Logos/IconTR.png" id="8_68vu0"]
+[ext_resource type="Texture2D" uid="uid://cpxechcig0c0s" path="res://Textures/Logos/settings.png" id="9_ia61w"]
+[ext_resource type="AudioStream" uid="uid://bg2eky4hj7k4e" path="res://Sounds/SFX/Pokemon/Pikachu.ogg" id="10_inlu5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mf6rc"]
+shader = ExtResource("1_w71ya")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/offset = 1.49012e-08
+shader_parameter/pixelise = 10.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1x83w"]
+resource_local_to_scene = true
+shader = ExtResource("3_d0coi")
+shader_parameter/spawn_anim = 3.0
+shader_parameter/offset = 0.0
+shader_parameter/death_animation = 0.0
+shader_parameter/is_client = null
+shader_parameter/status = 0
+shader_parameter/raise_alpha = 0.0
+shader_parameter/is_raise = true
+shader_parameter/is_confused = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlkmt"]
+shader = ExtResource("3_d0coi")
+shader_parameter/spawn_anim = 3.0
+shader_parameter/offset = 3.5
+shader_parameter/death_animation = 0.0
+shader_parameter/is_client = true
+shader_parameter/status = 0
+shader_parameter/raise_alpha = 0.0
+shader_parameter/is_raise = true
+shader_parameter/is_confused = false
+
+[sub_resource type="SystemFont" id="SystemFont_cgdgr"]
+font_names = PackedStringArray("Berlin Sans FB")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rosmn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex4bk"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="SystemFont" id="SystemFont_grsxr"]
+font_names = PackedStringArray("Berlin Sans FB")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbb4j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ur8a3"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sjq70"]
+shader = ExtResource("1_w71ya")
+shader_parameter/color1 = Color(0, 0.596078, 1, 1)
+shader_parameter/color2 = Color(0.588235, 0.494118, 1, 1)
+shader_parameter/offset = 1.49012e-08
+shader_parameter/pixelise = 1000.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 1.0
+
+[sub_resource type="SystemFont" id="SystemFont_xi0pj"]
+font_names = PackedStringArray("Berlin Sans FB")
+subpixel_positioning = 0
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_iffam")
+
+[node name="BG" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_mf6rc")
+offset_right = 540.0
+offset_bottom = 960.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Center" type="Node2D" parent="BG"]
+
+[node name="Pokeball" type="TextureRect" parent="BG/Center"]
+modulate = Color(1, 1, 1, 0.588235)
+offset_left = -30.0
+offset_top = 60.0
+offset_right = 570.0
+offset_bottom = 660.0
+texture = ExtResource("8_68vu0")
+expand_mode = 1
+
+[node name="Basis" type="TextureRect" parent="BG/Center"]
+offset_left = 30.0
+offset_top = 235.0
+offset_right = 510.0
+offset_bottom = 765.0
+texture = ExtResource("3_eiqod")
+
+[node name="LvDresseur" type="Line2D" parent="BG/Center"]
+position = Vector2(415, 326)
+points = PackedVector2Array(-35, 35, 20, -20, 100, -20)
+width = 1.5
+default_color = Color(0, 0, 0, 1)
+sharp_limit = 1.0
+
+[node name="Label" type="Label" parent="BG/Center/LvDresseur"]
+offset_left = -414.0
+offset_top = -23.0
+offset_right = 100.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lv.100"
+horizontal_alignment = 2
+
+[node name="LvPartenaire" type="Line2D" parent="BG/Center"]
+position = Vector2(117, 579)
+points = PackedVector2Array(40, -30, -20, 20, -100, 20)
+width = 1.5
+default_color = Color(0, 0, 0, 1)
+sharp_limit = 1.0
+
+[node name="Label" type="Label" parent="BG/Center/LvPartenaire"]
+offset_left = -100.0
+offset_top = -5.0
+offset_right = 420.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lv. 100"
+
+[node name="Partenaire" type="Sprite2D" parent="BG/Center"]
+material = SubResource("ShaderMaterial_1x83w")
+position = Vector2(230, 384)
+scale = Vector2(4, 4)
+texture = ExtResource("5_li12e")
+script = ExtResource("5_sxqpv")
+
+[node name="Avatar" type="Sprite2D" parent="BG/Center"]
+material = SubResource("ShaderMaterial_rlkmt")
+position = Vector2(370, 410)
+scale = Vector2(4, 4)
+texture = ExtResource("6_ycfmc")
+hframes = 7
+vframes = 2
+
+[node name="Team" type="Label" parent="BG/Center"]
+offset_left = 30.0
+offset_top = 184.0
+offset_right = 510.0
+offset_bottom = 234.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_cgdgr")
+theme_override_font_sizes/font_size = 30
+text = "Louistiti & Dracaufeu"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="BG/Center"]
+offset_left = 95.0
+offset_top = 235.0
+offset_right = 445.0
+offset_bottom = 575.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rosmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rosmn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rosmn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rosmn")
+
+[node name="SelectedTeam" type="Node2D" parent="BG"]
+position = Vector2(275, 620)
+
+[node name="Panel" type="Panel" parent="BG/SelectedTeam"]
+offset_left = 20.0
+offset_top = 7.0
+offset_right = 255.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ex4bk")
+
+[node name="Label" type="Label" parent="BG/SelectedTeam/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_grsxr")
+theme_override_font_sizes/font_size = 15
+text = "Team Name"
+vertical_alignment = 1
+
+[node name="Pokeball" type="TextureRect" parent="BG/SelectedTeam"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_68vu0")
+expand_mode = 1
+
+[node name="Params" type="Button" parent="BG"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 60.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wbb4j")
+icon = ExtResource("9_ia61w")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Tutorial_UI" type="Panel" parent="BG"]
+visible = false
+clip_children = 1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 520.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ur8a3")
+
+[node name="Background" type="ColorRect" parent="BG/Tutorial_UI"]
+material = SubResource("ShaderMaterial_sjq70")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BG/Tutorial_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = -1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = SubResource("SystemFont_xi0pj")
+theme_override_font_sizes/font_size = 25
+text = "caca"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="Button" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("2_jfvju")
+bus = &"SFX"
+
+[node name="SFX" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("10_inlu5")
+bus = &"SFX"
+
+[node name="BGM" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("3_nilox")
+bus = &"BGM"
+
+[connection signal="texture_changed" from="BG/Center/Partenaire" to="BG/Center/Partenaire" method="_on_texture_changed"]
+[connection signal="pressed" from="BG/Center/Button" to="." method="_on_partenaire_pressed"]

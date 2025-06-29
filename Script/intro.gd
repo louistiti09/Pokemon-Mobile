@@ -126,10 +126,10 @@ func _on_oui_pressed():
 				node.get_node("TextureRect").texture = load("res://Textures/Pokemons/Front/%s/%s.png" % [is_shiny,pokedex])
 				node.get_node("Label").text = pkm
 			$AnimationPlayer.play("intro_part_6")
+		await action_ui_writing("Très bien ! Il va maintenant falloir que tu choisisses ton premier nouvel ami.")
 		UI.PokemonSelection.Bulbizarre.disabled = false
 		UI.PokemonSelection.Salameche.disabled = false
 		UI.PokemonSelection.Carapuce.disabled = false
-		action_ui_writing("Très bien ! Il va maintenant falloir que tu choisisses ton premier nouvel ami.")
 	elif progression == 6:
 		$AnimationPlayer.play_backwards("intro_part_4")
 		await get_tree().create_timer(0.75).timeout
@@ -229,4 +229,7 @@ func ending():
 		"Attacks":random_moveset,
 	}
 	data.Pokemons.append(new_pkm)
+	data.Partenaire = new_pkm
+	data.Teams[data.ActiveTeam].Team.append(new_pkm)
 	SaveManager.save_data(data)
+	SceneManager.change_scene(self,"menu")

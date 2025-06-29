@@ -1,6 +1,6 @@
 extends Node
 
-const EmptyData = {"Pseudo":"","Avatar":0,"Pokemons":[],"CTCS":[],"ActiveTeam":0,"Teams":[{"Team":[],"Name":""}]}
+const EmptyData = {"Pseudo":"","Partenaire":"","Avatar":0,"PlayerLvL":5,"PlayerEXP":0,"Pokemons":[],"CTCS":[],"ActiveTeam":0,"Teams":[{"Team":[],"Name":"Mon Equipe"}]}
 
 func load_data() -> Dictionary:
 	if FileAccess.file_exists("user://save_file.json"):
@@ -25,5 +25,6 @@ func save_data(data : Dictionary):
 func update_data_version(data : Dictionary) -> Dictionary:
 	for key in EmptyData.keys():
 		if !data.has(key):
+			print("Data updated ! (%s added)" % key)
 			data[key] = EmptyData[key]
 	return data

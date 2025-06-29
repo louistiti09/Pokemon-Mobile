@@ -69,8 +69,9 @@ func hide_pkm_name():
 	pkm_name.visible = false
 
 func pkm_click(sound_path : String):
-	Audios.SFX.stream = load(sound_path)
-	Audios.SFX.playing = true
+	if !Audios.SFX.playing:
+		Audios.SFX.stream = load(sound_path)
+		Audios.SFX.playing = true
 
 func _on_quitter_pressed():
 	Audios.Button.playing = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://bwlgfuig8hgfd"]
+[gd_scene load_steps=80 format=3 uid="uid://bwlgfuig8hgfd"]
 
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_1pfj7"]
 [ext_resource type="Script" path="res://Script/game.gd" id="1_306b4"]
@@ -546,6 +546,16 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p07w7"]
+shader = ExtResource("1_1pfj7")
+shader_parameter/color1 = Color(0, 0.596078, 1, 1)
+shader_parameter/color2 = Color(0.588235, 0.494118, 1, 1)
+shader_parameter/offset = 1.49012e-08
+shader_parameter/pixelise = 1000.0
+shader_parameter/generate_offset = false
+shader_parameter/wavy = 6.0
+shader_parameter/wave_width = 1.0
+
 [sub_resource type="Animation" id="Animation_xwqrl"]
 resource_name = "Show_Opponent"
 length = 0.5
@@ -570,7 +580,7 @@ _data = {
 [node name="game" type="Node2D"]
 script = ExtResource("1_306b4")
 
-[node name="Sprites" type="Node" parent="."]
+[node name="Sprites" type="Node2D" parent="."]
 
 [node name="Background" type="ColorRect" parent="Sprites"]
 material = SubResource("ShaderMaterial_gowmg")
@@ -653,7 +663,7 @@ scale = Vector2(3, 3)
 position = Vector2(420, 394)
 scale = Vector2(3, 3)
 
-[node name="UI" type="Node" parent="."]
+[node name="UI" type="Node2D" parent="."]
 
 [node name="Params" type="Button" parent="UI"]
 offset_left = 10.0
@@ -667,7 +677,7 @@ icon = ExtResource("2_xuqmb")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Pokemons_UI" type="Node" parent="UI"]
+[node name="Pokemons_UI" type="Node2D" parent="UI"]
 
 [node name="Opp" type="Control" parent="UI/Pokemons_UI"]
 layout_mode = 3
@@ -1132,7 +1142,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_agf82")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_um2ft")
 text = "Continuer le combat"
 
-[node name="Main_UI" type="Node" parent="UI"]
+[node name="Main_UI" type="Node2D" parent="UI"]
 
 [node name="Basis_UI" type="Panel" parent="UI/Main_UI"]
 clip_children = 1
@@ -1543,7 +1553,7 @@ offset_bottom = 180.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qrbjx")
 
 [node name="Background" type="ColorRect" parent="UI/Tutorial_UI"]
-material = SubResource("ShaderMaterial_6in17")
+material = SubResource("ShaderMaterial_p07w7")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1591,7 +1601,7 @@ bus = &"SFX"
 [node name="IA" type="Node" parent="."]
 script = ExtResource("10_73u3u")
 
-[node name="AnimNodes" type="Node" parent="."]
+[node name="AnimNodes" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimNodes"]
 

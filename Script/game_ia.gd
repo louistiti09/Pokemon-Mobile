@@ -120,7 +120,7 @@ func calculate_reward(old_state : Dictionary, new_state : Dictionary):
 		if old_state["IA"]["Active"]["Hp"] < old_state["Opp"]["Active"]["Hp"]:
 			reward += 10.0 # switch défensif
 		else:
-			reward -= 5.0 # switch inutile ?
+			reward -= 30.0 # switch inutile ?
 	
 	# 5. Statuts infligés / subis
 	var bad_statuses = ["Brûlé", "Paralysé", "Empoisonné", "Gelé", "Vampigraine", "Danse-Flammes", "Ligotage", "Confus"]
@@ -149,7 +149,8 @@ func calculate_reward(old_state : Dictionary, new_state : Dictionary):
 	var hp_ratio = new_state["IA"]["Active"]["Hp"] / new_state["IA"]["Active"]["Max_Hp"]
 	reward += 5.0 * clamp(hp_ratio, 0.0, 1.0)
 	
-	print(reward)
+	print("Note : %s" % reward)
+	print("-------------------")
 	return reward
 
 func feed(new_state : Dictionary):
@@ -165,18 +166,26 @@ func play(game_state: Dictionary) -> String:
 
 	# On choisit une action (exploration / exploitation)
 	if randf() < epsilon or !q_table.has(state_key):
-		print("EXPLORATION")
+		print("Mode : EXPLORATION")
 		return possible_moves[randi() % possible_moves.size()]
 	else:
-		print("EXPLOITATION")
 		var best_value = -INF
 		var best_actions = []
 		for action in possible_moves:
 			ensure_q_entry(state_key, action)
 			var q = q_table[state_key][action]
+			if q < 0.0: #On ignore les moves abhérants
+				continue
+				
 			if q > best_value:
 				best_value = q
 				best_actions = [action]
 			elif q == best_value:
 				best_actions.append(action)
-		return best_actions[randi() % best_actions.size()]
+		
+		if best_actions.size() == 0:
+			print("Mode : FALLBACK") #Aucun move correct -> Exploration
+			return possible_moves[randi() % possible_moves.size()]
+		else:
+			print("Mode : EXPLOITATION")
+			return best_actions[randi() % best_actions.size()]

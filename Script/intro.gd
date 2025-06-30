@@ -35,7 +35,6 @@ var shiny = null
 
 func _ready(): if get_parent().get_class() == "Window": intro()
 func intro():
-	print("Launching Introduction")
 	UI.MainLabel.text = ""
 	UI.PseudoSelected.text = ""
 	$AnimationPlayer.play("intro_part_1")
@@ -97,9 +96,11 @@ func avatar_chosen(button : Control):
 	node2D.visible = false
 	UI.AvatarSelected.visible = true
 	$AnimationPlayer.play("intro_part_3")
-	var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel(true)
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel(true)
 	tween.tween_property(UI.AvatarSelected,"position",Vector2(400,400),1)
 	tween.tween_property(UI.AvatarSelected,"scale",Vector2(3,3),1)
+	await tween.finished
+	tween.kill()
 
 func _on_oui_pressed():
 	Audios.Button.playing = true
@@ -152,9 +153,11 @@ func _on_oui_pressed():
 		UI.PokemonName.visible = true
 		
 		$AnimationPlayer.play("intro_part_7")
-		var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel(true)
+		var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel(true)
 		tween.tween_property(UI.PokemonSelected,"position",Vector2(245,380),1)
 		tween.tween_property(UI.PokemonName,"position",Vector2(240,505),1)
+		await tween.finished
+		tween.kill()
 
 func _on_non_pressed():
 	Audios.Button.playing = true
@@ -166,8 +169,10 @@ func _on_non_pressed():
 		await get_tree().create_timer(0.75).timeout
 		action_ui_writing("Au fait, à quoi ressembles-tu ?")
 		$AnimationPlayer.play("intro_part_2")
-		var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel(true)
+		var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		tween.tween_property(UI.AvatarSelected,"position",Vector2(800,0),0.2)
+		await tween.finished
+		tween.kill()
 	elif progression == 5:
 		progression = 4
 		_on_oui_pressed()

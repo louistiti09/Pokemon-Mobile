@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bf0inobufwta8"]
+[gd_scene load_steps=48 format=3 uid="uid://bf0inobufwta8"]
 
 [ext_resource type="Script" path="res://Script/menu.gd" id="1_iffam"]
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_w71ya"]
@@ -10,8 +10,15 @@
 [ext_resource type="Script" path="res://Script/PkmnShaderSetup.gd" id="5_sxqpv"]
 [ext_resource type="Texture2D" uid="uid://chcux540pw5vk" path="res://Textures/Trainers.png" id="6_ycfmc"]
 [ext_resource type="Texture2D" uid="uid://wtdc6y5ui0rg" path="res://Textures/Logos/IconTR.png" id="8_68vu0"]
+[ext_resource type="Texture2D" uid="uid://dw4fu7ul6ofgm" path="res://Textures/Logos/Friends.png" id="9_e0b8w"]
 [ext_resource type="Texture2D" uid="uid://cpxechcig0c0s" path="res://Textures/Logos/settings.png" id="9_ia61w"]
-[ext_resource type="AudioStream" uid="uid://bg2eky4hj7k4e" path="res://Sounds/SFX/Pokemon/Pikachu.ogg" id="10_inlu5"]
+[ext_resource type="Texture2D" uid="uid://dtxs2raqkm0h4" path="res://Textures/Logos/Pokeball.png" id="10_mry0s"]
+[ext_resource type="Texture2D" uid="uid://dvrp3doludxo0" path="res://Textures/Logos/Dress.png" id="11_5lju7"]
+[ext_resource type="Texture2D" uid="uid://mpspxm8lqspw" path="res://Textures/Logos/Cart.png" id="12_a7occ"]
+[ext_resource type="Texture2D" uid="uid://va7vcc0gk7y" path="res://Textures/Logos/Versus.png" id="13_0n6qn"]
+[ext_resource type="Texture2D" uid="uid://77uf2ihxtr2w" path="res://Textures/Logos/Pikachu.png" id="13_3pk76"]
+[ext_resource type="AudioStream" uid="uid://tqs83ivy22ky" path="res://Sounds/SFX/Pokemon/Dracaufeu.ogg" id="13_l6ttc"]
+[ext_resource type="Texture2D" uid="uid://dqsq5uygyqpmg" path="res://Textures/Logos/Herbes.png" id="14_dxahc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mf6rc"]
 shader = ExtResource("1_w71ya")
@@ -23,13 +30,16 @@ shader_parameter/generate_offset = false
 shader_parameter/wavy = 6.0
 shader_parameter/wave_width = 10.0
 
+[sub_resource type="SystemFont" id="SystemFont_gek7s"]
+font_names = PackedStringArray("Ebrima")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1x83w"]
 resource_local_to_scene = true
 shader = ExtResource("3_d0coi")
 shader_parameter/spawn_anim = 3.0
 shader_parameter/offset = 0.0
 shader_parameter/death_animation = 0.0
-shader_parameter/is_client = null
+shader_parameter/is_client = false
 shader_parameter/status = 0
 shader_parameter/raise_alpha = 0.0
 shader_parameter/is_raise = true
@@ -64,6 +74,100 @@ corner_radius_bottom_left = 10
 font_names = PackedStringArray("Berlin Sans FB")
 subpixel_positioning = 0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxctm"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcj5g"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bh6i"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8h38"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0cyn"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpast"]
+bg_color = Color(0, 0.392157, 0.784314, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf0s3"]
+bg_color = Color(0.0784314, 0.470588, 0.862745, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="SystemFont" id="SystemFont_thhs2"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdsp6"]
+bg_color = Color(0.588235, 0.196078, 0.705882, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gc1n"]
+bg_color = Color(0.666667, 0.27451, 0.784314, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crlrd"]
+bg_color = Color(0.784314, 0.0784314, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5esd7"]
+bg_color = Color(0.862745, 0.156863, 0.0784314, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwj8n"]
+bg_color = Color(0.196078, 0.588235, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tykrh"]
+bg_color = Color(0.27451, 0.666667, 0.0784314, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbb4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ur8a3"]
@@ -86,6 +190,52 @@ shader_parameter/wave_width = 1.0
 font_names = PackedStringArray("Berlin Sans FB")
 subpixel_positioning = 0
 
+[sub_resource type="Animation" id="Animation_4sikp"]
+resource_name = "roar"
+length = 0.55
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audios/SFX:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG/Center/Partenaire:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
+"transitions": PackedFloat32Array(0.3, 0.1, 0.5, 0.2, 0.2, 0.3, 0.3, 1, 1.2, 1),
+"update": 0,
+"values": [Vector2(230, 384), Vector2(230, 394), Vector2(220, 384), Vector2(240, 384), Vector2(220, 384), Vector2(240, 384), Vector2(210, 384), Vector2(250, 384), Vector2(210, 384), Vector2(230, 384)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG/Center/Partenaire:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(0.3, 0.1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(3.7, 3.7), Vector2(4, 4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ghqx"]
+_data = {
+"roar": SubResource("Animation_4sikp")
+}
+
 [node name="menu" type="Node2D"]
 script = ExtResource("1_iffam")
 
@@ -96,6 +246,23 @@ offset_bottom = 960.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="Version" type="LinkButton" parent="BG"]
+layout_direction = 3
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 540.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0.392157, 0.392157, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(0.392157, 0.392157, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(0.392157, 0.392157, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(0.392157, 0.392157, 0.392157, 1)
+theme_override_fonts/font = SubResource("SystemFont_gek7s")
+theme_override_font_sizes/font_size = 15
+text = "v0.1"
+underline = 1
+uri = "https://github.com/louistiti09/Pokemon-Mobile"
 
 [node name="Center" type="Node2D" parent="BG"]
 
@@ -224,6 +391,239 @@ offset_bottom = 40.0
 texture = ExtResource("8_68vu0")
 expand_mode = 1
 
+[node name="Button" type="Button" parent="BG/SelectedTeam"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 255.0
+offset_bottom = 35.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rosmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rosmn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rosmn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rosmn")
+
+[node name="Buttons" type="Node2D" parent="BG"]
+
+[node name="Left" type="Polygon2D" parent="BG/Buttons"]
+position = Vector2(0, 960)
+color = Color(0, 0, 0, 0.588235)
+polygon = PackedVector2Array(0, -260, 70, -250, 100, 0, 0, 0)
+
+[node name="VBox" type="VBoxContainer" parent="BG/Buttons/Left"]
+offset_left = 6.0
+offset_top = -230.0
+offset_right = 66.0
+offset_bottom = -10.0
+rotation = -0.0873883
+theme_override_constants/separation = 20
+
+[node name="Friends" type="Button" parent="BG/Buttons/Left/VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oxctm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mcj5g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7bh6i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a8h38")
+theme_override_styles/focus = SubResource("StyleBoxFlat_a0cyn")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Buttons/Left/VBox/Friends"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 55.0
+texture = ExtResource("9_e0b8w")
+expand_mode = 1
+
+[node name="Pokedex" type="Button" parent="BG/Buttons/Left/VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oxctm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mcj5g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7bh6i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a8h38")
+theme_override_styles/focus = SubResource("StyleBoxFlat_a0cyn")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Buttons/Left/VBox/Pokedex"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 53.0
+offset_bottom = 53.0
+texture = ExtResource("10_mry0s")
+expand_mode = 1
+
+[node name="Dress" type="Button" parent="BG/Buttons/Left/VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oxctm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mcj5g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7bh6i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a8h38")
+theme_override_styles/focus = SubResource("StyleBoxFlat_a0cyn")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Buttons/Left/VBox/Dress"]
+offset_top = -5.0
+offset_right = 60.0
+offset_bottom = 65.0
+texture = ExtResource("11_5lju7")
+expand_mode = 1
+
+[node name="Shop" type="Button" parent="BG/Buttons"]
+custom_minimum_size = Vector2(0, 60)
+offset_left = 110.0
+offset_top = 710.0
+offset_right = 310.0
+offset_bottom = 810.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_hpast")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sf0s3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hpast")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hpast")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hpast")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Buttons/Shop"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 5.0
+offset_right = 130.0
+offset_bottom = 75.0
+texture = ExtResource("12_a7occ")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="BG/Buttons/Shop"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 200.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_thhs2")
+theme_override_font_sizes/font_size = 16
+text = "Boutique"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Teams" type="Button" parent="BG/Buttons"]
+custom_minimum_size = Vector2(0, 60)
+offset_left = 110.0
+offset_top = 820.0
+offset_right = 310.0
+offset_bottom = 920.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gdsp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1gc1n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gdsp6")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_gdsp6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gdsp6")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Buttons/Teams"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 5.0
+offset_right = 128.0
+offset_bottom = 80.0
+texture = ExtResource("13_3pk76")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="BG/Buttons/Teams"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 200.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_thhs2")
+theme_override_font_sizes/font_size = 16
+text = "Equipes"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Combat" type="Button" parent="BG/Buttons"]
+custom_minimum_size = Vector2(0, 60)
+offset_left = 320.0
+offset_top = 710.0
+offset_right = 520.0
+offset_bottom = 810.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_crlrd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5esd7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_crlrd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_crlrd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_crlrd")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Buttons/Combat"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 5.0
+offset_right = 140.0
+offset_bottom = 85.0
+texture = ExtResource("13_0n6qn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="BG/Buttons/Combat"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 200.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_thhs2")
+theme_override_font_sizes/font_size = 16
+text = "Combat"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Hunt" type="Button" parent="BG/Buttons"]
+custom_minimum_size = Vector2(0, 60)
+offset_left = 320.0
+offset_top = 820.0
+offset_right = 520.0
+offset_bottom = 920.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_uwj8n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tykrh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uwj8n")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_uwj8n")
+theme_override_styles/focus = SubResource("StyleBoxFlat_uwj8n")
+
+[node name="TextureRect" type="TextureRect" parent="BG/Buttons/Hunt"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = -5.0
+offset_right = 145.0
+offset_bottom = 85.0
+texture = ExtResource("14_dxahc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="BG/Buttons/Hunt"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 200.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_thhs2")
+theme_override_font_sizes/font_size = 16
+text = "Hautes Herbes"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="Params" type="Button" parent="BG"]
 layout_mode = 0
 offset_left = 10.0
@@ -282,12 +682,19 @@ stream = ExtResource("2_jfvju")
 bus = &"SFX"
 
 [node name="SFX" type="AudioStreamPlayer" parent="Audios"]
-stream = ExtResource("10_inlu5")
+stream = ExtResource("13_l6ttc")
 bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="Audios"]
 stream = ExtResource("3_nilox")
 bus = &"BGM"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ghqx")
+}
+
 [connection signal="texture_changed" from="BG/Center/Partenaire" to="BG/Center/Partenaire" method="_on_texture_changed"]
 [connection signal="pressed" from="BG/Center/Button" to="." method="_on_partenaire_pressed"]
+[connection signal="pressed" from="BG/SelectedTeam/Button" to="." method="_on_selected_team_pressed"]
+[connection signal="pressed" from="BG/Buttons/Left/VBox/Pokedex" to="." method="_on_pokedex_pressed"]

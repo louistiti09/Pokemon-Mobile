@@ -1,8 +1,7 @@
 extends Node2D
 
-func _ready():title_scene()
+func _ready(): if get_parent().get_class() == "Window": title_scene()
 func title_scene():
-	print("Launching Title Scene")
 	var pokemons = Stats.POKEMONS.keys()
 	var random_pokemon = randi_range(1,151)-1
 	var battle_subtitle = pokemons[random_pokemon]
@@ -26,7 +25,10 @@ func _on_click_pressed():
 	await get_tree().create_timer(2).timeout
 	var data = SaveManager.load_data()
 	if data.Pseudo == "": #Première connexion
+		print("First Connection")
+		print("-------------------------------------\n")
 		SceneManager.change_scene(self,"intro",false)
 	else: #Menu Principal
 		print("Connected as %s" % data.Pseudo)
+		print("-------------------------------------\n")
 		SceneManager.change_scene(self,"menu")

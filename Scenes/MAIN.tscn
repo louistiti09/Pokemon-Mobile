@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b31ua1gaikx3w"]
+[gd_scene load_steps=7 format=3 uid="uid://b31ua1gaikx3w"]
 
 [ext_resource type="PackedScene" uid="uid://dy68dcwghu8vq" path="res://Scenes/title_scene.tscn" id="1_jwgg8"]
 [ext_resource type="PackedScene" uid="uid://bo68ujguf0gc2" path="res://Scenes/intro.tscn" id="2_61ydu"]
 [ext_resource type="PackedScene" uid="uid://bmgodcc11fig4" path="res://Scenes/transition.tscn" id="3_tvcya"]
 [ext_resource type="PackedScene" uid="uid://bf0inobufwta8" path="res://Scenes/menu.tscn" id="3_vyouw"]
+[ext_resource type="PackedScene" uid="uid://dd5n2wb2gp024" path="res://Scenes/team_builder.tscn" id="4_bdf54"]
+[ext_resource type="PackedScene" uid="uid://cvwj1815sfkea" path="res://Scenes/pokedex.tscn" id="5_fgpha"]
 
 [node name="MAIN" type="Node2D"]
 
@@ -13,6 +15,12 @@
 visible = false
 
 [node name="menu" parent="." instance=ExtResource("3_vyouw")]
+visible = false
+
+[node name="team_builder" parent="." instance=ExtResource("4_bdf54")]
+visible = false
+
+[node name="pokedex" parent="." instance=ExtResource("5_fgpha")]
 visible = false
 
 [node name="transition" parent="." instance=ExtResource("3_tvcya")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvwj1815sfkea"]
+[gd_scene load_steps=18 format=3 uid="uid://cvwj1815sfkea"]
 
 [ext_resource type="Script" path="res://Script/pokedex.gd" id="1_hg3hl"]
 [ext_resource type="Shader" path="res://Shaders/pixel_gradient.gdshader" id="1_tf5ly"]
@@ -43,6 +43,23 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="SystemFont" id="SystemFont_sgxm4"]
 font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="SystemFont" id="SystemFont_alky2"]
+font_names = PackedStringArray("Berlin Sans FB")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah8fq"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srhgj"]
+bg_color = Color(0.392157, 1, 0, 0.784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16jv6"]
 bg_color = Color(0.239216, 0.129412, 0, 1)
@@ -149,6 +166,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 5
 
+[node name="Progression" type="ProgressBar" parent="BG/Scroll/VBox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_alky2")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_ah8fq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_srhgj")
+max_value = 151.0
+value = 50.0
+
 [node name="Sample" type="HBoxContainer" parent="."]
 visible = false
 custom_minimum_size = Vector2(0, 100)
@@ -233,3 +263,5 @@ stream = ExtResource("6_d56sr")
 bus = &"SFX"
 
 [connection signal="pressed" from="BG/Quitter" to="." method="_on_quitter_pressed"]
+[connection signal="mouse_entered" from="BG/Scroll/VBox/Progression" to="." method="_on_progression_mouse_entered"]
+[connection signal="mouse_exited" from="BG/Scroll/VBox/Progression" to="." method="_on_progression_mouse_exited"]

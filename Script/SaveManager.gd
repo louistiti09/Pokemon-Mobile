@@ -14,7 +14,7 @@ func load_data() -> Dictionary:
 				return update_data_version(result)
 	return EmptyData
 
-func save_data(data : Dictionary):
+func save_data(data : Dictionary) -> void:
 	var json_string := JSON.stringify(data)
 	var file = FileAccess.open("user://save_file.json", FileAccess.WRITE)
 	if file:

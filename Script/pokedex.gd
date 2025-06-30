@@ -4,6 +4,7 @@ extends Node2D
 @onready var sample_pkm = $Pkm
 @onready var pkm_name = $PkmName
 @onready var vbox = $BG/Scroll/VBox
+@onready var progress = $BG/Scroll/VBox/Progression
 @onready var Audios = {
 	"Button" : $Audios/Button,
 	"SFX" : $Audios/SFX,
@@ -26,10 +27,13 @@ func pokedex():
 			else: add_base = Pokedex.has(p.Evolution.Name) && !Pokedex.has(p_name)
 			if add_base: Pokedex.append(p_name)
 	
-	for child in vbox.get_children(): vbox.remove_child(child)
+	for child in vbox.get_children():
+		if child.get_class() == "HBoxContainer" || child.get_class() == "ColorRect":
+			vbox.remove_child(child)
 	
 	var i = 0
 	var hbox
+	progress.value = 0
 	for pkm in Stats.POKEMONS:
 		i+=1
 		if i%5 == 1:
@@ -40,6 +44,7 @@ func pokedex():
 		var pkm_panel = sample_pkm.duplicate()
 		if (Pokedex.has(pkm) || i<=151) :
 			if Pokedex.has(pkm):
+				progress.value += 1
 				pkm_panel.get_node("TextureRect").texture = load("res://Textures/Pokemons/Front/n/%s.png" % i)
 				pkm_panel.get_node("Label").visible = false
 				pkm_panel.connect("mouse_entered",func():show_pkm_name(pkm))
@@ -75,9 +80,18 @@ func pkm_click(sound_path : String):
 
 func _on_quitter_pressed():
 	Audios.Button.playing = true
-	get_tree().quit()#babye
+	if get_parent().get_class() == "Window":
+		get_tree().quit()#babye
+	else :
+		SceneManager.change_scene(self,"menu",true)
 
 func _process(_delta):
 	pkm_name.global_position = get_global_mouse_position()+Vector2(-25,-50)
 	if pkm_name.global_position.x > 544-pkm_name.size.x:
 		pkm_name.global_position = get_global_mouse_position()+Vector2(-125,-50)
+
+func _on_progression_mouse_entered():
+	pkm_name.get_node("Label").text = "%s / 151" % progress.value
+	pkm_name.visible = true
+
+func _on_progression_mouse_exited():hide_pkm_name()

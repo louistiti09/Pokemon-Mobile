@@ -43,19 +43,8 @@ vec3 get_raise_arrows(vec3 color, vec2 uv) {
 void fragment() {
 	//Death anim
 	vec2 uv = UV;
-	uv.y -= min(death_animation/100.0,1.0);
+	uv.y -= min(death_animation/100.0,1.1);
 	COLOR = texture(TEXTURE,uv);
-	
-	//Animation pokeball
-	if (spawn_anim <= 1.0) {
-		vec3 inv_color = vec3(abs(1.0-apparition_color.x),abs(1.0-apparition_color.y),abs(1.0-apparition_color.z));
-		vec3 modulation = vec3(1,1,1)-(inv_color*(1.0-pow(spawn_anim,2)));
-		COLOR.rgb = modulation;
-		COLOR.a *= sqrt(spawn_anim);
-	} else {
-		vec3 modulation = vec3((spawn_anim-1.0)/2.0);
-		COLOR.rgb /= modulation;
-	}
 	
 	//Status
 	if (status == 1) { COLOR.rgb += burned_color*status_alpha;}
@@ -77,6 +66,17 @@ void fragment() {
 		COLOR = texture(TEXTURE,uv);
 		COLOR.r += sin(TIME)*0.15;
 		COLOR.g += cos(TIME)*0.18;
+	}
+	
+	//Animation pokeball
+	if (spawn_anim <= 1.0) {
+		vec3 inv_color = vec3(abs(1.0-apparition_color.x),abs(1.0-apparition_color.y),abs(1.0-apparition_color.z));
+		vec3 modulation = vec3(1,1,1)-(inv_color*(1.0-pow(spawn_anim,2)));
+		COLOR.rgb = modulation;
+		COLOR.a *= sqrt(spawn_anim);
+	} else {
+		vec3 modulation = vec3((spawn_anim-1.0)/2.0);
+		COLOR.rgb /= modulation;
 	}
 }
 

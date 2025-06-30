@@ -31,7 +31,7 @@ resource_name = "start_game"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BGM:playing")
+tracks/0/path = NodePath("Audios/BGM:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -91,7 +91,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Start:playing")
+tracks/5/path = NodePath("Audios/Start:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -103,7 +103,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Pikachu:playing")
+tracks/6/path = NodePath("Audios/Pikachu:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -115,7 +115,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("BGM:volume_db")
+tracks/7/path = NodePath("Audios/BGM:volume_db")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -167,7 +167,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BGM:playing")
+tracks/3/path = NodePath("Audios/BGM:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -504,18 +504,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ll1wl")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ll1wl")
 disabled = true
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_iivyo")
-bus = &"BGM"
-
-[node name="Start" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_vslog")
-bus = &"SFX"
-
-[node name="Pikachu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_p7yp7")
-bus = &"SFX"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_e86c6")
@@ -543,6 +531,20 @@ centered = false
 offset = Vector2(-5, -15)
 flip_h = true
 script = ExtResource("9_2dw0h")
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("3_iivyo")
+bus = &"BGM"
+
+[node name="Start" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("8_vslog")
+bus = &"SFX"
+
+[node name="Pikachu" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("6_p7yp7")
+bus = &"SFX"
 
 [connection signal="pressed" from="Click" to="." method="_on_click_pressed"]
 [connection signal="texture_changed" from="Pokemon1" to="Pokemon1" method="_on_texture_changed"]

@@ -322,7 +322,10 @@ func _on_annuler_pressed():
 func _on_quitter_teambuilder_pressed():
 	Audios.Button.playing = true
 	save_team_builder()
-	get_tree().quit()#babye
+	if get_parent().get_class() == "Window":
+		get_tree().quit()#babye
+	else :
+		SceneManager.change_scene(self,"team_manager",true)
 
 func _on_change_atk_pressed():
 	Audios.Button.playing = true
